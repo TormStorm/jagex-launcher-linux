@@ -20,9 +20,7 @@ Since Jagex doesn't seem to be interested in making a native Jagex launcher for 
 - Jagex Launcher installed files
 - RuneLite (optional)
 
-## Installing the Jagex Launcher
-
-### Installing .NET Framework
+## Installing .NET Framework
 Open WineTricks and choose "Select the default wineprefix"
 <img src="/assets/images/wineprefix.png" width="75%">
 
@@ -38,8 +36,14 @@ Accept the license terms and click install.
 <br>
 <img src="/assets/images/dotnetsetup.png" width="60%">
 
-When the second .NET framework installer pops up you might get a warning that the setup might not run properly, but you can safely ignore this warning. 
+
+You might get a warning, but it can safely be ignored.
+<br>
+<img src="/assets/images/dotnetwarning.png" width="60%">
+
 Accept the license terms and click install again.
+<br>
+<img src="/assets/images/dotnetsetup2.png" width="60%">
 
 ## Installing the launcher
 To install the Jagex Launcher you need the files 
