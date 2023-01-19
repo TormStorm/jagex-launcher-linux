@@ -23,15 +23,23 @@ Since Jagex doesn't seem to be interested in making a native Jagex launcher for 
 ## Installing the Jagex Launcher
 
 ### Installing .NET Framework
-Open WineTricks and choose "Select the default wineprefix". 
+Open WineTricks and choose "Select the default wineprefix"
 <img src="/assets/images/wineprefix.png" width="75%">
 
 
-Next select "Install a Windows DLL or component".
+Next select "Install a Windows DLL or component"
 <img src="/assets/images/component.png" width="75%">
-Select "dotnet 48". Ignore any errors and keep pressing OK until you get to the first .NET Framework 4 Setup. Accept the licensing terms and click install. When the second .NET framework installer pops up you might get a warning that the setup might not run properly, but you can safely ignore this warning. Accept the øicense terms and click install again.
 
 
+Select "dotnet48". Ignore any errors and keep pressing OK until you get to the .NET Framework 4 Setup 
+<img src="/assets/images/dotnet48.png" width="75%">
+
+Accept the license terms and click install.
+<br>
+<img src="/assets/images/dotnetsetup.png" width="60%">
+
+When the second .NET framework installer pops up you might get a warning that the setup might not run properly, but you can safely ignore this warning. 
+Accept the license terms and click install again.
 
 ## Installing the launcher
 To install the Jagex Launcher you need the files 
