@@ -6,7 +6,7 @@ This repo contains instruction on how to install the Jagex Launcher on linux wit
 ** **This is a work in progress** **
 <br>If you have any problems with the instucions please create a pull request and i will try to fix it.
 
-**This document does _NOT_ contain any links. Make sure to download the files from correct sources**
+**This document does _NOT_ contain any links for the Jagex Launcher or RuneLite. Make sure to download the files from correct sources**
 
 ## Why i created this repo
 
@@ -16,12 +16,19 @@ Since Jagex doesn't seem to be interested in making a native Jagex launcher for 
 
 ## Requirements
 - Wine
-- WineTricks
-- Jagex Launcher installed files
-- RuneLite (optional)
+- Jagex Launcher for Windows (installed files)
+- RuneLite AppImage (optional)
+
+## Installing Wine
+
+To install Wine with all the necessary dependencies go to GloriousEggroll's Blog on [How to get out of Wine Dependency hell](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell) and follow the instructions for your distribution. Make sure you also install WineTricks as it's needed for the next step.
 
 ## Installing .NET Framework
-Open WineTricks and choose "Select the default wineprefix"
+Open a terminal and run this command `winetricks--force`
+<br>
+
+
+Choose "Select the default wineprefix"
 <img src="/assets/images/wineprefix.png" width="75%">
 
 
@@ -45,5 +52,5 @@ Accept the license terms and click install
 <br>
 <img src="/assets/images/dotnet4.8setup.png" width="60%">
 
-## Installing the launcher
-To install the Jagex Launcher you need the files 
+## Running the launcher
+To run the Jagex Launcher you need the files from an already installed Jagex launcher in Windows. These files can be obtained either by installing the Jagex launcher in a virtual machine, or on a different computer. Once you have obtained the files run the 
