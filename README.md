@@ -53,4 +53,15 @@ Accept the license terms and click install
 <img src="/assets/images/dotnet4.8setup.png" width="60%">
 
 ## Running the launcher
-To run the Jagex Launcher you need the files from an already installed Jagex launcher in Windows. These files can be obtained either by installing the Jagex launcher in a virtual machine, or on a different computer. Once you have obtained the files run the 
+To run the Jagex Launcher you need the files from an already installed Jagex launcher in Windows. These files can be obtained either by installing the Jagex launcher in a virtual machine, or on a different computer. Once you have obtained the files open a terminal and navigate to the folder where the launcher files are located. Then simply run `wine JagexLauncher.exe` and the jagex launcher should start up as normal.
+
+## Desktop entry for the Jagex Launcher
+
+## RuneLite in the Jagex Launcher
+
+## Thanks and sources
+
+Big thanks to these people for making the information needed available to create this guide
+
+Thanks to c00k for his [Youtube video](https://youtu.be/izLxF_Wwinw) on how to intsall the Jagex launcher
+
