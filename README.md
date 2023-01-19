@@ -32,18 +32,18 @@ Next select "Install a Windows DLL or component"
 Select "dotnet48". Ignore any errors and keep pressing OK until you get to the .NET Framework 4 Setup 
 <img src="/assets/images/dotnet48.png" width="75%">
 
-Accept the license terms and click install.
+Accept the license terms and click install
 <br>
-<img src="/assets/images/dotnetsetup.png" width="60%">
+<img src="/assets/images/dotnet4setup.png" width="60%">
 
 
-You might get a warning, but it can safely be ignored.
+You might get a warning, but it can safely be ignored
 <br>
 <img src="/assets/images/dotnetwarning.png" width="60%">
 
-Accept the license terms and click install again.
+Accept the license terms and click install
 <br>
-<img src="/assets/images/dotnetsetup2.png" width="60%">
+<img src="/assets/images/dotnet4.8setup.png" width="60%">
 
 ## Installing the launcher
 To install the Jagex Launcher you need the files 
