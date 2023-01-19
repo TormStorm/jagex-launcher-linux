@@ -15,7 +15,8 @@ Since Jagex doesn't seem to be interested in making a native Jagex launcher for 
 # How To:
 
 ## Requirements
-- Wine
+- Wine with dependencies
+- WineTricks
 - Jagex Launcher for Windows (installed files)
 - RuneLite AppImage (optional)
 
@@ -59,9 +60,11 @@ To run the Jagex Launcher you need the files from an already installed Jagex lau
 
 ## RuneLite in the Jagex Launcher
 
-## Thanks and sources
+## Credits
 
 Big thanks to these people for making the information needed available to create this guide
 
-Thanks to c00k for his [Youtube video](https://youtu.be/izLxF_Wwinw) on how to intsall the Jagex launcher
+Thanks to c00k for his [Youtube video](https://youtu.be/izLxF_Wwinw) on how to install and run the Jagex Launcher in Linux
+<br>
+Thanks to jolty__ for his [Reddit post](https://www.reddit.com/r/2007scape/comments/uo1ey1/native_linux_runelite_running_with_jagex_launcher) on how to run RuneLite in the Jagex Launcher
 
