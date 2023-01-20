@@ -1,46 +1,43 @@
 # Jagex launcher for Linux
 
-This repo contains instruction on how to install the Jagex Launcher on linux with RuneLite through Wine.
-
-**This document does _NOT_ contain any links to the Jagex Launcher or RuneLite for obvious reasons. Please make sure to download the files from correct websites**
+This repo contains instruction on how to install the Jagex Launcher on linux through Wine as well as how to play through RuneLite.
 
 ## Why i created this repo
 
-RuneScape itself runs nativly in Linux, but unfortunatly the Jagex launcher does not, and has to be run thorugh Wine. RuneLite is not as straight forward to get running either, and since Jagex havne't provided any documentation on how to make it run i thoght i would this guide. Hopefully this won't be needed in the future, but until then this provides a way for linux users to use the Jagex Launcher.
+Unfortunatly the Jagex launcher does not work nativly on Linux, and it's not as straight forward to play through RuneLite. Since Jagex havne't provided any documentation on how to run the Jagex Launcher on Linux i created this repo. Hopefully this won't be needed in the future, but until then this repo will provide the nessesary information.
 
-# How To:
+# Instructions
+
+**This repo does _NOT_ contain any links to the _Jagex Launcher_ or _RuneLite_. Please make sure that you download these from correct websites**
 
 ## Requirements
 - Wine with dependencies
 - WineTricks
-- Windows VM or seperate computer
+- Windows VM or Windows computer
 - Jagex Launcher for Windows
 - RuneLite AppImage (optional)
 
 ## Installing Wine
 
-To install Wine with all the necessary dependencies go to GloriousEggroll's Blog on [How to get out of Wine Dependency hell](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell) and follow the instructions for your distribution. Make sure you also install WineTricks as it's needed for the next step.
+To install Wine with all the necessary dependencies head over to GloriousEggroll's Blog on [How to get out of Wine Dependency hell](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell) and follow the instructions for your distribution. Make sure you also install WineTricks as it's needed for the next step.
 
 ## Installing .NET Framework
-Open a terminal and run Winetricks by running this command `winetricks--force`. 
-<br>
-This is to make sure that everything gets intalled correctly.
-<br>
+Open a terminal and start Winetricks with following command `winetricks--force`
 
-
+Ignore any errors and keep pressing OK until you get to the next step.
 
 <details>
-  <summary>Choose "Select the default wineprefix"</summary>
+  <summary>Select "Select the default wineprefix and click ok"</summary>
 <img src="/assets/images/wineprefix.png" width="75%">
 </details>
 
 <details>
-  <summary>Next select "Install a Windows DLL or component"</summary>
+  <summary>Select "Install a Windows DLL or component and click ok"</summary>
 <img src="/assets/images/component.png" width="75%">
 </details>
 
 <details>
-  <summary>Select "dotnet48". Ignore any errors and keep pressing OK until you get to the .NET Framework 4 Setup </summary>
+  <summary>Select "dotnet48" and click ok</summary>
 <img src="/assets/images/dotnet48.png" width="75%">
 </details>
 
@@ -50,7 +47,7 @@ This is to make sure that everything gets intalled correctly.
 </details>
 
 <details>
-  <summary>You might get a warning, but it can safely be ignored</summary>
+  <summary>You might get a warning in the Microsoft .NET Framework installer, but you can safely continue</summary>
 <img src="/assets/images/dotnetwarning.png" width="60%">
 </details>
 
@@ -59,21 +56,24 @@ This is to make sure that everything gets intalled correctly.
 <img src="/assets/images/dotnet4.8setup.png" width="60%">
 </details>
 
-## Running the launcher
-Unfortunatly to run the Jagex Launcher you need the files from an already installed Jagex launcher in Windows. These files can be obtained either by installing the Jagex launcher in a virtual machine, or on a different computer. Once you have obtained the files open a terminal and navigate to the folder where the launcher files are located. Then simply run `wine JagexLauncher.exe` and the jagex launcher should start up as normal.
+## Running the Jagex Launcher
+Unfortunatly to run the Jagex Launcher you need all of the files from an already installed Jagex launcher in Windows. These files can be obtained either by installing the Jagex launcher in Windows on a virtual machine, or on a seperate computer. Once you have obtained the files place them in a folder, preferably in your home directory and open a terminal. Navigate to the folder you created and start the Jagex Launcher by running the following command `wine JagexLauncher.exe`
 
-## Desktop entry for the Jagex Launcher
-Unless you want to open a terminal every time you want to run the Jagex Launcher you should create a desktop entry. To create a desktop entry simply create a new text file with the code below and save it as `jagex-launcher.desktop` inside `/home/user/.local/share/appliations` where `user` is the name of your user in Linux. Make sure you also edit the exec path and icon path to the location of the Jagex Launcher.
+## Desktop entry
+Unless you want to open a terminal every time you want to run the Jagex Launcher you should create a desktop entry. To create a desktop entry simply open a text editor and create a new text file.
 ```
 [Desktop Entry]
 Type=Application
 Name=Jagex Launcher
 Terminal=false
-Exec=wine /home/torm/JagexLauncher/JagexLauncher.exe
-Icon=/home/torm/JagexLauncher/JagexLauncher.webp
+Exec=wine /home/user/JagexLauncher/JagexLauncher.exe
+Icon=/home/user/JagexLauncher/icon.png
 ```
 
-If you only want to run the default runescape client you can simply download it from the Jagex Launcher and run it, but if you also want to be able to run RuneLite keep reading. 
+Save the file as "jagex-launcher.desktop" in "/home/user/.local/share/appliations" where "user" is the name of your user in Linux and make sure that the exec path and icon path is the same as the folder you created earlier. Lastly download an icon and place it in the same folder.
+
+
+If you only want to use the default runescape clients you can simply download it straight from the Jagex Launcher and run it, but if you also want to use RuneLite keep reading. 
 
 ## RuneLite in the Jagex Launcher
 
@@ -107,7 +107,7 @@ Once you have Registry Editor running navigate to the following path `HKEY_CURRE
 
 You are finally finnished, and should be able to open the Jagex launcher with your new desktop entry and if everything is done correctly it should say Play when selecting RuneLite from the client drop down menu.
 
-## Credits
+# Credits
 
 Big thanks to these people for making the information needed available to create this guide
 
