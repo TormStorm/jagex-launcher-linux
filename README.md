@@ -77,13 +77,13 @@ If you only want to use the default runescape clients you can simply download it
 
 ## RuneLite
 
-To set up RuneLite navigate into the following directory `/home/USER/.wine/drive_c/users/USER/AppData/Local` Create a new directory called RuneLite and copy RuneLite.AppImage to this folder. Open a text editor and create a new file called RuneLite.sh Inside the file type the following
+To set up RuneLite navigate into the following directory `/home/USER/.wine/drive_c/users/USER/AppData/Local` Create a new directory and call it RuneLite. Copy RuneLite.AppImage to this folder and make sure that it is executable by opening a terminal and typing `sudo chmod +x RuneLite.AppImage` Open a text editor and create a new file called RuneLite.sh Inside the file type the following
 ```
 #!/bin/sh
 cd "${0%/*}"
 ./RuneLite.AppImage
 ```
-After creating the file make sure that it is executable by opening a terminal and typing `sudo chmod +x RuneLite.sh` Next create a symbolic link by typing `ln -s RuneLite.sh RuneLite.exe`
+After creating the file make sure that it is also executable by typing `sudo chmod +x RuneLite.sh` Next create a symbolic link by typing `ln -s RuneLite.sh RuneLite.exe`
 
 
 Finally you need to add a registry key to Wine so the Jagex Launcher thinks RuneLite is installed.
