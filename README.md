@@ -99,7 +99,7 @@ Open a terminal and start Winetricks with following command `winetricks`
 <img src="/assets/images/runregedit.png" width="75%">
 </details>
 
-Navigate to the following path `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall` If you don't have the "Uninstall" folder simply create it by right clicking inside `CurrentVersion` and selecting new key. Once you are inside `Uninstall` create a new folder called `RuneLite Launcher_is1` Inside that folder create a new string value named `InstallLocation` with the value `/home/USER/.wine/drive_c/users/USER/AppData/local/RuneLite` where "USER" is the name of your user in Linux.
+Navigate to the following path `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall` If you don't have the "Uninstall" folder simply create it by right clicking inside `CurrentVersion` and selecting new key. Once you are inside `Uninstall` create a new folder called `RuneLite Launcher_is1` Inside that folder create a new string value named `InstallLocation` with the value `/home/USER/.wine/drive_c/users/USER/AppData/Local/RuneLite` where "USER" is the name of your user in Linux.
 
 <details>
   <summary>Once you are done it should look like this</summary>
