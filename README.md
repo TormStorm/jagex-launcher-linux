@@ -75,7 +75,7 @@ Save the file as "jagex-launcher.desktop" in "/home/user/.local/share/appliation
 
 If you only want to use the default runescape clients you can simply download it straight from the Jagex Launcher and run it, but if you also want to use RuneLite keep reading. 
 
-## RuneLite in the Jagex Launcher
+## RuneLite
 
 To set up RuneLite navigate into the following directory `/home/user/.wine/drive_c/users/user/AppData/Local`. Create a new directory called RuneLite and copy RuneLite.AppImage file to this folder. Open a text editor and create a new file called RuneLite.sh Inside the file type the following
 ```
