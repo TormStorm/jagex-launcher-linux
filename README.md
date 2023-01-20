@@ -60,7 +60,7 @@ Ignore any errors and keep pressing OK until you get to the next step.
 Unfortunatly to run the Jagex Launcher you need all of the files from an already installed Jagex launcher in Windows. These files can be obtained either by installing the Jagex launcher in Windows on a virtual machine, or on a seperate computer. Once you have obtained the files place them in a folder, preferably in your home directory and open a terminal. Navigate to the folder you created and start the Jagex Launcher by running the following command `wine JagexLauncher.exe`
 
 ## Desktop entry
-Unless you want to open a terminal every time you want to run the Jagex Launcher you should create a desktop entry. To create a desktop entry simply open a text editor and create a new text file.
+Unless you want to open a terminal every time you want to run the Jagex Launcher you should create a desktop entry. To create a desktop entry simply open a text editor and create a new text file. Inside the file type the following.
 ```
 [Desktop Entry]
 Type=Application
@@ -70,31 +70,32 @@ Exec=wine /home/user/JagexLauncher/JagexLauncher.exe
 Icon=/home/user/JagexLauncher/icon.png
 ```
 
-Save the file as "jagex-launcher.desktop" in "/home/user/.local/share/appliations" where "user" is the name of your user in Linux and make sure that the exec path and icon path is the same as the folder you created earlier. Lastly download an icon and place it in the same folder.
+Save the file as "jagex-launcher.desktop" in "/home/user/.local/share/appliations" where "user" is the name of your user in Linux and make sure that the exec path and icon path is the same as the folder you created earlier. Lastly download an icon and place it in the same folder. The Jagex Launcher icon can be found both on the OldSchool Wiki and the Runescape Wiki on the Jagex Launcher page.
 
 
 If you only want to use the default runescape clients you can simply download it straight from the Jagex Launcher and run it, but if you also want to use RuneLite keep reading. 
 
 ## RuneLite in the Jagex Launcher
 
-To set up RuneLite start by heading into the wine directory. It's located in `/home/user/.wine/drive_c/users/user/AppData/Local` Create a new directory called RuneLite and copy over the RuneLite.AppImage file. Next create a new file and call it RuneLite.sh. Inside the file type the following
+To set up RuneLite navigate into the following directory `/home/user/.wine/drive_c/users/user/AppData/Local`. Create a new directory called RuneLite and copy RuneLite.AppImage file to this folder. Open a text editor and create a new file called RuneLite.sh Inside the file type the following
 ```
 #!/bin/sh
 cd "${0%/*}"
 ./RuneLite.AppImage
 ```
-This file simply changes the path to RuneLite directory and executes RuneLite.appImage. After creating the file make sure that it is executable either by opening a terminal and typing `sudo chmod +x RuneLite.sh`, or by right clicking the file and going into properties. Next open a terminal and create a symbolic link by typing the following `ln -s RuneLite.sh RuneLite.exe`. This file simply runs the RuneLite.sh file, which then runs the RuneLite.AppImage.
+After creating the file make sure that it is executable by opening a terminal and typing `sudo chmod +x RuneLite.sh` Next create a symbolic link by typing `ln -s RuneLite.sh RuneLite.exe`
+
 
 Finally you need to add a registry key to Wine so the Jagex Launcher thinks RuneLite is installed.
-<br>
 
+Open a terminal and start Winetricks with following command `winetricks`
 <details>
-  <summary>To do this start WineTricks again and choose "Select the default wineprefix"</summary>
+  <summary>Select "Select the default wineprefix"</summary>
 <img src="/assets/images/wineprefix.png" width="75%">
 </details>
 
 <details>
-  <summary>Next select "Run regedit"</summary>
+  <summary>Select "Run regedit"</summary>
 <img src="/assets/images/runregedit.png" width="75%">
 </details>
 
