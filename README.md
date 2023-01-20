@@ -19,7 +19,7 @@ Unfortunatly the Jagex launcher does not work natively on Linux, and it's not as
 
 ## Installing Wine
 
-To install Wine with all the necessary dependencies head over to GloriousEggroll's Blog on [How to get out of Wine Dependency hell](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell) and follow the instructions for your distribution. Make sure you also install WineTricks as it's needed for the next step.
+To install Wine with all the necessary dependencies head over to GloriousEggroll website and in the Wine (Linux) category you will find a page called "How to get out of Wine Dependency hell" Follow the instructions for your distribution. Make sure you also install WineTricks as it's needed for the next step.
 
 ## Installing .NET Framework
 Open a terminal and start Winetricks with following command `winetricks --force`
@@ -111,7 +111,7 @@ You are finally finnished, and should be able to open the Jagex launcher with yo
 
 Big thanks to these people for making the information available to create this repo.
 
-[How to use Jagex's New Launcher on Linux](https://youtu.be/izLxF_Wwinw) by c00k
+"How to use Jagex's New Launcher on Linux" on Reddit by c00k
 <br>
-[Native Linux RuneLite running with Jagex Launcher](https://www.reddit.com/r/2007scape/comments/uo1ey1/native_linux_runelite_running_with_jagex_launcher) by jolty__
+"Native Linux RuneLite running with Jagex Launcher" on Youtube by jolty__
 
