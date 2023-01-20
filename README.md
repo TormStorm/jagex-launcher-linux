@@ -70,7 +70,7 @@ Exec=wine /home/user/JagexLauncher/JagexLauncher.exe
 Icon=/home/user/JagexLauncher/icon.png
 ```
 
-Save the file as "jagex-launcher.desktop" in "/home/user/.local/share/appliations" where "user" is the name of your user in Linux and make sure that the exec path and icon path is the same as the folder you created earlier. Lastly download an icon and place it in the same folder. The Jagex Launcher icon can be found both on the OldSchool Wiki and the Runescape Wiki on the Jagex Launcher page.
+Save the file as "jagex-launcher.desktop" in `/home/user/.local/share/appliations` where "user" is the name of your user in Linux and make sure that the exec path and icon path is the same as the folder you created earlier. Lastly download an icon and place it in the same folder. The Jagex Launcher icon can be found both on the OldSchool Wiki and the Runescape Wiki on the Jagex Launcher page.
 
 
 If you only want to use the default runescape clients you can simply download it straight from the Jagex Launcher and run it, but if you also want to use RuneLite keep reading. 
@@ -99,7 +99,7 @@ Open a terminal and start Winetricks with following command `winetricks`
 <img src="/assets/images/runregedit.png" width="75%">
 </details>
 
-Navigate to the following path "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall" If you don't have the folder "Uninstall" simply create it by right clicking inside "CurrentVersion" and selct new key. Once you are inside "Uninstall" create a new folder called "RuneLite Launcher_is1". Inside that folder create a new string value named "InstallLocation", and the value "/home/user/.wine/drive_c/users/user/AppData/local/RuneLite" where "user" is the name of your user in Linux. 
+Navigate to the following path `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall` If you don't have the folder "Uninstall" simply create it by right clicking inside "CurrentVersion" and selct new key. Once you are inside "Uninstall" create a new folder called "RuneLite Launcher_is1". Inside that folder create a new string value named "InstallLocation", and the value `/home/user/.wine/drive_c/users/user/AppData/local/RuneLite` where "user" is the name of your user in Linux. 
 
 <details>
   <summary>Once you are done it should look like this</summary>
