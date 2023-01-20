@@ -27,17 +27,17 @@ Open a terminal and start Winetricks with following command `winetricks --force`
 Ignore any errors and keep pressing OK until you get to the next step.
 
 <details>
-  <summary>Select "Select the default wineprefix and click ok"</summary>
+  <summary>Select "Select the default wineprefix and click OK"</summary>
 <img src="/assets/images/wineprefix.png" width="75%">
 </details>
 
 <details>
-  <summary>Select "Install a Windows DLL or component and click ok"</summary>
+  <summary>Select "Install a Windows DLL or component and click OK"</summary>
 <img src="/assets/images/component.png" width="75%">
 </details>
 
 <details>
-  <summary>Select "dotnet48" and click ok</summary>
+  <summary>Select "dotnet48" and click OK</summary>
 <img src="/assets/images/dotnet48.png" width="75%">
 </details>
 
