@@ -28,29 +28,36 @@ This is to make sure that everything gets intalled correctly.
 <br>
 
 
-Choose "Select the default wineprefix"
+
+<details>
+  <summary>Choose "Select the default wineprefix"</summary>
 <img src="/assets/images/wineprefix.png" width="75%">
+</details>
 
-
-Next select "Install a Windows DLL or component"
+<details>
+  <summary>Next select "Install a Windows DLL or component"</summary>
 <img src="/assets/images/component.png" width="75%">
+</details>
 
-
-Select "dotnet48". Ignore any errors and keep pressing OK until you get to the .NET Framework 4 Setup 
+<details>
+  <summary>Select "dotnet48". Ignore any errors and keep pressing OK until you get to the .NET Framework 4 Setup </summary>
 <img src="/assets/images/dotnet48.png" width="75%">
+</details>
 
-Accept the license terms and click install
-<br>
+<details>
+  <summary>Accept the license terms and click install</summary>
 <img src="/assets/images/dotnet4setup.png" width="60%">
+</details>
 
-
-You might get a warning, but it can safely be ignored
-<br>
+<details>
+  <summary>You might get a warning, but it can safely be ignored</summary>
 <img src="/assets/images/dotnetwarning.png" width="60%">
+</details>
 
-Accept the license terms and click install
-<br>
+<details>
+  <summary>Accept the license terms and click install</summary>
 <img src="/assets/images/dotnet4.8setup.png" width="60%">
+</details>
 
 ## Running the launcher
 Unfortunatly to run the Jagex Launcher you need the files from an already installed Jagex launcher in Windows. These files can be obtained either by installing the Jagex launcher in a virtual machine, or on a different computer. Once you have obtained the files open a terminal and navigate to the folder where the launcher files are located. Then simply run `wine JagexLauncher.exe` and the jagex launcher should start up as normal.
@@ -81,17 +88,22 @@ This file simply changes the path to RuneLite directory and executes RuneLite.ap
 Finally you need to add a registry key to Wine so the Jagex Launcher thinks RuneLite is installed.
 <br>
 
-To do this start WineTricks again and choose "Select the default wineprefix"
+<details>
+  <summary>To do this start WineTricks again and choose "Select the default wineprefix"</summary>
 <img src="/assets/images/wineprefix.png" width="75%">
+</details>
 
-Next select "Run regedit"
-<br>
+<details>
+  <summary>Next select "Run regedit"</summary>
 <img src="/assets/images/runregedit.png" width="75%">
+</details>
 
 Once you have Registry Editor running navigate to the following path `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\` If you do not have a folder called `Uninstall` simply create it by right clicking inside `CurrentVersion` and selecting `New` `Key`. Once you are inside `Uninstall` create a new folder called `RuneLite Launcher_is1`. Inside that folder create a new `String value` with the name `InstallLocation`, and the value `/home/user/.wine/drive_c/users/user/AppData/local/RuneLite` where `user` is the name of your user in Linux. 
 
-Once you are done it should look like this
+<details>
+  <summary>Once you are done it should look like this</summary>
 <img src="/assets/images/regedit.png" width="75%">
+</details>
 
 You are finally finnished, and should be able to open the Jagex launcher with your new desktop entry and if everything is done correctly it should say Play when selecting RuneLite from the client drop down menu.
 
