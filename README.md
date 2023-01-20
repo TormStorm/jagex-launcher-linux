@@ -109,9 +109,9 @@ You are finally finnished, and should be able to open the Jagex launcher with yo
 
 # Credits
 
-Big thanks to these people for making the information needed available to create this guide
+Big thanks to these people for making the information available to create this guide
 
-Thanks to c00k for his [Youtube video](https://youtu.be/izLxF_Wwinw) on how to install and run the Jagex Launcher in Linux
+[How to use Jagex's New Launcher on Linux](https://youtu.be/izLxF_Wwinw) by c00k
 <br>
-Thanks to jolty__ for his [Reddit post](https://www.reddit.com/r/2007scape/comments/uo1ey1/native_linux_runelite_running_with_jagex_launcher) on how to run RuneLite in the Jagex Launcher
+[Native Linux RuneLite running with Jagex Launcher](https://www.reddit.com/r/2007scape/comments/uo1ey1/native_linux_runelite_running_with_jagex_launcher) by jolty__
 
