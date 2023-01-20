@@ -109,7 +109,7 @@ You are finally finnished, and should be able to open the Jagex launcher with yo
 
 # Credits
 
-Big thanks to these people for making the information available to create this guide
+Big thanks to these people for making the information available to create this repo.
 
 [How to use Jagex's New Launcher on Linux](https://youtu.be/izLxF_Wwinw) by c00k
 <br>
