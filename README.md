@@ -8,7 +8,7 @@ Unfortunatly the Jagex launcher does not work natively on Linux, and it's not as
 
 # Instructions
 
-**This repo does _NOT_ contain any links to the _Jagex Launcher_ or _RuneLite_. Please make sure that you download these from correct websites**
+**This repo does _NOT_ contain any links to the _Jagex Launcher_ or _RuneLite_. Please make sure you download these from the correct websites**
 
 ## Requirements
 - Wine with dependencies
