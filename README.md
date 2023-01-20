@@ -87,7 +87,6 @@ After creating the file make sure that it is also executable by typing `sudo chm
 
 
 Finally you need to add a registry key to Wine so the Jagex Launcher thinks RuneLite is installed.
-
 Open a terminal and start Winetricks with following command `winetricks`
 <details>
   <summary>Select "Select the default wineprefix"</summary>
