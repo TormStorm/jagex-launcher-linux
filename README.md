@@ -77,7 +77,7 @@ If you only want to use the default runescape clients you can simply download it
 
 ## RuneLite
 
-To set up RuneLite navigate into the following directory `/home/user/.wine/drive_c/users/user/AppData/Local`. Create a new directory called RuneLite and copy RuneLite.AppImage file to this folder. Open a text editor and create a new file called RuneLite.sh Inside the file type the following
+To set up RuneLite navigate into the following directory `/home/user/.wine/drive_c/users/user/AppData/Local` Create a new directory called RuneLite and copy RuneLite.AppImage file to this folder. Open a text editor and create a new file called RuneLite.sh Inside the file type the following
 ```
 #!/bin/sh
 cd "${0%/*}"
@@ -99,7 +99,7 @@ Open a terminal and start Winetricks with following command `winetricks`
 <img src="/assets/images/runregedit.png" width="75%">
 </details>
 
-Navigate to the following path `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall` If you don't have the folder "Uninstall" simply create it by right clicking inside "CurrentVersion" and selct new key. Once you are inside "Uninstall" create a new folder called "RuneLite Launcher_is1". Inside that folder create a new string value named "InstallLocation", and the value `/home/user/.wine/drive_c/users/user/AppData/local/RuneLite` where "user" is the name of your user in Linux. 
+Navigate to the following path `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall` If you don't have the "Uninstall" folder simply create it by right clicking inside `CurrentVersion` and selecting new key. Once you are inside `Uninstall` create a new folder called `RuneLite Launcher_is1` Inside that folder create a new string value named `InstallLocation` with the value `/home/user/.wine/drive_c/users/user/AppData/local/RuneLite` where "user" is the name of your user in Linux.
 
 <details>
   <summary>Once you are done it should look like this</summary>
