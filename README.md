@@ -22,7 +22,9 @@ RuneScape itself runs nativly in Linux, but unfortunatly the Jagex launcher does
 To install Wine with all the necessary dependencies go to GloriousEggroll's Blog on [How to get out of Wine Dependency hell](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell) and follow the instructions for your distribution. Make sure you also install WineTricks as it's needed for the next step.
 
 ## Installing .NET Framework
-Open a terminal and run this command `winetricks--force`
+Open a terminal and run Winetricks by running this command `winetricks--force`. 
+<br>
+This is to make sure that everything gets intalled correctly.
 <br>
 
 
@@ -54,8 +56,7 @@ Accept the license terms and click install
 Unfortunatly to run the Jagex Launcher you need the files from an already installed Jagex launcher in Windows. These files can be obtained either by installing the Jagex launcher in a virtual machine, or on a different computer. Once you have obtained the files open a terminal and navigate to the folder where the launcher files are located. Then simply run `wine JagexLauncher.exe` and the jagex launcher should start up as normal.
 
 ## Desktop entry for the Jagex Launcher
-Unless you want to open a terminal every time you want to run the Jagex Launcher you can create a desktop entry. To do so simply create a new text file with the following code and save it as `jagex-launcher.desktop` inside `/home/user/.local/share/appliations` where user is the name of your user in Linux. Make sure you also edit the exec path and icon path to the location of the Jagex Launcher.
-
+Unless you want to open a terminal every time you want to run the Jagex Launcher you should create a desktop entry. To create a desktop entry simply create a new text file with the code below and save it as `jagex-launcher.desktop` inside `/home/user/.local/share/appliations` where `user` is the name of your user in Linux. Make sure you also edit the exec path and icon path to the location of the Jagex Launcher.
 ```
 [Desktop Entry]
 Type=Application
@@ -65,7 +66,7 @@ Exec=wine /home/torm/JagexLauncher/JagexLauncher.exe
 Icon=/home/torm/JagexLauncher/JagexLauncher.webp
 ```
 
-If you want to run the default runescape client you can simply download it from the Jagex Launcher and run it. If you also want to be able to run RuneLite keep reading. 
+If you only want to run the default runescape client you can simply download it from the Jagex Launcher and run it, but if you also want to be able to run RuneLite keep reading. 
 
 ## RuneLite in the Jagex Launcher
 
@@ -77,13 +78,22 @@ cd "${0%/*}"
 ```
 This file simply changes the path to RuneLite directory and executes RuneLite.appImage. After creating the file make sure that it is executable either by opening a terminal and typing `sudo chmod +x RuneLite.sh`, or by right clicking the file and going into properties. Next open a terminal and create a symbolic link by typing the following `ln -s RuneLite.sh RuneLite.exe`. This file simply runs the RuneLite.sh file, which then runs the RuneLite.AppImage.
 
-Finally you need to add a registry key to Wine So the Jagex Launcher thinks RuneLite is installed.
+Finally you need to add a registry key to Wine so the Jagex Launcher thinks RuneLite is installed.
 <br>
-To do this start WineTricks choose "Select the default wineprefix"
+
+To do this start WineTricks again and choose "Select the default wineprefix"
 <img src="/assets/images/wineprefix.png" width="75%">
 
 Next select "Run regedit"
+<br>
 <img src="/assets/images/runregedit.png" width="75%">
+
+Once you have Registry Editor running navigate to the following path `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\` If you do not have a folder called `Uninstall` simply create it by right clicking inside `CurrentVersion` and selecting `New` `Key`. Once you are inside `Uninstall` create a new folder called `RuneLite Launcher_is1`. Inside that folder create a new `String value` with the name `InstallLocation`, and the value `/home/user/.wine/drive_c/users/user/AppData/local/RuneLite` where `user` is the name of your user in Linux. 
+
+Once you are done it should look like this
+<img src="/assets/images/regedit.png" width="75%">
+
+You are finally finnished, and should be able to open the Jagex launcher with your new desktop entry and if everything is done correctly it should say Play when selecting RuneLite from the client drop down menu.
 
 ## Credits
 
