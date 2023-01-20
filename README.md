@@ -4,7 +4,7 @@ This repo contains instruction on how to install the Jagex Launcher on linux thr
 
 ## Why i created this repo
 
-Unfortunatly the Jagex launcher does not work nativly on Linux, and it's not as straight forward to play through RuneLite. Since Jagex havne't provided any documentation on how to run the Jagex Launcher on Linux i created this repo. Hopefully this won't be needed in the future, but until then this repo will provide the nessesary information.
+Unfortunatly the Jagex launcher does not work natively on Linux, and it's not as straight forward to play through RuneLite. Since Jagex havne't provided any documentation on how to run the Jagex Launcher on Linux i created this repo. Hopefully this won't be needed in the future, but until then this repo will provide the nessesary information.
 
 # Instructions
 
