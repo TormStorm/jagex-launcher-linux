@@ -10,7 +10,7 @@ This repo contains instruction on how to install the Jagex Launcher on linux wit
 
 ## Why i created this repo
 
-Since Jagex doesn't seem to be interested in making a native Jagex launcher for linux, as well as not providing any documentation on how to make it run in linux i though i would make a step by step instruction. Hopefully this guide won't be needed in the future, but until then this provides a way for linux users to use the Jagex Launcher. 
+RuneScape itself runs nativly in Linux, but unfortunatly the Jagex launcher does not, and has to be run thorugh Wine. RuneLite is not as straight forward to get running either, and since Jagex havne't provided any documentation on how to make it run i thoght i would this guide. Hopefully this won't be needed in the future, but until then this provides a way for linux users to use the Jagex Launcher.
 
 # How To:
 
@@ -58,7 +58,7 @@ Accept the license terms and click install
 Unfortunatly to run the Jagex Launcher you need the files from an already installed Jagex launcher in Windows. These files can be obtained either by installing the Jagex launcher in a virtual machine, or on a different computer. Once you have obtained the files open a terminal and navigate to the folder where the launcher files are located. Then simply run `wine JagexLauncher.exe` and the jagex launcher should start up as normal.
 
 ## Desktop entry for the Jagex Launcher
-Unless you want to open a terminal every time you want to run the Jagex Launcher you can create a desktop entry. To do so simply create a new text file with the following code and save it as `jagex-launcher.desktop` inside `/home/user/.local/share/appliations` where user is the name of your user in Linux. Make sure you also edit the exec and icon paths to the location of the Jagex Launcher.
+Unless you want to open a terminal every time you want to run the Jagex Launcher you can create a desktop entry. To do so simply create a new text file with the following code and save it as `jagex-launcher.desktop` inside `/home/user/.local/share/appliations` where user is the name of your user in Linux. Make sure you also edit the exec path and icon path to the location of the Jagex Launcher.
 
 ```
 [Desktop Entry]
@@ -70,6 +70,10 @@ Icon=/home/torm/JagexLauncher/JagexLauncher.webp
 ```
 
 ## RuneLite in the Jagex Launcher
+
+If you want to run the default runescape client you can simply download it from the Jagex Launcher and run it. If you also want to be able to run RuneLite keep reading. 
+
+
 
 ## Credits
 
