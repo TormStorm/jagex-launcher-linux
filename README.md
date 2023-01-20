@@ -42,17 +42,17 @@ Ignore any errors and keep pressing OK until you get to the next step.
 </details>
 
 <details>
-  <summary>Accept the license terms and click install</summary>
+  <summary>Accept the license terms and click Install</summary>
 <img src="/assets/images/dotnet4setup.png" width="60%">
 </details>
 
 <details>
-  <summary>You might get a warning in the Microsoft .NET Framework installer, but you can safely continue</summary>
+  <summary>You might get a warning in the Microsoft .NET Framework installer, just click Continue</summary>
 <img src="/assets/images/dotnetwarning.png" width="60%">
 </details>
 
 <details>
-  <summary>Accept the license terms and click install</summary>
+  <summary>Accept the license terms and click Install</summary>
 <img src="/assets/images/dotnet4.8setup.png" width="60%">
 </details>
 
