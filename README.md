@@ -24,7 +24,7 @@ To install Wine with all the necessary dependencies head over to GloriousEggroll
 ## Installing .NET Framework
 Open a terminal and start Winetricks with following command `winetricks --force`
 
-Ignore any errors and keep pressing OK until you get to the next step.
+Ignore any errors in this step and keep pressing OK until you can proceed.
 
 <details>
   <summary>Select "Select the default wineprefix and click OK"</summary>
