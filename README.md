@@ -22,7 +22,7 @@ Unfortunatly the Jagex launcher does not work nativly on Linux, and it's not as 
 To install Wine with all the necessary dependencies head over to GloriousEggroll's Blog on [How to get out of Wine Dependency hell](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell) and follow the instructions for your distribution. Make sure you also install WineTricks as it's needed for the next step.
 
 ## Installing .NET Framework
-Open a terminal and start Winetricks with following command `winetricks--force`
+Open a terminal and start Winetricks with following command `winetricks --force`
 
 Ignore any errors and keep pressing OK until you get to the next step.
 
