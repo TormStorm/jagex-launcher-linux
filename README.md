@@ -8,7 +8,7 @@ Unfortunatly the Jagex launcher does not work natively on Linux, and it's not as
 
 # Instructions
 
-**This repo does _NOT_ contain any links to the _Jagex Launcher_ or _RuneLite_. Please make sure you download these from the correct websites**
+**This repo does _NOT_ contain any links. Please make sure you download everything from the correct websites**
 
 ## Requirements
 - Wine with dependencies
@@ -111,7 +111,7 @@ You are finally finnished, and should be able to open the Jagex launcher with yo
 
 Big thanks to these people for making the information available to create this repo.
 
-"How to use Jagex's New Launcher on Linux" on Reddit by c00k
+"How to use Jagex's New Launcher on Linux" on Youtube by c00k
 <br>
-"Native Linux RuneLite running with Jagex Launcher" on Youtube by jolty__
+"Native Linux RuneLite running with Jagex Launcher" on Reddit by jolty__
 
