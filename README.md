@@ -111,7 +111,7 @@ You are finally finnished, and should be able to open the Jagex launcher with yo
 
 Big thanks to these people for making the information available to create this repo.
 
-"How to use Jagex's New Launcher on Linux" on Youtube by c00k
+"How to use Jagex's New Launcher on Linux" by c00k on Youtube
 <br>
-"Native Linux RuneLite running with Jagex Launcher" on Reddit by jolty__
+"Native Linux RuneLite running with Jagex Launcher" by jolty__ on Reddit
 
