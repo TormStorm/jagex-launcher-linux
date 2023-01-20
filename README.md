@@ -69,11 +69,17 @@ Exec=wine /home/torm/JagexLauncher/JagexLauncher.exe
 Icon=/home/torm/JagexLauncher/JagexLauncher.webp
 ```
 
-## RuneLite in the Jagex Launcher
-
 If you want to run the default runescape client you can simply download it from the Jagex Launcher and run it. If you also want to be able to run RuneLite keep reading. 
 
+## RuneLite in the Jagex Launcher
 
+To set up RuneLite start by heading into the wine directory. It's located in `/home/user/.wine/drive_c/users/user/AppData/Local` Create a new directory called RuneLite and copy over the RuneLite.AppImage file. Next create a new file and call it RuneLite.sh. Inside the file type the following
+```
+#!/bin/sh
+cd "${0%/*}"
+./RuneLite.AppImage
+```
+This file simply changes the path to RuneLite directory and executes RuneLite.appImage. After creating the file make sure that it is executable either by opening a terminal and typing `sudo chmod +x RuneLite.sh`, or by right clicking the file and going into properties. Next open a terminal and create a symbolic link by typing the following `ln -s RuneLite.sh RuneLite.exe`. This file simply runs the RuneLite.sh file, which then runs the RuneLite.AppImage.
 
 ## Credits
 
