@@ -2,11 +2,7 @@
 
 This repo contains instruction on how to install the Jagex Launcher on linux with RuneLite through Wine.
 
-
-** **This is a work in progress** **
-<br>If you have any problems with the instucions please create a pull request and i will try to fix it.
-
-**This document does _NOT_ contain any links for the Jagex Launcher or RuneLite. Make sure to download the files from correct sources**
+**This document does _NOT_ contain any links to the Jagex Launcher or RuneLite for obvious reasons. Please make sure to download the files from correct websites**
 
 ## Why i created this repo
 
@@ -80,6 +76,14 @@ cd "${0%/*}"
 ./RuneLite.AppImage
 ```
 This file simply changes the path to RuneLite directory and executes RuneLite.appImage. After creating the file make sure that it is executable either by opening a terminal and typing `sudo chmod +x RuneLite.sh`, or by right clicking the file and going into properties. Next open a terminal and create a symbolic link by typing the following `ln -s RuneLite.sh RuneLite.exe`. This file simply runs the RuneLite.sh file, which then runs the RuneLite.AppImage.
+
+Finally you need to add a registry key to Wine So the Jagex Launcher thinks RuneLite is installed.
+<br>
+To do this start WineTricks choose "Select the default wineprefix"
+<img src="/assets/images/wineprefix.png" width="75%">
+
+Next select "Run regedit"
+<img src="/assets/images/runregedit.png" width="75%">
 
 ## Credits
 
