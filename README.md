@@ -19,42 +19,12 @@ Unfortunatly the Jagex launcher does not work natively on Linux, and it's not as
 
 ## Installing Wine
 
-To install Wine with all the necessary dependencies head over to GloriousEggroll website and in the Wine (Linux) category you will find a page called "How to get out of Wine Dependency hell" Follow the instructions for your distribution. Make sure you also install WineTricks as it's needed for the next step.
+To install Wine with the necessary dependencies head over to [GloriousEggroll website](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell) and follow the steps for your distribution. <br> 
+Make sure you also install WineTricks as it's needed for the next step.
+
 
 ## Installing .NET Framework
-Open a terminal and start Winetricks with following command `winetricks --force`
-
-Ignore any errors in this step and keep pressing OK until you can proceed.
-
-<details>
-  <summary>Select "Select the default wineprefix and click OK"</summary>
-<img src="/assets/images/wineprefix.png">
-</details>
-
-<details>
-  <summary>Select "Install a Windows DLL or component and click OK"</summary>
-<img src="/assets/images/component.png">
-</details>
-
-<details>
-  <summary>Select "dotnet48" and click OK</summary>
-<img src="/assets/images/dotnet48.png">
-</details>
-
-<details>
-  <summary>Accept the license terms and click Install</summary>
-<img src="/assets/images/dotnet4setup.png">
-</details>
-
-<details>
-  <summary>You might get a warning in the Microsoft .NET Framework installer, just click Continue</summary>
-<img src="/assets/images/dotnetwarning.png">
-</details>
-
-<details>
-  <summary>Accept the license terms and click Install</summary>
-<img src="/assets/images/dotnet4.8setup.png">
-</details>
+To install .NET Framework open a terminal and type following command `winetricks --force -q dotnet48`
 
 ## Running the Jagex Launcher
 Unfortunatly to run the Jagex Launcher you need all of the files from an already installed Jagex launcher in Windows. These files can be obtained either by installing the Jagex launcher in Windows on a virtual machine, or on a seperate computer. Once you have obtained the files place them in a folder, preferably in your home directory and open a terminal. Navigate to the folder you created and start the Jagex Launcher by running the following command `wine JagexLauncher.exe`
