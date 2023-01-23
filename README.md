@@ -13,6 +13,7 @@ Unfortunatly the Jagex launcher does not work natively on Linux, and it's not as
 ## Requirements
 - Wine with dependencies
 - WineTricks
+- .NET Framework 4.8
 - Windows VM or Windows computer
 - Jagex Launcher for Windows
 - RuneLite AppImage (optional)
