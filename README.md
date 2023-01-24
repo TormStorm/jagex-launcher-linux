@@ -1,6 +1,6 @@
 # Jagex launcher for Linux
 
-**THIS BRANCH MAY _NOT_ CONTAIN WORKING OR COMPLETE INCTRUCTIONS. PLEASE USE THE MASTER BRANCH**
+**THIS BRANCH MAY _NOT_ CONTAIN WORKING OR COMPLETE INCTRUCTIONS. PLEASE USE THE MAIN BRANCH**
 
 This repo contains instruction on how to install the Jagex Launcher on linux through Wine as well as how to play through RuneLite.
 
