@@ -6,37 +6,39 @@ This repo contains instruction on how to install the Jagex Launcher on linux thr
 
 ## Why i created this repo
 
-Unfortunatly the Jagex launcher does not work natively on Linux, and it's not as straight forward to play through RuneLite. Since Jagex havne't provided any documentation on how to run the Jagex Launcher on Linux i created this repo. Hopefully this won't be needed in the future, but until then this repo will provide the nessesary information.
+The Jagex launcher does not work natively on Linux, and it's not as straight forward to play through RuneLite. Since Jagex havne't provided any documentation on how to run the Jagex Launcher on Linux i created this repo. Hopefully this won't be needed in the future, but until then this repo will provide the nessesary information.
 
 ## Instructions
 
 **This repo does _NOT_ contain links to the Jagex Launcher or RuneLite. Please make sure you download everything from the correct websites**
 
-<!--<details open>-->
-<!--<summary>-->
-
-<!--## Manual install-->
-<!--</summary>-->
-
-### Requirements
-- Wine with dependencies
-- WineTricks
-- .NET Framework 4.8
+## Requirements
+- Lutris
+- Wine binary
 - Windows VM or Windows computer
-- Jagex Launcher for Windows
+- Jagex Launcher (Windows)
 - RuneLite AppImage (optional)
 
-### Installing Wine
+### Install Lutris
 
-To install Wine with the necessary dependencies head over to [GloriousEggroll website](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell) and follow the steps for your distribution. <br> 
-Make sure you also install WineTricks as it's needed for the next step.
+Install Lutris either through an appstore or the terminal: `sudo apt install lutris`
 
+### Download Wine binary
 
-### Installing .NET Framework
-To install .NET Framework open a terminal and type following command `winetricks --force -q dotnet48`
+To download the latest Wine binary head over to Kron4ek's [Github page](https://github.com/Kron4ek/Wine-Builds/releases) and download "wine-8.0-amd64" 
 
-## Running the Jagex Launcher
-Unfortunatly to run the Jagex Launcher you need all of the files from an already installed Jagex launcher in Windows. These files can be obtained either by installing the Jagex launcher in Windows on a virtual machine, or on a seperate computer. Once you have obtained the files place them in a folder, preferably in your home directory and open a terminal. Navigate to the folder you created and start the Jagex Launcher by running the following command `wine JagexLauncher.exe`
+<!---### Installing .NET Framework
+To install .NET Framework open a terminal and type following command `winetricks --force -q dotnet48`--->
+
+### Running the Jagex Launcher
+To run the Jagex Launcher you need the files from an already installed Jagex launcher in Windows. These files can be obtained either by installing the Jagex launcher on a virtual machine or on a seperate computer. Once you have obtained the files place them in in a folder on your home directory.
+
+### Lutris
+
+Open lutris and click the pluss sign on the top left. Select "Add locally installed game"
+In the Game Info tab type "Jagex Launcher" in the name field and under Runner select Wine. <br>
+In the Game Options tab click browse and select the Jagex Launcher executable Under excecutable.
+
 
 ### Desktop entry
 Unless you want to open a terminal every time you want to run the Jagex Launcher you should create a desktop entry. To create a desktop entry simply open a text editor and create a new text file. Inside the file type the following.
@@ -84,8 +86,6 @@ Select registry, "Import Registry File.." and import the file you just created.
 </details>
 
 You are finally finnished, and should be able to open the Jagex launcher with your new desktop entry and if everything is done correctly it should say Play when selecting RuneLite from the client drop down menu.
-
-<!--</details>-->
 
 # Credits
 
