@@ -13,48 +13,46 @@ The Jagex launcher does not work natively on Linux, and it's not as straight for
 **This repo does _NOT_ contain links to the Jagex Launcher or RuneLite. Please make sure you download everything from the correct websites**
 
 ## Requirements
-- Lutris
 - Wine binary
-- Windows VM or Windows computer
+- Lutris
 - Jagex Launcher (Windows)
+- Windows Virtual Machine or Windows computer
 - RuneLite AppImage (optional)
 
-### Install Lutris
+
+### Wine binary
+
+To download the latest Wine binary head over to Kron4ek's [Github page](https://github.com/Kron4ek/Wine-Builds/releases) and download "wine-8.0-amd64"<br>
+Extract the zipped file and place it somewhere in your home directory,
+
+
+### Lutris
 
 Install Lutris either through an appstore or the terminal: `sudo apt install lutris`
 
-### Download Wine binary
-
-To download the latest Wine binary head over to Kron4ek's [Github page](https://github.com/Kron4ek/Wine-Builds/releases) and download "wine-8.0-amd64" 
 
 <!---### Installing .NET Framework
 To install .NET Framework open a terminal and type following command `winetricks --force -q dotnet48`--->
 
-### Running the Jagex Launcher
-To run the Jagex Launcher you need the files from an already installed Jagex launcher in Windows. These files can be obtained either by installing the Jagex launcher on a virtual machine or on a seperate computer. Once you have obtained the files place them in in a folder on your home directory.
+### Jagex Launcher
+Install the Jagex Launcher either in a Windows virtual machine or on seperate computer. <br>
+Copy the installation folder to your home directory on your Linux computer.
+
 
 ### Lutris
 
-Open lutris and click the pluss sign on the top left. Select "Add locally installed game"
-In the Game Info tab type "Jagex Launcher" in the name field and under Runner select Wine. <br>
-In the Game Options tab click browse and select the Jagex Launcher executable Under excecutable.
-
+Open lutris and click the pluss sign on the top left. Select "Add locally installed game"<br>
+In the Game Info tab type "Jagex Launcher" in the name field and under Runner select Wine.<br>
+In the Game Options tab click browse and select the Jagex Launcher executable Under excecutable.<br>
+In the Runner Options click the Advanced toggle in the top right and under Wine version select custom.<br>
+Under Custom Wine executable select the directory to the Wine binary you downloaded. Example: `/home/USER/wine-8.0/bin/wine`<br>
+Disable all of the enabled toggles in the Runner Options.
+In the System Options disable all of the enabled toggles and click save.
 
 ### Desktop entry
-Unless you want to open a terminal every time you want to run the Jagex Launcher you should create a desktop entry. To create a desktop entry simply open a text editor and create a new text file. Inside the file type the following.
-```
-[Desktop Entry]
-Type=Application
-Name=Jagex Launcher
-Terminal=false
-Exec=wine /home/USER/JagexLauncher/JagexLauncher.exe
-Icon=/home/USER/JagexLauncher/icon.png
-```
-
-Save the file as "jagex-launcher.desktop" in `/home/USER/.local/share/appliations` where "USER" is the name of your user in Linux and make sure that the exec path and icon path is the same as the folder you created earlier. Lastly download an icon and place it in the same folder. The Jagex Launcher icon can be found both on the OldSchool Wiki and the Runescape Wiki on the Jagex Launcher page.
-
-
-If you only want to use the default runescape clients you can simply download it straight from the Jagex Launcher and run it, but if you also want to use RuneLite keep reading. 
+Download the Jagex Launcher icon from the [RuneScape Wiki](https://runescape.wiki/w/Jagex_Launcher#/media/File:Jagex_Launcher_icon.png)<br>
+To create a desktop entry right click the Jagex Launcher in Lutris and select configure. Under game options select the custom on the top right and select the image you downloaded and click save.<br>
+Right click the Jagex Launcher inside Lutris again and select "Create application menu shortcut"
 
 ### RuneLite
 
