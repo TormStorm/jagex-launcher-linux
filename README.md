@@ -44,6 +44,7 @@ Copy the installation folder to your home directory on your Linux computer.
 Open lutris and click the pluss sign on the top left. Select "Add locally installed game"<br>
 In the Game Info tab type "Jagex Launcher" in the name field and under Runner select Wine.<br>
 In the Game Options tab click browse and select the Jagex Launcher executable Under excecutable.<br>
+in Wine prefix type `/home/USER/.JagexLauncher/`<br>
 In the Runner Options click the Advanced toggle in the top right and under Wine version select custom.<br>
 Under Custom Wine executable select the directory to the Wine binary you downloaded. Example: `/home/USER/wine-8.0/bin/wine`<br>
 Disable all of the enabled toggles in the Runner Options.
