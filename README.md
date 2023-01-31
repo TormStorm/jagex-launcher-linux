@@ -16,11 +16,19 @@ Please make sure your download everything from the correct sources.**
 - .NET Framework 4.8
 - Wine binary
 - Lutris
-- Jagex Launcher (Windows)
+- Jagex Launcher for Windows
 - Windows Virtual Machine or Windows computer
-- RuneLite AppImage (optional)
+- RuneLite AppImage
 
 ## Instructions
+
+## Create custom wine prefix
+Open a terminal and type the following command<br>
+`WINEPREFIX=~/.JagexLauncher winecfg`
+
+### Installing .NET Framework
+To install .NET Framework into a new wine prefix open a terminal and type following command<br>
+`WINEPREFIX=~/.JagexLauncher winetricks --force -q dotnet48`
 
 ### Wine binary
 
@@ -33,13 +41,11 @@ Make sure the version says 8.0 before clicking install.
 
 Install Lutris with instrucions from their [website](https://lutris.net/downloads)<br>
 Open lutris and click the pluss sign on the top left and select "Add locally installed game"<br>
+
 In Game Info type "Jagex Launcher" in the name field and under Runner select Wine.<br>
 In Game Options under excecutable click browse and select the Jagex Launcher executable and in Wine prefix type `~/.JagexLauncher`<br>
 In Runner Options under wine verion select Wine-8.0 and disable all of the enabled toggles<br>
 In System Options disable all of the enabled toggles and click save.
-
-### Installing .NET Framework
-To install .NET Framework open a terminal and type following command `winetricks --force -q dotnet48`
 
 ### Jagex Launcher
 Download and insall the [Jagex Launcher](https://www.jagex.com/en-GB/launcher) either in a Windows virtual machine or on seperate computer. <br>
@@ -52,10 +58,14 @@ Right click the Jagex Launcher inside Lutris again and select "Create applicatio
 
 ### RuneLite
 
-Download [RuneLite for Linux](https://runelite.net) and navigate into the following directory on your computer `/home/USER/.wine/drive_c/users/USER/AppData/Local` Create a new directory and call it RuneLite. Copy RuneLite.AppImage to this folder and make sure that it is executable by opening a terminal and typing `sudo chmod +x RuneLite.AppImage` Open a text editor and create a new file called RuneLite.sh Inside the file type the following where USER is the name of your Linux user.
+Download [RuneLite for Linux](https://runelite.net) and navigate to wine prefix in your home directory`.JagexLauncher/drive_c/users/USER/AppData/Local`<br>
+Create a new folder called RuneLite and copy over the appimage. To make it executable open a terminal and type the following<br>
+`sudo chmod +x RuneLite.AppImage`<br>
+
+Open a text editor and create a new file called RuneLite.sh Inside the file type the following where USER is the name of your Linux user.
 ```
 #!/bin/sh
-cd /home/USER/.wine/drive_c/users/USER/AppData/Local/RuneLite
+cd ~/.JagexLauncher/drive_c/users/USER/AppData/Local/RuneLite
 ./RuneLite.AppImage
 ```
 After creating the file make sure that it is also executable by typing `sudo chmod +x RuneLite.sh` Next create a symbolic link by typing `ln -s RuneLite.sh RuneLite.exe`
