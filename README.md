@@ -44,8 +44,7 @@ Open lutris and click the pluss sign on the top left and select "Add locally ins
 
 In Game Info type "Jagex Launcher" in the name field and under Runner select Wine.<br>
 In Game Options under excecutable click browse and select the Jagex Launcher executable and in Wine prefix type `~/.JagexLauncher`<br>
-In Runner Options under wine verion select Wine-8.0 and disable all of the enabled toggles<br>
-In System Options disable all of the enabled toggles and click save.
+In Runner Options under wine verion select Wine-8.0. Disable DXVM, Esync and FSync and click save.<br>
 
 ### Jagex Launcher
 Download and insall the [Jagex Launcher](https://www.jagex.com/en-GB/launcher) either in a Windows virtual machine or on seperate computer. <br>
