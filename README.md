@@ -13,6 +13,7 @@ The Jagex launcher does not work natively on Linux, and it's not as straight for
 Please make sure your download everything from the correct sources.**
 
 ## Requirements
+- .NET Framework 4.8
 - Wine binary
 - Lutris
 - Jagex Launcher (Windows)
@@ -23,36 +24,30 @@ Please make sure your download everything from the correct sources.**
 
 ### Wine binary
 
-To download the Wine binary head over to Kron4ek's [Github page](https://github.com/Kron4ek/Wine-Builds/releases) and download "wine-8.0-amd64"<br>
-Extract the zipped file and place it somewhere in your home directory,
+To get the latest Wine binary download ProtonUp-Qt with instructions from [Github](https://github.com/DavidoTek/ProtonUp-Qt/releases)<br>
+Check that it installs for Lutris and click add version. Under compatability tool select "Kron4ek Wine-Builds Vanilla"<br>
+Make sure the version says 8.0 before clicking install.
+
 
 ### Lutris
 
-Install Lutris either through an appstore or the terminal. e.g:  `sudo apt install lutris`
+Install Lutris with instrucions from their [website](https://lutris.net/downloads)<br>
+Open lutris and click the pluss sign on the top left and select "Add locally installed game"<br>
+In Game Info type "Jagex Launcher" in the name field and under Runner select Wine.<br>
+In Game Options under excecutable click browse and select the Jagex Launcher executable and in Wine prefix type `~/.JagexLauncher`<br>
+In Runner Options under wine verion select Wine-8.0 and disable all of the enabled toggles<br>
+In System Options disable all of the enabled toggles and click save.
 
-
-<!---### Installing .NET Framework
-To install .NET Framework open a terminal and type following command `winetricks --force -q dotnet48`--->
+### Installing .NET Framework
+To install .NET Framework open a terminal and type following command `winetricks --force -q dotnet48`
 
 ### Jagex Launcher
 Download and insall the [Jagex Launcher](https://www.jagex.com/en-GB/launcher) either in a Windows virtual machine or on seperate computer. <br>
 Copy the installation folder to your home directory on your Linux computer.
 
-
-### Lutris
-
-Open lutris and click the pluss sign on the top left. Select "Add locally installed game"<br>
-In the Game Info tab type "Jagex Launcher" in the name field and under Runner select Wine.<br>
-In the Game Options tab click browse and select the Jagex Launcher executable Under excecutable.<br>
-in Wine prefix type `/home/USER/.JagexLauncher/`<br>
-In the Runner Options click the Advanced toggle in the top right and under Wine version select custom.<br>
-Under Custom Wine executable select the directory to the Wine binary you downloaded. Example: `/home/USER/wine-8.0/bin/wine`<br>
-Disable all of the enabled toggles in the Runner Options.
-In the System Options disable all of the enabled toggles and click save.
-
 ### Desktop entry
 Download the Jagex Launcher icon from the [RuneScape Wiki](https://runescape.wiki/w/Jagex_Launcher#/media/File:Jagex_Launcher_icon.png)<br>
-To create a desktop entry right click the Jagex Launcher in Lutris and select configure. Under game options select the custom on the top right and select the image you downloaded and click save.<br>
+To create a desktop entry right click the Jagex Launcher in Lutris and select configure. Under game options click set custom icon and select the image you downloaded.
 Right click the Jagex Launcher inside Lutris again and select "Create application menu shortcut"
 
 ### RuneLite
