@@ -57,7 +57,8 @@ Right click the Jagex Launcher inside Lutris again and select "Create applicatio
 
 ### RuneLite
 
-Download [RuneLite for Linux](https://runelite.net) and navigate to wine prefix in your home directory`.JagexLauncher/drive_c/users/USER/AppData/Local`<br>
+Download [RuneLite for Linux](https://runelite.net) and navigate to wine prefix in your home directory<br>
+`.JagexLauncher/drive_c/users/USER/AppData/Local`<br>
 Create a new folder called RuneLite and copy over the appimage. To make it executable open a terminal and type the following<br>
 `sudo chmod +x RuneLite.AppImage`<br>
 
@@ -80,7 +81,7 @@ Windows Registry Editor Version 5.00
 "InstallLocation"="/home/USER/.wine/drive_c/users/USER/AppData/Local/RuneLite"
 ```
 
-Open a terminal and type with following command `winetricks regedit`
+Open a terminal and type with following command `WINEPREFIX=~/.JagexLauncher winetricks regedit`
 Select registry, "Import Registry File.." and import the file you just created.
 
 <details>
