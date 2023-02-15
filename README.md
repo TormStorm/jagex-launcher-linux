@@ -13,12 +13,15 @@ The Jagex launcher does not work natively on Linux, and it's not as straight for
 Please make sure your download everything from the correct sources.**
 
 ## Requirements
-- .NET Framework 4.8
-- Wine binary
-- Lutris
-- Jagex Launcher for Windows
+
+- [Lutris](https://lutris.net/downloads)
+- [Wine Binary](https://github.com/DavidoTek/ProtonUp-Qt/releases)
+- [Jagex Launcher for Windows](https://www.jagex.com/en-GB/launcher)
+- [RuneLite Appimage](https://runelite.net)
 - Windows Virtual Machine or Windows computer
-- RuneLite AppImage
+- .NET Framework 4.8
+
+
 
 ## Instructions
 
@@ -32,22 +35,19 @@ To install .NET Framework into a new wine prefix open a terminal and type follow
 
 ### Wine binary
 
-To get the latest Wine binary download ProtonUp-Qt with instructions from [Github](https://github.com/DavidoTek/ProtonUp-Qt/releases)<br>
-Check that it installs for Lutris and click add version. Under compatability tool select "Kron4ek Wine-Builds Vanilla"<br>
+Open ProtonUp-QT and check that it installs for Lutris. Click add version, and under compatability tool select "Kron4ek Wine-Builds Vanilla"<br>
 Make sure the version says 8.0 before clicking install.
 
 
 ### Lutris
 
-Install Lutris with instrucions from their [website](https://lutris.net/downloads)<br>
 Open lutris and click the pluss sign on the top left and select "Add locally installed game"<br>
-
 In Game Info type "Jagex Launcher" in the name field and under Runner select Wine.<br>
 In Game Options under excecutable click browse and select the Jagex Launcher executable and in Wine prefix type `~/.JagexLauncher`<br>
 In Runner Options under wine verion select Wine-8.0. Disable DXVM, Esync and FSync and click save.<br>
 
 ### Jagex Launcher
-Download and insall the [Jagex Launcher](https://www.jagex.com/en-GB/launcher) either in a Windows virtual machine or on seperate computer. <br>
+Insall the  Jagex Launcher either in a Windows virtual machine or on seperate computer. <br>
 Copy the installation folder to your home directory on your Linux computer.
 
 ### Desktop entry
@@ -57,24 +57,26 @@ Right click the Jagex Launcher inside Lutris again and select "Create applicatio
 
 ### RuneLite
 
-Download [RuneLite for Linux](https://runelite.net) and navigate to wine prefix in your home directory<br>
+Navigate to your wine prefix, create a new folder called RuneLite and copy over the appimage.<br>
 `.JagexLauncher/drive_c/users/USER/AppData/Local`<br>
-Create a new folder called RuneLite and copy over the appimage. To make it executable open a terminal and type the following<br>
+
+To make it executable open a terminal in this directory and type<br>
 `sudo chmod +x RuneLite.AppImage`<br>
 
-Open a text editor and create a new file called RuneLite.sh Inside the file type the following where USER is the name of your Linux user.
+Create a new file called RuneLite.sh
 ```
 #!/bin/sh
 cd ~/.JagexLauncher/drive_c/users/USER/AppData/Local/RuneLite
 ./RuneLite.AppImage
 ```
-After creating the file make sure that it is also executable by typing `sudo chmod +x RuneLite.sh` Next create a symbolic link by typing `ln -s RuneLite.sh RuneLite.exe`
+<br>
+After creating the file make it executable by typing `sudo chmod +x RuneLite.sh`<br>
+Next create a symbolic link by typing `ln -s RuneLite.sh RuneLite.exe`
 
 
 Finally you need to add a registry key to Wine so the Jagex Launcher thinks RuneLite is installed.<br>
 
-Create a new file called `InstallLocation.reg` with the following text and save it in your home directory.
-
+Create a new file called `InstallLocation.reg` with the following text
 ```
 Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1]
