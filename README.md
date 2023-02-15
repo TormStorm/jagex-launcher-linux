@@ -31,7 +31,7 @@ Open a terminal and type the following command<br>
 
 ### Installing .NET Framework
 To install .NET Framework into a new wine prefix open a terminal and type following command<br>
-`WINEPREFIX=~/.local/share/wineprefixes/JagexLauncher --force -q dotnet48`
+`WINEPREFIX=~/.local/share/wineprefixes/JagexLauncher winetricks --force -q dotnet48`
 
 ### Wine binary
 
