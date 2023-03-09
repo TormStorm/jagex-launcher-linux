@@ -1,6 +1,6 @@
-# Jagex launcher for Linux
+# Jagex Launcher Linux
 
-This repo contains instruction on how to run the Jagex Launcher in linux as well as how to play through RuneLite
+This repo contains instruction on how to run the Jagex Launcher in Linux as well as how to play through RuneLite
 
 ## Disclaimer
 
@@ -17,7 +17,7 @@ I am not affiliated with Jagex or RuneLite, and assumes no responsibility for th
 <br>
 
 > **Note**<br>
-> Anywhere it says USERNAME in all caps needs to replaced with the name of your linux user
+> Anywhere it says USERNAME in all caps needs to replaced with the name of your Linux user
 
 ## Wine
 
