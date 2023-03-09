@@ -16,7 +16,7 @@ I am not affiliated with Jagex or RuneLite, and assumes no responsibility for th
 - Windows Virtual Machine or Windows computer
 <br>
 
-> **Note**
+> **Note**<br>
 > Anywhere it says USERNAME in all caps needs to replaced with the name of your linux user
 
 ## Wine
@@ -104,14 +104,11 @@ Open Windows Registry Editor with the following command: `winetricks --force reg
 Select registry, Import Registry File.. and import the file you just created.
 
 <details>
-<summary>Once you are done it should look like this (Click to show image)</summary><br>
+<summary>When you are done it should look like this (Click to show image)</summary><br>
 <img src="/assets/images/regedit.png">
 </details>
-<br>
 
-Open the Jagex launcher with your new desktop entry. If everything is done correctly it should say play when selecting RuneLite from the client drop down menu.
-
-# Credits
+## Credits
 
 Thanks to c00k and jolty__ for making the information available to create this repo
 
