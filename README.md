@@ -24,19 +24,17 @@ I am not affiliated with Jagex or RuneLite, and assumes no responsibility for th
 Click the link under requirements and follow the instructions for your distribution<br>
 
 ## WineTricks
-Open a terminal and install it through your packet manager<br>
-E.g. `sudo apt install winetricks`
+Install WineTricks through your package manager. For example: `sudo apt install winetricks`
 
 ## .NET Framework
 
-Open a terminal and type the following command:<br>
-`winetricks --force -q dotnet48`
+Install .NET Framework with the following command: `winetricks --force -q dotnet48`
 
 <details>
 <summary>Manual installation (Click to expand)</summary><br>
 
-Open a terminal and start Winetricks with following command: `winetricks --force`<br>
-Ignore any errors in this step and keep pressing OK until you can proceed
+Start WineTricks with the following command: `winetricks --force`<br>
+Ignore any pop-ups and keep pressing OK until you can proceed
 
 Select "Select the default wineprefix and click OK"<br>
 <img src="/assets/images/wineprefix.png"><br>
@@ -61,7 +59,7 @@ Accept the license terms and click Install<br>
 ## Jagex Launcher
 Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer<br>
 Copy the installation folder to your home directory on your Linux computer<br>
-Open a terminal, navigate to the Jagex Launcher and start it with the following command: `wine JagexLauncher.exe`
+Navigate to the Jagex Launcher and start it with the following command: `wine JagexLauncher.exe`
 
 ## Desktop entry
 Create a new file called `jagex-launcher.desktop` with the following text:
@@ -81,7 +79,7 @@ Make sure that the exec path and icon path is the same as the path to the Jagex 
 ## RuneLite
 
 Navigate to this directory: `/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local` and create a new folder called `RuneLite`<br>
-Copy `RuneLite.AppImage` to the folder and make it executable with the following command: `sudo chmod +x RuneLite.AppImage`<br>
+Copy `RuneLite.AppImage` to this folder and make it executable with the following command: `sudo chmod +x RuneLite.AppImage`<br>
 Create a new file called `RuneLite.sh` with the following text:
 ```
 #!/bin/sh
@@ -89,7 +87,7 @@ cd /home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local/RuneLite
 ./RuneLite.AppImage
 ```
 Make `RuneLite.sh` executable with the following command: `sudo chmod +x RuneLite.sh`<br>
-Create a symbolic link to RuneLite.sh with the following command: `ln -s RuneLite.sh RuneLite.exe`
+Create a symbolic link to `RuneLite.sh` with the following command: `ln -s RuneLite.sh RuneLite.exe`
 
 ## Windows Registry
 
