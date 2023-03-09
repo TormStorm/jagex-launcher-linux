@@ -17,7 +17,7 @@ I am not affiliated with Jagex or RuneLite, and assumes no responsibility for th
 <br>
 
 > **Note**<br>
-> Anywhere it says USERNAME in all caps needs to replaced with the name of your Linux user
+> Replace USERNAME with the name of your Linux user
 
 ## Wine
 
