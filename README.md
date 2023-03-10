@@ -68,13 +68,13 @@ Create a new file called `jagex-launcher.desktop` with the following text:
 Type=Application
 Name=Jagex Launcher
 Terminal=false
-Exec=wine /home/USERNAME/JagexLauncher/JagexLauncher.exe
-Icon=/home/USERNAME/JagexLauncher/Jagex_Launcher_icon.webp
+Exec=wine /home/USERNAME/Jagex\ Launcher/JagexLauncher.exe
+Icon=Jagex_Launcher_icon
 ```
 
 Save the file in: `/home/USERNAME/.local/share/appliations`<br>
-Download the [Jagex Launcher icon](https://oldschool.runescape.wiki/images/Jagex_Launcher_icon.png) and place it in the same folder as Jagex Launcher<br>
-Make sure that the exec path and icon path is the same as the path to the Jagex Launcher<br>
+Download the [Jagex Launcher icon](https://oldschool.runescape.wiki/images/Jagex_Launcher_icon.png) and save it in `/home/USERNAME/.local/share/icons`<br>
+Make sure that the exec path is the same as the path to the Jagex Launcher<br>
 
 ## RuneLite
 
