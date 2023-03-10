@@ -59,7 +59,6 @@ Accept the license terms and click Install<br>
 ## Jagex Launcher
 Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer<br>
 Copy the installation folder to your home directory on your Linux computer<br>
-Navigate to the Jagex Launcher and start it with the following command: `wine JagexLauncher.exe`
 
 ## Desktop entry
 Create a new file called `jagex-launcher.desktop` with the following text:
@@ -101,7 +100,7 @@ Windows Registry Editor Version 5.00
 "InstallLocation"="/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local/RuneLite"
 ```
 Save the file in your home directory<br>
-Open Windows Registry Editor with the following command: `winetricks --force regedit`<br>
+Open Windows Registry Editor with the following command: `winetricks regedit`<br>
 Select registry, Import Registry File.. and import the file you just created.
 
 <details>
