@@ -78,14 +78,17 @@ Make sure that the exec path and icon path is the same as the path to the Jagex 
 
 ## RuneLite
 
-Navigate to this directory: `/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local` and create a new folder called `RuneLite`<br>
-Copy `RuneLite.AppImage` to this folder and make it executable with the following command: `sudo chmod +x RuneLite.AppImage`<br>
+Navigate to this directory: `/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local`<br>
+Create a new folder called `RuneLite`and move `RuneLite.AppImage` to this directory.<br>
+Make the file executable with the following command: `sudo chmod +x RuneLite.AppImage`<br>
+
 Create a new file called `RuneLite.sh` with the following text:
 ```
 #!/bin/sh
 cd /home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local/RuneLite
 ./RuneLite.AppImage
 ```
+Save the file in the `RuneLite` folder<br>
 Make `RuneLite.sh` executable with the following command: `sudo chmod +x RuneLite.sh`<br>
 Create a symbolic link to `RuneLite.sh` with the following command: `ln -s RuneLite.sh RuneLite.exe`
 
