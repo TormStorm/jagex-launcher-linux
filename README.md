@@ -1,6 +1,6 @@
 # Jagex Launcher Linux
 
-This repo contains instruction on how to run the Jagex Launcher in Linux as well as how to play through RuneLite
+This repo contains instruction on how to run the Jagex Launcher in Linux as well as how to play OSRS through RuneLite
 
 ## Disclaimer
 
@@ -11,7 +11,8 @@ I am not affiliated with Jagex or RuneLite, and assumes no responsibility for th
 - [Wine](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell)
 - [WineTricks](https://github.com/Winetricks/winetricks)
 - [Jagex Launcher for Windows](https://www.jagex.com/en-GB/launcher)
-- [RuneLite for Linux (optional)](https://runelite.net)
+- [Jagex Launcher icon](https://runescape.wiki/images/Jagex_Launcher_icon.png)
+- [RuneLite for Linux](https://runelite.net)
 - .NET Framework 4.8
 - Windows Virtual Machine or Windows computer
 <br>
@@ -21,7 +22,7 @@ I am not affiliated with Jagex or RuneLite, and assumes no responsibility for th
 
 ## Wine
 
-Click the link under requirements and follow the instructions for your distribution<br>
+Install Wine with the link above and follow the instructions for your distribution<br>
 
 ## WineTricks
 Install WineTricks through your package manager. For example: `sudo apt install winetricks`
@@ -72,7 +73,7 @@ Icon=Jagex_Launcher_icon
 ```
 
 Save the file in: `/home/USERNAME/.local/share/appliations`<br>
-Download the [Jagex Launcher icon](https://oldschool.runescape.wiki/images/Jagex_Launcher_icon.png) and save it in `/home/USERNAME/.local/share/icons`<br>
+Download the Jagex Launcher icon and save it in `/home/USERNAME/.local/share/icons`<br>
 Make sure that the exec path is the same as the path to the Jagex Launcher<br>
 
 ## RuneLite
@@ -87,7 +88,7 @@ Create a new file called `RuneLite.sh` with the following text:
 cd /home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local/RuneLite
 ./RuneLite.AppImage
 ```
-Save the file in the `RuneLite` folder<br>
+Save the file in the `RuneLite` folder you just created<br>
 Make `RuneLite.sh` executable with the following command: `sudo chmod +x RuneLite.sh`<br>
 Create a symbolic link to `RuneLite.sh` with the following command: `ln -s RuneLite.sh RuneLite.exe`
 
