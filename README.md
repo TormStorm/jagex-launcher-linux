@@ -9,6 +9,9 @@ This repo contains instruction on how to run the Jagex Launcher in Linux as well
 
 I am not affiliated with Jagex or RuneLite, and assumes no responsibility for the contens of this page
 
+> **Note**<br>
+> Replace USERNAME with the name of your Linux user
+
 ## Run with Bottles
 <details>
   <summary>The easiest way to run the Jagex Launcher is with Bottles (Click to expand)</summary>
@@ -17,13 +20,9 @@ I am not affiliated with Jagex or RuneLite, and assumes no responsibility for th
 
 - [Bottles](https://flathub.org/apps/details/com.usebottles.bottles)
 - [Jagex Launcher for Windows](https://www.jagex.com/en-GB/launcher)
-- [Jagex Launcher icon](https://runescape.wiki/images/Jagex_Launcher_icon.png)
 - [RuneLite for Linux](https://runelite.net)
 - Windows Virtual Machine or Windows computer
   <br>
-
-> **Note**<br>
-> Replace USERNAME with the name of your Linux user
   
 ## Jagex Launcher
 Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer<br>
@@ -33,8 +32,8 @@ Copy the installation folder to the following directory:<br> `/home/USERNAME/.va
 Install Bottles with the link above<br>
 Create a new bottle and name it Jagex Launcher. Under enviorment select `Application`<br>
 Select `Run Excecutable` and select the Jagex Launcher executable<br>
-Close flatpak and run the following commmand: `flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications`<br>
-Open flatpak again and click the three dots to the right on your bottle and select `Add Desktop Entry`
+Close Bottles and run the following commmand: `flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications`<br>
+Open Bottles again and select the Jagex Launcher. Click the three dots to the right of the bottle and select `Add Desktop Entry`
 
 ## RuneLite
 
@@ -92,9 +91,6 @@ Select registry, Import Registry File.. and import the file you just created.
 - .NET Framework 4.8
 - Windows Virtual Machine or Windows computer
 <br>
-
-> **Note**<br>
-> Replace USERNAME with the name of your Linux user
 
 ## Wine
 
