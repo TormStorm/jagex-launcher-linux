@@ -26,7 +26,6 @@ I am not affiliated with Jagex or RuneLite, and assumes no responsibility for th
 
 [Bottles](https://flathub.org/apps/details/com.usebottles.bottles)<br>
 [Jagex Launcher for Windows](https://www.jagex.com/en-GB/launcher)<br>
-[RuneLite for Linux](https://runelite.net)<br>
 Windows Virtual Machine or Windows computer<br>
   
 ### Jagex Launcher
@@ -52,7 +51,6 @@ Open Bottles again and select the Jagex Launcher. Click the three dots to the ri
 - [WineTricks](https://github.com/Winetricks/winetricks)
 - [Jagex Launcher for Windows](https://www.jagex.com/en-GB/launcher)
 - [Jagex Launcher icon](https://runescape.wiki/images/Jagex_Launcher_icon.png)
-- [RuneLite for Linux](https://runelite.net)
 - .NET Framework 4.8
 - Windows Virtual Machine or Windows computer
 
@@ -132,6 +130,9 @@ Right click the Jagex Launcher inside Lutris again and select "Create applicatio
 -->
 
 ## RuneLite with Bottles or manual
+
+### Requirements
+[RuneLite for Linux](https://runelite.net)<br>
 
 Navigate to this directory: `/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local`<br>
 Create a new folder called `RuneLite`and move `RuneLite.AppImage` to this directory.<br>
