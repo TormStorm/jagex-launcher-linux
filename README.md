@@ -116,11 +116,11 @@ Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1]
 "InstallLocation"="/home/deck/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/users/deck/AppData/Local/RuneLite"
 ```
-Save the file on your Steam Deck<br>
+Save the file in any location, such as `/home/deck/Documents`<br>
 Open Bottles, select Jagex Launcher, then scroll down and select Registry Editor<br>
 Select registry, Import Registry File.. and import the file you just created.
-Now launch the Jagex Launcher and now with RuneLite selected it should say `Play`.<br>
-If not make sure to fully exit the Jagex Launcher and then confirm the paths are accurate.
+Now launch the Jagex Launcher and select RuneLite. 'Install' should be replaced with 'Play' and launch RuneLite
+
 
 </details>
 
