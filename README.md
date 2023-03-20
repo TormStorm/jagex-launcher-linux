@@ -7,13 +7,11 @@ This repo contains instruction on how to run the Jagex Launcher in Linux as well
 
 ### Disclaimer
 
-I am not affiliated with Jagex or RuneLite, and assumes no responsibility for the contens of this page
+I am not affiliated with Jagex or RuneLite, and is not responsible for for the contens of this page.
 
-> **Note**<br>
-> Replace USERNAME with the name of your Linux user
-
-<details open>
-<summary><h2>Run with Bottles</h2></summary>
+## Run with Bottles
+<details closed>
+<summary>The easiest way to run the Jagex Launcher is with Bottles (click to expand)</summary>
 
 ### Requirements
 
@@ -21,6 +19,9 @@ I am not affiliated with Jagex or RuneLite, and assumes no responsibility for th
 - [Jagex Launcher for Windows](https://www.jagex.com/en-GB/launcher)<br>
 - [RuneLite for Linux](https://runelite.net)<br>
 - Windows Virtual Machine or Windows computer<br>
+
+> **Note**<br>
+> Replace USERNAME with the name of your Linux user
   
 ### Jagex Launcher
 Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer<br>
@@ -62,11 +63,12 @@ Open Windows Registry Editor with the following command: `winetricks regedit`<br
 Select registry, Import Registry File.. and import the file you just created.
 
 </details>
+<br>
 
-##
+## Run on Steam Deck
  
-<details open>
-<summary><h2>Run on Steam Deck</h2></summary> 
+<details closed>
+<summary>Run the Jagex Launcher on the Steam Deck (click to expand)</summary> 
  
 ### Requirements
 
@@ -123,11 +125,12 @@ Now launch the Jagex Launcher and select RuneLite. 'Install' should be replaced 
 
 
 </details>
+<br>
 
-##
+## Run Manually
 
 <details close>
-<summary><h2>Run Manually</h2></summary>
+<summary>Run the Jagex Launcher manually (click to expand)</summary>
 
 ### Requirements
 
@@ -138,6 +141,9 @@ Now launch the Jagex Launcher and select RuneLite. 'Install' should be replaced 
 - [RuneLite for Linux](https://runelite.net)
 - .NET Framework 4.8
 - Windows Virtual Machine or Windows computer
+
+> **Note**<br>
+> Replace USERNAME with the name of your Linux user
 
 ### Wine
 
