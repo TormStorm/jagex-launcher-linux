@@ -204,7 +204,7 @@ Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced 
 
 </details>
 
-## References
+### References
 
 <sub>[Native Linux RuneLite running with Jagex Launcher Launcher by jolty__](https://www.reddit.com/r/2007scape/comments/uo1ey1/native_linux_runelite_running_with_jagex_launcher)</sub><br>
 <sub>[How to use Jagex's New Launcher on Linux by c00k](https://www.youtube.com/watch?v=izLxF_Wwinw)</sub><br>
