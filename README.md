@@ -1,4 +1,4 @@
-# Jagex launcher for Linux
+# Jagex Launcher Linux
 
 > **Warning**<br>
 > This branch may not contain working or complete instructions. Please use the main branch
@@ -50,7 +50,7 @@ Save the file in the `RuneLite` folder you just created<br>
 Make `RuneLite.sh` executable with the following command: `sudo chmod +x RuneLite.sh`<br>
 Create a symbolic link to `RuneLite.sh` with the following command: `ln -s RuneLite.sh RuneLite.exe`
 
-### Windows Registry
+#### Windows Registry
 
 Create a new file called `InstallLocation.reg` with the following text:
 ```
@@ -60,7 +60,8 @@ Windows Registry Editor Version 5.00
 ```
 Save the file in your home directory<br>
 Open Windows Registry Editor with the following command: `winetricks regedit`<br>
-Select registry, Import Registry File.. and import the file you just created.
+Select registry, Import Registry File.. and import the file you just created<br>
+Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced with `Play` and launch RuneLite
 
 </details>
 
@@ -109,7 +110,7 @@ Make `RuneLite.sh` executable as well<br>
 Right click the RuneLite folder and select "Open Terminal Here"<br>
 Create a symbolic link to `RuneLite.sh` with the following command: `ln -s RuneLite.sh RuneLite.exe`
 
-### Windows Registry
+#### Windows Registry
 
 Create a new file called `InstallLocation.reg` with the following text:
 ```
@@ -119,12 +120,12 @@ Windows Registry Editor Version 5.00
 ```
 Save the file in any location, such as `/home/deck/Documents`<br>
 Open Bottles, select Jagex Launcher, then scroll down and select Registry Editor<br>
-Select registry, Import Registry File.. and import the file you just created.
-Now launch the Jagex Launcher and select RuneLite. 'Install' should be replaced with 'Play' and launch RuneLite
+Select registry, Import Registry File.. and import the file you just created<br>
+Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced with `Play` and launch RuneLite
 
 </details>
 
-## Manual
+## Manually
 
 <details close>
 <summary>Run the Jagex Launcher manually</summary>
@@ -188,7 +189,7 @@ Save the file in the `RuneLite` folder you just created<br>
 Make `RuneLite.sh` executable with the following command: `sudo chmod +x RuneLite.sh`<br>
 Create a symbolic link to `RuneLite.sh` with the following command: `ln -s RuneLite.sh RuneLite.exe`
 
-### Windows Registry
+#### Windows Registry
 
 Create a new file called `InstallLocation.reg` with the following text:
 ```
@@ -198,13 +199,12 @@ Windows Registry Editor Version 5.00
 ```
 Save the file in your home directory<br>
 Open Windows Registry Editor with the following command: `winetricks regedit`<br>
-Select registry, Import Registry File.. and import the file you just created.
+Select registry, Import Registry File.. and import the file you just created<br>
+Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced with `Play` and launch RuneLite
 
 </details>
 
 ## References
-
-Thanks to these people for making the information available to create this repo
 
 <sub>[Native Linux RuneLite running with Jagex Launcher Launcher by jolty__](https://www.reddit.com/r/2007scape/comments/uo1ey1/native_linux_runelite_running_with_jagex_launcher)</sub><br>
 <sub>[How to use Jagex's New Launcher on Linux by c00k](https://www.youtube.com/watch?v=izLxF_Wwinw)</sub><br>
