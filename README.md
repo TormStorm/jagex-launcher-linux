@@ -7,9 +7,9 @@ This repo contains instruction on how to run the Jagex Launcher in Linux as well
 
 ### Disclaimer
 
-I am not affiliated with Jagex or RuneLite, and is not responsible for for the contens of this page.
+I am not affiliated with Jagex or RuneLite, and is not responsible for for the contens of this page
 
-## Run with Bottles
+## Bottles
 <details closed>
 <summary>The easiest way to run the Jagex Launcher is with Bottles</summary>
 
@@ -34,7 +34,7 @@ Select `Run Excecutable` and select the Jagex Launcher executable<br>
 Close Bottles and run the following commmand: `flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications`<br>
 Open Bottles and select the Jagex Launcher. Click the three dots to the right of the bottle and select `Add Desktop Entry`
 
-### RuneLite [^1]
+### RuneLite
 
 Navigate to this directory: `/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local`<br>
 Create a new folder called `RuneLite`and move `RuneLite.AppImage` to this directory.<br>
@@ -64,7 +64,7 @@ Select registry, Import Registry File.. and import the file you just created.
 
 </details>
 
-## Run on Steam Deck
+## Steam Deck
  
 <details closed>
 <summary>Run the Jagex Launcher on the Steam Deck</summary> 
@@ -82,7 +82,7 @@ Select registry, Import Registry File.. and import the file you just created.
 Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer<br>
 Copy the installation folder to the following directory: `/home/deck`<br>
 
-### FlatSeal and Bottles [^3]
+### FlatSeal and Bottles
 Install Bottles with the link above<br>
 Install Flatseal with the link above<br>
 Launch Flatseal and select Bottles. Under Filesystem enable `All user files`. Exit Flatseal<br>
@@ -124,7 +124,7 @@ Now launch the Jagex Launcher and select RuneLite. 'Install' should be replaced 
 
 </details>
 
-## Run Manually
+## Manual
 
 <details close>
 <summary>Run the Jagex Launcher manually</summary>
@@ -142,7 +142,7 @@ Now launch the Jagex Launcher and select RuneLite. 'Install' should be replaced 
 > **Note**<br>
 > Replace USERNAME with the name of your Linux user
 
-### Wine [^2]
+### Wine
 
 Install Wine with the link above and follow the instructions for your distribution<br>
 
@@ -172,7 +172,7 @@ Save the file in: `/home/USERNAME/.local/share/appliations`<br>
 Download the Jagex Launcher icon and save it in `/home/USERNAME/.local/share/icons`<br>
 Make sure that the exec path is the same as the path to the Jagex Launcher<br>
 
-### RuneLite [^1]
+### RuneLite
 
 Navigate to this directory: `/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local`<br>
 Create a new folder called `RuneLite`and move `RuneLite.AppImage` to this directory.<br>
@@ -202,10 +202,10 @@ Select registry, Import Registry File.. and import the file you just created.
 
 </details>
 
-# Refferences
+## References
 
-Thanks to these amazing people for making the information available to create this repo
+Thanks to these people for making the information available to create this repo
 
-[^1]: [Native Linux RuneLite running with Jagex Launcher Launcher by jolty__](https://www.reddit.com/r/2007scape/comments/uo1ey1/native_linux_runelite_running_with_jagex_launcher)<br>
-[^2]: [How to use Jagex's New Launcher on Linux by c00k](https://www.youtube.com/watch?v=izLxF_Wwinw)<br>
-[^3]: [How to Run Jagex Launcher on Steam Deck/Linux Utilizing Bottles by jeremiah1119](https://www.reddit.com/r/2007scape/comments/11q8mly/how_to_run_jagex_launcher_on_steam_decklinux/)
+<sub>[Native Linux RuneLite running with Jagex Launcher Launcher by jolty__](https://www.reddit.com/r/2007scape/comments/uo1ey1/native_linux_runelite_running_with_jagex_launcher)</sub><br>
+<sub>[How to use Jagex's New Launcher on Linux by c00k](https://www.youtube.com/watch?v=izLxF_Wwinw)</sub><br>
+<sub>[How to Run Jagex Launcher on Steam Deck/Linux Utilizing Bottles by jeremiah1119](https://www.reddit.com/r/2007scape/comments/11q8mly/how_to_run_jagex_launcher_on_steam_decklinux/)</sub>
