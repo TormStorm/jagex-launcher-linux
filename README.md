@@ -1,8 +1,5 @@
 # Jagex Launcher Linux
 
-> **Warning**<br>
-> This branch may not contain working or complete instructions. Please use the main branch
-
 This repo contains instruction on how to run the Jagex Launcher in Linux as well as how to play through RuneLite
 
 ### Disclaimer
