@@ -30,7 +30,7 @@ Copy the installation folder to the following directory: `/home/USERNAME`<br>
 ### Bottles
 Install Bottles with the link above<br>
 Create a new bottle and name it Jagex Launcher. Under enviorment select `Application`<br>
-Copy the installation folder to the following directory:<br>
+Move the installation folder to the following directory:<br>
 `/home/USERNAME/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/Program Files (x86)`<br>
 Select `Run Excecutable` and select the Jagex Launcher executable<br>
 Close Bottles and run the following commmand: `flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications`<br>
@@ -38,12 +38,11 @@ Open Bottles and select the Jagex Launcher. Click the three dots to the right of
 
 ### RuneLite
 
+Install `libfuse2` through your package manager. For example: `sudo apt install libfuse2`<br>
 Navigate to this directory:<br>
 `/home/USERNAME/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/users/USERNAME/AppData/Local`<br>
 Create a new folder called `RuneLite` and move `RuneLite.AppImage` to this folder<br>
 Make the file executable with the following command: `sudo chmod +x RuneLite.AppImage`<br>
-Install `libfuse2` through your package manager. For example: `sudo apt install libfuse2`
-
 
 Create a new file called `RuneLite.sh` with the following text:
 ```
