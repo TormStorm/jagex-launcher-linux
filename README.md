@@ -15,6 +15,7 @@ I am not affiliated with Jagex or RuneLite and is not responsible for for the co
 ### Requirements
 
 - [Bottles](https://flathub.org/apps/details/com.usebottles.bottles)<br>
+- [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal)
 - [Jagex Launcher for Windows](https://www.jagex.com/en-GB/launcher)<br>
 - [RuneLite for Linux](https://runelite.net)<br>
 - Windows Virtual Machine or Windows computer<br>
@@ -26,8 +27,10 @@ I am not affiliated with Jagex or RuneLite and is not responsible for for the co
 Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer<br>
 Copy the installation folder to the following directory: `/home/USERNAME`<br>
 
-### Bottles
+### Bottles and FlatSeal
 Install Bottles with the link above<br>
+Install Flatseal with the link above<br>
+Launch Flatseal and select Bottles. Under Filesystem enable `All user files`<br>
 Create a new bottle and name it Jagex Launcher. Under enviorment select `Application`<br>
 Move the installation folder to the following directory:<br>
 `/home/USERNAME/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/Program Files (x86)`<br>
@@ -87,10 +90,10 @@ Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced 
 Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer<br>
 Copy the installation folder to the following directory: `/home/deck`<br>
 
-### FlatSeal and Bottles
+### Bottles and FlatSeal 
 Install Bottles with the link above<br>
 Install Flatseal with the link above<br>
-Launch Flatseal and select Bottles. Under Filesystem enable `All user files`. Exit Flatseal<br>
+Launch Flatseal and select Bottles. Under Filesystem enable `All user files`<br>
 Launch Bottles and then create a new Bottle, naming it Jagex Launcher. Under environment select `Application`<br>
 Select `Add Shortcuts...` and select the Jagex Launcher executable<br>
 Click the three dots to the right of the bottle and select `Add to Steam`<br>
