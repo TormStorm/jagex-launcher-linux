@@ -2,6 +2,8 @@
 
 This repo contains instruction on how to run the Jagex Launcher in Linux as well as how to play through RuneLite
 
+✔️ Tested and working with Jagex Accounts
+
 ### Disclaimer
 
 I am not affiliated with Jagex or RuneLite and is not responsible for for the contens of this page
