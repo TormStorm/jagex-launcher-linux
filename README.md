@@ -106,6 +106,7 @@ Create a symbolic link to `JagexLauncher.exe` with the following command: `ln -s
 Run the native RuneScape client
 
 ## RuneScape Steam Deck
+Run the native RuneScape client on the Steam Deck
 
 # Old School RuneScape
 Run the RuneLite client via the Jagex Launcher
@@ -210,7 +211,6 @@ Enable `Lock window size`<br>
 Set `Contain in screen` to `Always`<br>
 Enable `Always on top`<br>
 In the main plugin settings list, scroll down to `Stretched Mode` and either make sure `Integer Scaling` is Disabled or disable the plugin entirely
-
 --->
 
 # Troubleshooting
