@@ -15,16 +15,12 @@ I am not affiliated with Jagex or RuneLite and is not responsible for for the co
 
 - [Jagex Launcher](#jagex-launcher)
     - [Jagex Launcher on Steam Deck](#steam-deck)
-    - [Jagex Launcher on Steam Deck with Proton](#steam-deck-proton)
-  <!--- - [Old Method](#old-method)--->
- - [RuneScape](#runescape)
-    - [RuneScape on Steam Deck](#runescape-steam-deck)
-    - [RuneScape on Steam Deck with Proton](#runescape-steam-deck-proton)
- - [Old School RuneScape](#old-school-runescape)
-    - [Old School RuneScape on Steam Deck](#runelite-steam-deck)
-    - [Old School RuneScape on Steam Deck with Proton](#runelite-steam-deck-proton)
- - [Troubleshooting](#troubleshooting)
- - [References](#references)
+- [RuneScape client](#runescape)
+    - [RuneScape client on Steam Deck](#runescape-steam-deck)
+- [Old School RuneScape client](#old-school-runescape)
+    - [Old School RuneScape client on Steam Deck](#old-school-runescape-steam-deck)
+- [Troubleshooting](#troubleshooting)
+- [References](#references)
 
 # Jagex Launcher
 The easiest way to run the Jagex Launcher is with Bottles
@@ -80,7 +76,7 @@ Click the three dots to the right of the bottle and select `Add to Steam`<br>
 `At this point the Jagex Launcher should launch properly both in Bottles, and in Steam under the Non-Steam Game category.`<br>
 Before continuing with installing RuneLite, Right click the Jagex Launcher icon in the notification tray at the bottom right and select 'Exit'
 
-
+<!---
 ## Steam Deck Proton
 Run the Jagex Launcher on the Steam Deck via Proton, using the original Old School Runescape application
 
@@ -104,90 +100,12 @@ Install the Jagex Launcher either in a Windows virtual machine or on a seperate 
 Enable hidden files, then copy the contents of the installation folder to the following directory: `/home/deck/.local/share/Steam/steamapps/Old School Runescape/bin/win64`<br>
 Right click in the win64 folder and select "Open Terminal Here"<br>
 Create a symbolic link to `JagexLauncher.exe` with the following command: `ln -s JagexLauncher.exe osclient.exe`
-
-<!---
-## Old Method
-Run the Jagex Launcher manually using Wine
-
-### Requirements
-
-- [Wine](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell)
-- [WineTricks](https://github.com/Winetricks/winetricks)
-- [Jagex Launcher for Windows](https://www.jagex.com/en-GB/launcher)
-- [Jagex Launcher icon](https://runescape.wiki/images/Jagex_Launcher_icon.png)
-- [RuneLite for Linux](https://runelite.net)
-- .NET Framework 4.8
-- Windows Virtual Machine or Windows computer
-
-> **Note**<br>
-> Replace USERNAME with the name of your Linux user
-
-### Wine
-
-Install Wine with the link above and follow the instructions for your distribution<br>
-
-### WineTricks
-Install WineTricks through your package manager. For example: `sudo apt install winetricks`
-
-### .NET Framework
-
-Install .NET Framework with the following command: `winetricks --force -q dotnet48`
-
-### Jagex Launcher
-Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer<br>
-Copy the installation folder to your home directory on your Linux computer<br>
-
-### Desktop entry
-Create a new file called `jagex-launcher.desktop` with the following text:
-```
-[Desktop Entry]
-Type=Application
-Name=Jagex Launcher
-Terminal=false
-Exec=wine /home/USERNAME/Jagex\ Launcher/JagexLauncher.exe
-Icon=Jagex_Launcher_icon
-```
-
-Save the file in: `/home/USERNAME/.local/share/appliations`<br>
-Download the Jagex Launcher icon and save it in `/home/USERNAME/.local/share/icons`<br>
-Make sure that the exec path is the same as the path to the Jagex Launcher<br>
-
-### RuneLite
-
-Navigate to this directory: `/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local`<br>
-Create a new folder called `RuneLite`and move `RuneLite.AppImage` to this directory.<br>
-Make the file executable with the following command: `sudo chmod +x RuneLite.AppImage`<br>
-
-Create a new file called `RuneLite.sh` with the following text:
-```
-#!/bin/sh
-cd /home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local/RuneLite
-./RuneLite.AppImage
-```
-Save the file in the `RuneLite` folder you just created<br>
-Make `RuneLite.sh` executable with the following command: `sudo chmod +x RuneLite.sh`<br>
-Create a symbolic link to `RuneLite.sh` with the following command: `ln -s RuneLite.sh RuneLite.exe`
-
-### Windows Registry
-
-Create a new file called `InstallLocation.reg` with the following text:
-```
-Windows Registry Editor Version 5.00
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1]
-"InstallLocation"="/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local/RuneLite"
-```
-Save the file in your home directory<br>
-Open Windows Registry Editor with the following command: `winetricks regedit`<br>
-Select registry, Import Registry File.. and import the file you just created<br>
-Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced with `Play` and launch RuneLite
---->
+-->
 
 # RuneScape
 Run the native RuneScape client
 
 ## RuneScape Steam Deck
-
-## RuneScape Steam Deck Proton
 
 # Old School RuneScape
 Run the RuneLite client via the Jagex Launcher
@@ -221,7 +139,7 @@ Open Bottles, select Jagex Launcher, then scroll down and select Registry Editor
 Select registry, Import Registry File.. and import the file you just created<br>
 Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced with `Play` and launch RuneLite
 
-## RuneLite Steam Deck
+## Old School RuneScape Steam Deck
 
 Enable hidden files, then navigate to this directory: `/home/deck/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/users/deck/AppData/Local`<br>
 Create a new folder called `RuneLite` and move `RuneLite.AppImage` to this directory<br>
@@ -251,7 +169,7 @@ Open Bottles, select Jagex Launcher, then scroll down and select Registry Editor
 Select registry, Import Registry File.. and import the file you just created<br>
 Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced with `Play` and launch RuneLite
 
-
+<!---
 ## RuneLite Steam Deck Proton
 
 Download the RuneLite appimage from the link above<br>
@@ -292,6 +210,8 @@ Enable `Lock window size`<br>
 Set `Contain in screen` to `Always`<br>
 Enable `Always on top`<br>
 In the main plugin settings list, scroll down to `Stretched Mode` and either make sure `Integer Scaling` is Disabled or disable the plugin entirely
+
+--->
 
 # Troubleshooting
 
