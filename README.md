@@ -33,7 +33,7 @@ Follow the prompts carefully. Leave the default installation path.
 After you click install, the wizard will appear to freeze. This is expected, and the installer still works in the background. To continue, you will need to force quit that window after waiting about one minute. You can do so the following ways:  
 - xkill - Some distros have this pre-packaged. Simply type `xkill` in a terminal and then click on the install wizard
 - shell command if you don't have xkill (steam deck does not):  
-```ps aux | grep 'cache/lutris/installer/jagex-launcher-rs3-flatpak/jagexlauncher/' | grep -v grep | awk '{print $2}' | xargs kill -9```
+```ps aux | grep 'cache/lutris/installer/jagex-launcher/jagexlauncher/' | grep -v grep | awk '{print $2}' | xargs kill```
 
 ### Steam deck tips
 Switch to desktop mode by pressing Steam -> Power -> Switch to Desktop  
