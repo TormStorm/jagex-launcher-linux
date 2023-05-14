@@ -26,13 +26,17 @@ script:
         app: firefox iertutil msls31 urlmon wininet corefonts
     - task:
         description: You must leave the installation path default. Advance through the dialogue and wait about one minute after pressing 'install'. The installer freezes, but still works in the background. Force quit this process using something like xkill on the jagex installer window to continue the lutris installer. See https://github.com/TormStorm/jagex-launcher-linux for more info. 
-        executable: jagexlauncher
+        executable: $GAMEDIR/drive_c/windows/explorer.exe
+        args: jagexlauncher
+        include_processes: explorer.exe
         name: wineexec
         prefix: $GAMEDIR
-        return_code: 256
         overrides:
           jscript.dll: native
           mscttf.dll: native,builtin
+    - task:
+        name: winekill
+        prefix: $GAMEDIR
     - merge:
         src: runelite
         dst: $GAMEDIR/drive_c/RuneLite
@@ -51,7 +55,7 @@ script:
         content: |
           #!/bin/sh
           cd "$GAMEDIR/drive_c/RuneScape"
-          flatpak run com.jagex.RuneScape
+          flatpak-spawn --host flatpak run --env=PULSE_LATENCY_MSEC=200 --env='vblank_mode=0' --env='MESA_GL_VERSION_OVERRIDE=4.5FC' com.jagex.RuneScape
     - chmodx: $GAMEDIR/drive_c/RuneScape/runescape3.sh
     - execute:
         command: ln -s $GAMEDIR/drive_c/RuneScape/runescape3.sh $GAMEDIR/drive_c/RuneScape/RuneScape.exe
