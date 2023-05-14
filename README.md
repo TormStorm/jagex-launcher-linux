@@ -8,9 +8,46 @@ This repo contains instruction on how to run the Jagex Launcher in Linux as well
 
 I am not affiliated with Jagex or RuneLite and is not responsible for for the contens of this page
 
+## Lutris
+
+<details closed>
+<summary>The easiest way to run the Jagex Launcher is with Lutris</summary>
+
+### Requirements
+
+- [Lutris](https://lutris.net/downloads)
+- (optional) [Flatpak](https://flatpak.org/setup/) and [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal)
+  - Only needed if you want to run RS3 in flatpak, or you want to use flatpak Lutris
+  - Using lutris from your disto's package manager is recommended instead of Flatpak
+  - Steam deck comes pre-installed with flatpak and does not allow installing from pacman by default so flatpak is recommended in that case.
+
+### Configuring flatseal (skip if not using Flatpak Lutris)
+Install lutris and Flatseal from flathub  
+Launch Flatseal and select Lutris. Under Filesystem enable All user files.
+
+### Running the installer
+Navigate to the [Jagex Launcher](https://lutris.net/games/jagex-launcher/) page on the Lutris website  
+Click install on whichever installer looks to most suit your needs.  
+Follow the prompts carefully. Leave the default installation path. 
+
+After you click install, the wizard will appear to freeze. This is expected, and the installer still works in the background. To continue, you will need to force quit that window after waiting about one minute. You can do so the following ways:  
+- xkill - Some distros have this pre-packaged. Simply type `xkill` in a terminal and then click on the install wizard
+- shell command if you don't have xkill (steam deck does not):  
+```ps aux | grep 'cache/lutris/installer/jagex-launcher-rs3-flatpak/jagexlauncher/' | grep -v grep | awk '{print $2}' | xargs kill -9```
+
+### Steam deck tips
+Switch to desktop mode by pressing Steam -> Power -> Switch to Desktop  
+Then you can just follow the guide like normal
+
+Recommend installing AnyDesk from the Discover Store and also on your PC to do the installation remotely  
+Makes installation steps that involve the terminal much more manageable  
+In testing I had an issue where lutris couldn't open external windows. This was fixed with `systemctl restart --user xdg-desktop-portal`
+
+
+</details>
+
 ## Bottles
 <details closed>
-<summary>The easiest way to run the Jagex Launcher is with Bottles</summary>
 
 ### Requirements
 

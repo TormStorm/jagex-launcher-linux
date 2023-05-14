@@ -1,0 +1,67 @@
+name: Jagex Launcher RS3 Flatpak
+game_slug: jagex-launcher-rs3-flatpak
+version: Installer
+slug: jagex-launcher-installer-rs3-flatpak
+runner: wine
+
+script:
+  files:
+    - jagexlauncher: https://cdn.jagex.com/Jagex%20Launcher%20Installer.exe
+    - runelite: https://github.com/runelite/launcher/releases/download/2.6.4/RuneLite.AppImage
+
+  game:
+    exe: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/JagexLauncher.exe
+  wine:
+    overrides:
+      jscript.dll: native
+      mscttf.dll: native,builtin
+  installer:
+    - task:
+        description: Creating Wine prefix
+        name: create_prefix
+        prefix: $GAMEDIR
+    - task:
+        name: winetricks
+        prefix: $GAMEDIR
+        app: firefox iertutil msls31 urlmon wininet corefonts
+    - task:
+        description: You must leave the installation path default. Advance through the dialogue and wait about one minute after pressing 'install'. The installer freezes, but still works in the background. Force quit this process using something like xkill on the jagex installer window to continue the lutris installer. See https://github.com/TormStorm/jagex-launcher-linux for more info. 
+        executable: jagexlauncher
+        name: wineexec
+        prefix: $GAMEDIR
+        return_code: 256
+        overrides:
+          jscript.dll: native
+          mscttf.dll: native,builtin
+    - merge:
+        src: runelite
+        dst: $GAMEDIR/drive_c/RuneLite
+    - chmodx: runelite
+    - write_file:
+        file: $GAMEDIR/drive_c/RuneLite/runelite.sh
+        content: |
+          #!/bin/sh
+          cd "$GAMEDIR/drive_c/RuneLite"
+          ./RuneLite.AppImage --appimage-extract-and-run
+    - chmodx: $GAMEDIR/drive_c/RuneLite/runelite.sh
+    - execute:
+        command: ln -s $GAMEDIR/drive_c/RuneLite/runelite.sh $GAMEDIR/drive_c/RuneLite/RuneLite.exe
+    - write_file:
+        file: $GAMEDIR/drive_c/RuneScape/runescape3.sh
+        content: |
+          #!/bin/sh
+          cd "$GAMEDIR/drive_c/RuneScape"
+          flatpak run com.jagex.RuneScape
+    - chmodx: $GAMEDIR/drive_c/RuneScape/runescape3.sh
+    - execute:
+        command: ln -s $GAMEDIR/drive_c/RuneScape/runescape3.sh $GAMEDIR/drive_c/RuneScape/RuneScape.exe
+    - task:
+        name: set_regedit
+        path: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1
+        key: InstallLocation
+        value: C:\\RuneLite
+    - task:
+        name: set_regedit
+        path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneScape Launcher_is1
+        key: InstallLocation
+        value: C:\\RuneScape
