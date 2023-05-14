@@ -1,4 +1,4 @@
-name: Jagex Launcher RS3 Flatpak
+name: Jagex Launcher
 game_slug: jagex-launcher
 version: Installer
 slug: jagex-launcher-installer
@@ -14,7 +14,6 @@ script:
   wine:
     overrides:
       jscript.dll: native
-      mscttf.dll: native,builtin
   installer:
     - task:
         description: Creating Wine prefix
@@ -104,8 +103,7 @@ script:
         file: $GAMEDIR/drive_c/RuneScape/runescape3.sh
         content: |
           #!/bin/sh
-          cd "$GAMEDIR/drive_c/RuneScape"
-          flatpak-spawn --host flatpak run --env=PULSE_LATENCY_MSEC=200 --env='vblank_mode=0' --env='MESA_GL_VERSION_OVERRIDE=4.5FC' com.jagex.RuneScape
+          flatpak run --env=PULSE_LATENCY_MSEC=200 --env='vblank_mode=0' --env='MESA_GL_VERSION_OVERRIDE=4.5FC' com.jagex.RuneScape
     - chmodx: $GAMEDIR/drive_c/RuneScape/runescape3.sh
     - execute:
         command: ln -s $GAMEDIR/drive_c/RuneScape/runescape3.sh $GAMEDIR/drive_c/RuneScape/RuneScape.exe
