@@ -21,10 +21,6 @@ script:
         name: create_prefix
         prefix: $GAMEDIR
     - task:
-        name: winetricks
-        prefix: $GAMEDIR
-        app: firefox iertutil msls31 urlmon wininet corefonts
-    - task:
         description: You must leave the installation path default. Advance through the dialogue and wait about one minute after pressing 'install'. The installer freezes, but still works in the background. Force quit this process using something like xkill on the jagex installer window to continue the lutris installer. If you don't have xkill, you can run "ps aux | grep 'cache/lutris/installer/jagex-launcher/jagexlauncher/' | grep -v grep | awk '{print $2}' | xargs kill"
         executable: $GAMEDIR/drive_c/windows/explorer.exe
         args: jagexlauncher
@@ -33,7 +29,6 @@ script:
         prefix: $GAMEDIR
         overrides:
           jscript.dll: native
-          mscttf.dll: native,builtin
     - task:
         name: winekill
         prefix: $GAMEDIR
