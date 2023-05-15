@@ -58,8 +58,10 @@ The RuneLite client is automaticly installed, and can be played by selecting it 
 # Steam Deck
 Switch to desktop mode by pressing Steam -> Power -> Switch to Desktop  
 Then you can just follow the guide like normal
-Once that is done, install Boilr from the discover store.
-Choose Import Games on the left, then make sure "Jagex Launcher" is checked in the list and click the button on the bottom left.
+Once that is done, install BoilR from the discover store.
+Choose Import Games on the left, then make sure "Jagex Launcher" is checked in the list underneath Lutris
+Click the button on the bottom left that is a picture of a controller pointing at steam
+It should say "Done Importing Games"
 Restart steam
 Find the new entry for "Jagex Launcher". 
 Rename to RuneScape if playing RS3
