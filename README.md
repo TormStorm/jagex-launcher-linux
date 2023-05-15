@@ -58,6 +58,16 @@ The RuneLite client is automaticly installed, and can be played by selecting it 
 # Steam Deck
 Switch to desktop mode by pressing Steam -> Power -> Switch to Desktop  
 Then you can just follow the guide like normal
+Once that is done, install Boilr from the discover store.
+Choose Import Games on the left, then make sure "Jagex Launcher" is checked in the list and click the button on the bottom left.
+Restart steam
+Find the new entry for "Jagex Launcher". 
+Rename to RuneScape if playing RS3
+Rename to OSRS or RuneLite if playing OSRS
+This is because steam deck searches for control layouts based on game name
+Reboot to game mode and launch the new entry. 
+Press the steam button -> Controller Settings -> Browse community layouts
+Choose a layout that looks good for you and then you should be good to start playing!
 
 Recommend installing AnyDesk from the Discover Store and also on your PC to do the installation remotely  
 Makes installation steps that involve the terminal much more manageable   
