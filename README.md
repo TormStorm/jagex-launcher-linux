@@ -34,9 +34,12 @@ Open Lutris and click the + in the top left corner<br>
 Select `Search the Lutris website for installers` and search for `Jagex Launcher`<br>
 Make sure to leave the default installation path
 
+After clicking install the installer will appear to freeze. This is expected, and the installer still works in the background<br>
+After waiting about one minute you can close the Jagex Launcher with the following command<br>
+```ps aux | grep 'cache/lutris/installer/jagex-launcher/jagexlauncher/' | grep -v grep | awk '{print $2}' | xargs kill```
+
 After you click install, the Jagex Launcher wizard will appear to freeze. This is expected, and the installer still works in the background.<br>
 To continue, you will need to force quit that window after waiting about one minute<br>
-```ps aux | grep 'cache/lutris/installer/jagex-launcher/jagexlauncher/' | grep -v grep | awk '{print $2}' | xargs kill```
 
 Once the installation is complete you should be able to launch the Jagex Launcher and log in
 
