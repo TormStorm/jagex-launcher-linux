@@ -94,4 +94,3 @@ Audio issues<br>
 
 # References
 [^1]: [PSA: Perfect RuneLite settings for Steam Deck](https://www.reddit.com/r/2007scape/comments/yzbuwc/psa_perfect_runelite_settings_for_steam_deck)
-[^2]: [Audio issues with pipewire](https://twitter.com/fe_calmata/status/1650831866046316549)
