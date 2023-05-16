@@ -7,7 +7,7 @@ This repo contains instruction on how to install the Jagex Launcher in Linux<br>
 
 ## Disclaimer
 
-I am not responsible for the maintenance and safety of content produced and hosted by third parties and any use of third-party sites is at your own risk.
+I am not responsible for the maintenance and safety of content produced and hosted by third parties and any use of third-party sites is at your own risk
 
 # Table of contents
 
@@ -56,43 +56,42 @@ The official Old School RuneScape client can be played by selecting it from the 
 The RuneLite client is automaticly installed, and can be played by selecting it from the dropdown menu and pressing play
 
 # Steam Deck
-Switch to desktop mode by pressing Steam -> Power -> Switch to Desktop  
-Then you can just follow the guide like normal  
-Recommend installing AnyDesk from the Discover Store and also on your PC to do the installation remotely  
-Makes installation steps that involve the terminal much more manageable  
+Switch to desktop mode by pressing Steam -> Power -> Switch to Desktop
+Then you can just follow the guide like normal
+Recommend installing AnyDesk from the Discover Store and also on your PC to do the installation remotely
+Makes installation steps that involve the terminal much more manageable
 
-Once that is done, complete the below steps: 
+Once that is done, complete the below steps:
 
-Install BoilR from the discover store.  
-Choose Import Games on the left, then make sure "Jagex Launcher" is checked in the list underneath Lutris  
-Click the button on the bottom left that is a picture of a controller pointing at steam  
-It should say "Done Importing Games"  
-Restart steam  
-Find the new entry for "Jagex Launcher".   
-Rename to RuneScape if playing RS3  
-Rename to OSRS or RuneLite if playing OSRS  
-This is because steam deck searches for control layouts based on game name  
-Reboot to game mode and launch the new entry. 
-Press the steam button -> Controller Settings -> Browse community layouts  
-Choose a layout that looks good for you and then you should be good to start playing!  
+Install BoilR from the discover store
+Choose Import Games on the left, then make sure "Jagex Launcher" is checked in the list underneath Lutris
+Click the button on the bottom left that is a picture of a controller pointing at steam
+It should say "Done Importing Games"
+Restart steam
+Find the new entry for "Jagex Launcher"
+Rename to RuneScape if playing RS3
+Rename to OSRS or RuneLite if playing OSRS
+This is because steam deck searches for control layouts based on game name
+Reboot to game mode and launch the new entry
+Press the steam button -> Controller Settings -> Browse community layouts
+Choose a layout that looks good for you and then you should be good to start playing
 
-If you are using RuneLite, there are many resolution and wonky ui issues with Steam Deck out of the box. The installer creates a properties file you can import to solve most of these issues. You can import this by clicking the wrench in the top right of RuneLite, clicking the "profiles" tab, then clicking "import profile" and select the file called steamdeck-config.properties in the installation directory (usually /home/<user>/Games/jagex-launcher). The file selector can be very wonky in game mode, so recommend doing this in Desktop mode right after installation[^1]
+If you are using RuneLite, there are many resolution and wonky ui issues with Steam Deck out of the box. The installer creates a properties file you can import to solve most of these issues.[^1] You can import this by clicking the wrench in the top right of RuneLite, clicking the "profiles" tab, then clicking "import profile" and select the file called steamdeck-config.properties in the installation directory (usually /home/<user>/Games/jagex-launcher). The file selector can be very wonky in game mode, so recommend doing this in Desktop mode right after installation
 
 # Troubleshooting
-  
-Exit with return code 256<br>
-Delete the ```lutris-GE-Proton8-5-x86_64``` folder inside /data/lutris/runners/wine and restart the installation
-  
-Lutris can't open file selectors/popups<br>
-Run the following command: `systemctl restart --user xdg-desktop-portal`
+
+Exit with return code 256 during installation<br>
+Delete the ```lutris-GE-Proton8-5-x86_64``` folder inside /data/lutris/runners/wine and restart the installation<br>
+
+The Jagex Launcher opens, but the screen is black<br>
+Simply resize the window<br>
+
+Lutris can't open the file selector<br>
+Run the following command: `systemctl restart --user xdg-desktop-portal`<br>
 
 Audio issues<br>
-If you are using Flatpak you can add this to other files in Flatseal ```xdg-run/pipewire-0``` and then tweak ```PULSE_LATENCY_MSEC=X```[^2]<br>
-  
-Launcher is a black screen
-Simply resize the window
+[See issue 12](https://github.com/TormStorm/jagex-launcher-linux/issues/12)<br>
 
 # References
-[^1]: [PSA: Perfect RuneLite settings for Steam Deck.](https://www.reddit.com/r/2007scape/comments/yzbuwc/psa_perfect_runelite_settings_for_steam_deck/)
+[^1]: [PSA: Perfect RuneLite settings for Steam Deck](https://www.reddit.com/r/2007scape/comments/yzbuwc/psa_perfect_runelite_settings_for_steam_deck)
 [^2]: [Audio issues with pipewire](https://twitter.com/fe_calmata/status/1650831866046316549)
-
