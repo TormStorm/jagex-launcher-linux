@@ -12,8 +12,8 @@ I am not responsible for the maintenance and safety of content produced and host
 # Table of contents
 
 - [Jagex Launcher](#jagex-launcher)
-- [RuneScape client](#runescape)
-- [Old School RuneScape client](#old-school-runescape)
+- [RuneScape](#runescape)
+- [Old School RuneScape](#old-school-runescape)
 - [Steam Deck](#steam-deck)
 - [Troubleshooting](#troubleshooting)
 - [References](#references)
@@ -23,10 +23,11 @@ I am not responsible for the maintenance and safety of content produced and host
 ## Requirements
 
 - [Lutris](https://lutris.net/downloads)
+- [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal) <sup title="Only if using the Flatpak version of Lutris">[^1]</sup>
 
 > **Note**<br>
 > It is recommended to install Lutris from your disto's package manager<br>
-> If you use the Flatpak version of Lutris you will not be able to use the Flatpak version of RuneScape
+> If you use the Flatpak version of Lutris you will not be able to use the Flatpak RuneScape client
 
 
 ## Installation
@@ -76,7 +77,7 @@ Reboot to game mode and launch the new entry
 Press the steam button -> Controller Settings -> Browse community layouts
 Choose a layout that looks good for you and then you should be good to start playing
 
-If you are using RuneLite, there are many resolution and wonky ui issues with Steam Deck out of the box. The installer creates a properties file you can import to solve most of these issues.[^1] You can import this by clicking the wrench in the top right of RuneLite, clicking the "profiles" tab, then clicking "import profile" and select the file called steamdeck-config.properties in the installation directory (usually /home/<user>/Games/jagex-launcher). The file selector can be very wonky in game mode, so recommend doing this in Desktop mode right after installation
+If you are using RuneLite, there are many resolution and wonky ui issues with Steam Deck out of the box. The installer creates a properties file you can import to solve most of these issues. [^2] You can import this by clicking the wrench in the top right of RuneLite, clicking the "profiles" tab, then clicking "import profile" and select the file called steamdeck-config.properties in the installation directory (usually /home/<user>/Games/jagex-launcher). The file selector can be very wonky in game mode, so recommend doing this in Desktop mode right after installation
 
 # Troubleshooting
 
@@ -89,8 +90,10 @@ Simply resize the window<br>
 Lutris can't open the file selector<br>
 Run the following command: `systemctl restart --user xdg-desktop-portal`<br>
 
-Audio issues<br>
-[See issue 12](https://github.com/TormStorm/jagex-launcher-linux/issues/12)<br>
+Audio is crackling<br>
+See [issue 12](https://github.com/TormStorm/jagex-launcher-linux/issues/12) for possible solutions<br>
 
 # References
-[^1]: [PSA: Perfect RuneLite settings for Steam Deck](https://www.reddit.com/r/2007scape/comments/yzbuwc/psa_perfect_runelite_settings_for_steam_deck)
+[^1]: Only if using the Flatpak version of Lutris
+[^2]: [PSA: Perfect RuneLite settings for Steam Deck](https://www.reddit.com/r/2007scape/comments/yzbuwc/psa_perfect_runelite_settings_for_steam_deck)
+
