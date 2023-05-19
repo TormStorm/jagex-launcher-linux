@@ -1,7 +1,7 @@
 # Jagex Launcher Linux
 
 > **Warning**<br>
-> This branch may not contain working or complete instructions. Please use the main branch
+> This branch may not contain working or complete instructions, please use the main branch
 
 This repo contains instruction on how to install the Jagex Launcher in Linux<br>
 This also installs RuneLite and sets up the Flatpak RuneScape client<br>
@@ -33,6 +33,7 @@ I am not responsible for the maintenance and safety of content produced and host
 
 
 ## Installation
+
 Open Lutris and click the + in the top left corner<br>
 Select `Search the Lutris website for installers` and search `Jagex Launcher`<br>
 Make sure to leave the default installation path
@@ -60,25 +61,27 @@ The official Old School RuneScape client can be installed in the Jagex Launcher<
 The RuneLite client is automaticly installed and can be played by selecting it from the dropdown menu
 
 # Steam Deck
-Switch to desktop mode by pressing Steam -> Power -> Switch to Desktop
-Then you can just follow the guide like normal
-Recommend installing AnyDesk from the Discover Store and also on your PC to do the installation remotely
-Makes installation steps that involve the terminal much more manageable
 
-Once that is done, complete the below steps:
+Switch to desktop mode by pressing Steam -> Power -> Switch to Desktop<br>
+Follow the instructions for installing the Jagex Launhcer as normal<br>
 
-Install BoilR from the discover store
-Choose Import Games on the left, then make sure "Jagex Launcher" is checked in the list underneath Lutris
-Click the button on the bottom left that is a picture of a controller pointing at steam
-It should say "Done Importing Games"
-Restart steam
-Find the new entry for "Jagex Launcher"
-Rename to RuneScape if playing RS3
-Rename to OSRS or RuneLite if playing OSRS
-This is because steam deck searches for control layouts based on game name
-Reboot to game mode and launch the new entry
-Press the steam button -> Controller Settings -> Browse community layouts
-Choose a layout that looks good for you and then you should be good to start playing
+> **Note**<br>
+> It is recommended to install AnyDesk on the Steam Deck as well as on your PC to do the installation remotely as it makes installation steps that involve the terminal much more manageable<br>
+
+Once the installation is complete do the below steps:<br>
+
+Install BoilR from the discover store<br>
+Choose Import Games on the left, then make sure "Jagex Launcher" is checked in the list underneath Lutris<br>
+Click the button on the bottom left that is a picture of a controller pointing at steam<br>
+It should say "Done Importing Games"<br>
+Restart steam<br>
+Find the new entry for "Jagex Launcher"<br>
+Rename to RuneScape if playing RS3<br>
+Rename to OSRS or RuneLite if playing OSRS<br>
+This is because steam deck searches for control layouts based on game name<br>
+Reboot to game mode and launch the new entry<br>
+Press the steam button -> Controller Settings -> Browse community layouts<br>
+Choose a layout that looks good for you and then you should be good to start playing<br>
 
 If you are using RuneLite, there are many resolution and wonky ui issues with Steam Deck out of the box. The installer creates a properties file you can import to solve most of these issues. [^2] You can import this by clicking the wrench in the top right of RuneLite, clicking the "profiles" tab, then clicking "import profile" and select the file called steamdeck-config.properties in the installation directory (usually /home/<user>/Games/jagex-launcher). The file selector can be very wonky in game mode, so recommend doing this in Desktop mode right after installation
 
