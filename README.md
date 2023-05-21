@@ -20,55 +20,61 @@ I am not affiliated with Jagex or RuneLite and is not responsible for for the co
 - [RuneLite for Linux](https://runelite.net)<br>
 - Windows Virtual Machine or Windows computer<br>
 
-> **Note**<br>
-> Replace USERNAME with the name of your Linux user
-  
 ### Jagex Launcher
-Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer<br>
-Copy the installation folder to the following directory: `/home/USERNAME`<br>
+- [ ] Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer
+- [ ] Copy the installation folder to the following directory: `$HOME`
 
 ### Bottles and FlatSeal
-Install Bottles with the link above<br>
-Install Flatseal with the link above<br>
-Launch Flatseal and select Bottles. Under Filesystem enable `All user files`<br>
-Create a new bottle and name it Jagex Launcher. Under enviorment select `Application`<br>
-Move the installation folder to the following directory:<br>
-`/home/USERNAME/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/Program Files (x86)`<br>
-Select `Run Excecutable` and select the Jagex Launcher executable<br>
-Close Bottles and run the following commmand:<br>
-`flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications`<br>
-Open Bottles and select the Jagex Launcher. Click the three dots to the right and select `Add Desktop Entry`
+Install Bottles with the link above
+- [ ] Install Flatseal with the link above
+- [ ] Launch Flatseal and select Bottles. Under Filesystem enable `All user files`
+- [ ] Create a new bottle and name it Jagex Launcher. Under enviorment select `Application`
+- [ ] Move the installation folder to the following directory:
+    ```
+    $HOME/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/Program Files (x86)
+    ```
+- [ ] Select `Run Excecutable` and select the Jagex Launcher executable
+- [ ] Close Bottles and run the following commmand:
+    ```
+    flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications
+    ```
+- [ ] Open Bottles and select the Jagex Launcher. Click the three dots to the right and select `Add Desktop Entry`
 
 ### RuneLite
 
-Install `libfuse2` through your package manager. For example: `sudo apt install libfuse2`<br>
-Navigate to this directory:<br>
-`/home/USERNAME/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/users/USERNAME/AppData/Local`<br>
-Create a new folder called `RuneLite` and move `RuneLite.AppImage` to this folder<br>
-Make the file executable with the following command: `sudo chmod +x RuneLite.AppImage`<br>
-
-Create a new file called `RuneLite.sh` with the following text:
-```
-#!/bin/sh
-cd /home/USERNAME/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/users/USERNAME/AppData/Local/RuneLite
-./RuneLite.AppImage --appimage-extract-and-run
-```
-Save the file in the `RuneLite` folder you just created<br>
-Make `RuneLite.sh` executable with the following command: `sudo chmod +x RuneLite.sh`<br>
-Create a symbolic link to `RuneLite.sh` with the following command: `ln -s RuneLite.sh RuneLite.exe`
+- [ ] Install `libfuse2` through your package manager. For example: `sudo apt install libfuse2`
+- [ ] Navigate to this directory:
+    ```
+    $HOME/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/users/$USER/AppData/Local
+    ```
+- [ ] Create a new folder called `RuneLite` and move `RuneLite.AppImage` to this folder
+- [ ] Make the file executable with the following command:
+    ```
+    sudo chmod +x RuneLite.AppImage
+    ```
+- [ ] Create a new file called `RuneLite.sh` with the following text:
+  ```
+  #!/bin/sh
+  cd $HOME/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/users/$USER/AppData/Local/RuneLite
+  ./RuneLite.AppImage --appimage-extract-and-run
+  ```
+- [ ] Save the file in the `RuneLite` folder you just created
+- [ ] Make `RuneLite.sh` executable with the following command: `sudo chmod +x RuneLite.sh`
+- [ ] Create a symbolic link to `RuneLite.sh` with the following command: `ln -s RuneLite.sh RuneLite.exe`
 
 #### Windows Registry
 
-Create a new file called `InstallLocation.reg` with the following text:
+- [ ] Create a new file called `InstallLocation.reg` in your home directory:
 ```
+cat > $HOME/InstallLocation.reg <<EOF
 Windows Registry Editor Version 5.00
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1]
-"InstallLocation"="/users/USERNAME/AppData/Local/RuneLite"
+"InstallLocation"="C:/users/$USER/AppData/Local/RuneLite"
+EOF
 ```
-Save the file in your home directory<br>
-Open Bottles, select Jagex Launcher, then scroll down and select Registry Editor<br>
-Select registry, Import Registry File.. and import the file you just created<br>
-Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced with `Play` and launch RuneLite
+- [ ] Open Bottles, select Jagex Launcher, then scroll down and select Registry Editor
+- [ ] Select registry, Import Registry File.. and import the file you just created
+- [ ] Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced with `Play` and launch RuneLite
 
 </details>
 
