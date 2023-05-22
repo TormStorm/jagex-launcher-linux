@@ -1,7 +1,7 @@
 # Jagex Launcher Linux
 
 This repo contains instruction on how to install the Jagex Launcher in Linux<br>
-This also installs RuneLite and sets up the Flatpak RuneScape client<br>
+This also sets up the Flatpak RuneScape client and installs RuneLite<br>
 
 ## Disclaimer
 
