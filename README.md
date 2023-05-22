@@ -1,294 +1,109 @@
 # Jagex Launcher Linux
 
-This repo contains instruction on how to run the Jagex Launcher in Linux as well as how to play through RuneLite
+> **Warning**<br>
+> This branch may not contain working or complete instructions, please use the main branch
 
-✔️ Tested and working with Jagex Accounts
+This repo contains instruction on how to install the Jagex Launcher in Linux<br>
+This also installs RuneLite and sets up the Flatpak RuneScape client<br>
 
-### Disclaimer
+## Disclaimer
 
-I am not affiliated with Jagex or RuneLite and is not responsible for for the contens of this page
+I am not responsible for the maintenance and safety of content produced and hosted by third parties and any use of third-party sites is at your own risk
 
-## Bottles
-<details closed>
-<summary>The easiest way to run the Jagex Launcher is with Bottles</summary>
+# Table of contents
 
-### Requirements
+- [Jagex Launcher](#jagex-launcher)
+- [RuneScape](#runescape)
+- [Old School RuneScape](#old-school-runescape)
+- [Steam Deck](#steam-deck)
+- [Troubleshooting](#troubleshooting)
+- [References](#references)
 
-- [Bottles](https://flathub.org/apps/details/com.usebottles.bottles)<br>
-- [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal)
-- [Jagex Launcher for Windows](https://www.jagex.com/en-GB/launcher)<br>
-- [RuneLite for Linux](https://runelite.net)<br>
-- Windows Virtual Machine or Windows computer<br>
+# Jagex Launcher
 
-### Jagex Launcher
-- [ ] Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer
-- [ ] Copy the installation folder to the following directory: `$HOME`
+## Requirements
 
-### Bottles and FlatSeal
-Install Bottles with the link above
-- [ ] Install Flatseal with the link above
-- [ ] Launch Flatseal and select Bottles. Under Filesystem enable `All user files`
-- [ ] Create a new bottle and name it Jagex Launcher. Under enviorment select `Application`
-- [ ] Move the installation folder to the following directory:
-    ```
-    $HOME/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/Program Files (x86)
-    ```
-- [ ] Select `Run Excecutable` and select the Jagex Launcher executable
-- [ ] Close Bottles and run the following commmand:
-    ```
-    flatpak override com.usebottles.bottles --user --filesystem=xdg-data/applications
-    ```
-- [ ] Open Bottles and select the Jagex Launcher. Click the three dots to the right and select `Add Desktop Entry`
-
-### RuneLite
-
-- [ ] Install `libfuse2` through your package manager. For example: `sudo apt install libfuse2`
-- [ ] Navigate to this directory:
-    ```
-    $HOME/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/users/$USER/AppData/Local
-    ```
-- [ ] Create a new folder called `RuneLite` and move `RuneLite.AppImage` to this folder
-- [ ] Make the file executable with the following command:
-    ```
-    sudo chmod +x RuneLite.AppImage
-    ```
-- [ ] Create a new file called `RuneLite.sh` with the following text:
-  ```
-  #!/bin/sh
-  cd $HOME/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/users/$USER/AppData/Local/RuneLite
-  ./RuneLite.AppImage --appimage-extract-and-run
-  ```
-- [ ] Save the file in the `RuneLite` folder you just created
-- [ ] Make `RuneLite.sh` executable with the following command: `sudo chmod +x RuneLite.sh`
-- [ ] Create a symbolic link to `RuneLite.sh` with the following command: `ln -s RuneLite.sh RuneLite.exe`
-
-#### Windows Registry
-
-- [ ] Create a new file called `InstallLocation.reg` in your home directory:
-```
-cat > $HOME/InstallLocation.reg <<EOF
-Windows Registry Editor Version 5.00
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1]
-"InstallLocation"="C:/users/$USER/AppData/Local/RuneLite"
-EOF
-```
-- [ ] Open Bottles, select Jagex Launcher, then scroll down and select Registry Editor
-- [ ] Select registry, Import Registry File.. and import the file you just created
-- [ ] Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced with `Play` and launch RuneLite
-
-</details>
-
-## Steam Deck
- 
-<details closed>
-<summary>Run the Jagex Launcher on the Steam Deck</summary> 
- 
-### Requirements
-
-- [Bottles](https://flathub.org/apps/details/com.usebottles.bottles)
-- [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal)
-- [Jagex Launcher for Windows](https://www.jagex.com/en-GB/launcher)
-- [RuneLite for Linux](https://runelite.net)
-- Windows Virtual Machine or Windows computer
-  <br>
-
-### Jagex Launcher
-Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer<br>
-Copy the installation folder to the following directory: `/home/deck`<br>
-
-### Bottles and FlatSeal 
-Install Bottles with the link above<br>
-Install Flatseal with the link above<br>
-Launch Flatseal and select Bottles. Under Filesystem enable `All user files`<br>
-Launch Bottles and then create a new Bottle, naming it Jagex Launcher. Under environment select `Application`<br>
-Select `Add Shortcuts...` and select the Jagex Launcher executable<br>
-Click the three dots to the right of the bottle and select `Add to Steam`<br>
-`At this point the Jagex Launcher should launch properly both in Bottles, and in Steam under the Non-Steam Game category.`<br>
-Before continuing with installing RuneLite, Right click the Jagex Launcher icon in the notification tray at the bottom right and select 'Exit'
-
-## RuneLite
-
-Enable hidden files, then navigate to this directory: `/home/deck/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/users/deck/AppData/Local`<br>
-Create a new folder called `RuneLite` and move `RuneLite.AppImage` to this directory<br>
-Make the file executable by right clicking the file, selecting permissions, and checking `Is Executable`<br>
-
-Create a new file called `RuneLite.sh` with the following text:
-```
-#!/bin/sh
-cd /home/deck/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/users/deck/AppData/Local/RuneLite
-./RuneLite.AppImage --appimage-extract-and-run
-```
-Save the file in the `RuneLite` folder you just created<br>
-Make `RuneLite.sh` executable as well<br>
-Right click the RuneLite folder and select "Open Terminal Here"<br>
-Create a symbolic link to `RuneLite.sh` with the following command: `ln -s RuneLite.sh RuneLite.exe`
-
-#### Windows Registry
-
-Create a new file called `InstallLocation.reg` with the following text:
-```
-Windows Registry Editor Version 5.00
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1]
-"InstallLocation"="/home/deck/.var/app/com.usebottles.bottles/data/bottles/bottles/Jagex-Launcher/drive_c/users/deck/AppData/Local/RuneLite"
-```
-Save the file in any location, such as `/home/deck/Documents`<br>
-Open Bottles, select Jagex Launcher, then scroll down and select Registry Editor<br>
-Select registry, Import Registry File.. and import the file you just created<br>
-Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced with `Play` and launch RuneLite
-
-</details>
-
-## Steam Deck Proton
-<details closed>
-<summary>Run the Jagex Launcher on the Steam Deck via Proton, using the original Old School Runescape application</summary>
-
-### Requirements
-
-- [Old School Runescape Steam](https://store.steampowered.com/app/1343370/Old_School_RuneScape/)
-- [Wine](https://flathub.org/apps/details/org.winehq.Wine)
-- [Jagex Launcher for Windows](https://www.jagex.com/en-GB/launcher)
-- [RuneLite for Linux](https://runelite.net)
-- Windows Virtual Machine or Windows computer
-  <br>
-
-### OSRS Steam
-Install Old School Runescape on Steam, and launch it once to create the prefix
-  
-### Wine
-Install Wine from the discover store<br>
-Open a new terminal, and type the following command to install .NET 4.8 into the OSRS Proton prefix: `flatpak run --env=WINEPREFIX="/home/deck/.local/share/Steam/steamapps/compatdata/1343370/pfx" --command=winetricks org.winehq.Wine -q dotnet48`<br>
-  
-### Jagex Launcher
-Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer<br>
-Enable hidden files, then copy the contents of the installation folder to the following directory: `/home/deck/.local/share/Steam/steamapps/Old School Runescape/bin/win64`<br>
-Right click in the win64 folder and select "Open Terminal Here"<br>
-Create a symbolic link to `JagexLauncher.exe` with the following command: `ln -s JagexLauncher.exe osclient.exe`
-
-### RuneLite
-Download the RuneLite appimage from the link above<br>
-Navigate to this directory: `/home/deck/.local/share/Steam/steamapps/Old School Runescape`<br>
-Create a new folder called `RuneLite` and move `RuneLite.AppImage` to this directory<br>
-Make the file executable by right clicking the file, selecting permissions, and checking `Is Executable`<br>
-
-Create a new file called `RuneLite.sh` with the following text:
-```
-#!/bin/sh
-cd "/home/deck/.local/share/Steam/steamapps/Old School Runescape/RuneLite"
-./RuneLite.AppImage --appimage-extract-and-run
-```
-Save the file in the `RuneLite` folder you just created<br>
-Make `RuneLite.sh` executable as well<br>
-Right click the RuneLite folder and select "Open Terminal Here"<br>
-Create a symbolic link to `RuneLite.sh` with the following command: `ln -s RuneLite.sh RuneLite.exe`
-
-### Windows Registry
-Create a new file called `InstallLocation.reg` with the following text:
-```
-Windows Registry Editor Version 5.00
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1]
-"InstallLocation"="/home/deck/.local/share/Steam/steamapps/Old School Runescape/RuneLite"
-```
-Save the file in any location, such as `/home/deck/Documents`<br>
-Open a terminal, and run the following command: `flatpak run --env=WINEPREFIX="/home/deck/.local/share/Steam/steamapps/compatdata/1343370/pfx" --command=winetricks org.winehq.Wine regedit`<br>
-Select registry, Import Registry File.. and import the file you just created<br>
-You can now uninstall Wine through the discover store if you wish<br>
-Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced with `Play` and launch RuneLite
-  
-### Gaming Mode
-To improve RuneLite in Gaming mode, a few settings need to be changed<br>
-Open RuneLite, and click Configuration to open the plugin settings list. Scroll down to `RuneLite`, and click the cog icon<br>
-Set `Game size` to `994x768`<br>
-Set `Resize type` to `Keep window size`<br>
-Enable `Lock window size`<br>
-Set `Contain in screen` to `Always`<br>
-Enable `Always on top`<br>
-In the main plugin settings list, scroll down to `Stretched Mode` and either make sure `Integer Scaling` is Disabled or disable the plugin entirely
-
-</details>
-  
-  
-  
-## Old Method
-
-<details close>
-<summary>Run the Jagex Launcher manually using Wine</summary>
-
-### Requirements
-
-- [Wine](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell)
-- [WineTricks](https://github.com/Winetricks/winetricks)
-- [Jagex Launcher for Windows](https://www.jagex.com/en-GB/launcher)
-- [Jagex Launcher icon](https://runescape.wiki/images/Jagex_Launcher_icon.png)
-- [RuneLite for Linux](https://runelite.net)
-- .NET Framework 4.8
-- Windows Virtual Machine or Windows computer
+- [Lutris](https://lutris.net/downloads)
+- [Flatpak](https://www.flatpak.org/setup) <sup title="If using the Flatpak version of Lutris or the Flatpak RuneScape client">[^1]</sup>
+- [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal) <sup title="If using the Flatpak version of Lutris or the Flatpak RuneScape client">[^1]</sup>
 
 > **Note**<br>
-> Replace USERNAME with the name of your Linux user
+> It is recommended to install Lutris from your disto's package manager<br>
+> If you use the Flatpak version of Lutris you will not be able to use the Flatpak RuneScape client
 
-### Wine
 
-Install Wine with the link above and follow the instructions for your distribution<br>
+## Installation
 
-### WineTricks
-Install WineTricks through your package manager. For example: `sudo apt install winetricks`
+Download the latest version of the `JagexLauncher.yml` script under resources<br>
+Open Lutris and click the + in the top left corner<br>
+Select `Install from a local install script` and choose the script you downloaded<br>
+Make sure to leave the default installation path
 
-### .NET Framework
+After clicking install the installer will appear to freeze. This is expected, and the installer still works in the background<br>
+After waiting about one minute you can close the Jagex Launcher with the following command:<br>
+```ps aux | grep 'cache/lutris/installer/jagex-launcher/jagexlauncher/' | grep -v grep | awk '{print $2}' | xargs kill```
 
-Install .NET Framework with the following command: `winetricks --force -q dotnet48`
+If you are using the flatpak version of Lutris launch Flatseal. Select Lutris and under Filesystem enable all user files<br>
 
-### Jagex Launcher
-Install the Jagex Launcher either in a Windows virtual machine or on a seperate computer<br>
-Copy the installation folder to your home directory on your Linux computer<br>
+# RuneScape
 
-### Desktop entry
-Create a new file called `jagex-launcher.desktop` with the following text:
-```
-[Desktop Entry]
-Type=Application
-Name=Jagex Launcher
-Terminal=false
-Exec=wine /home/USERNAME/Jagex\ Launcher/JagexLauncher.exe
-Icon=Jagex_Launcher_icon
-```
+<!---The official RuneScape client can be downloaded from the Jagex Launcher<br>--->
+The Flatpak RuneScape client can be launched from the Jagex Launcher after installing it from Flathub:<br>
+```flatpak install flathub com.jagex.RuneScape```<br>
+<!---
+> **Note**<br>
+> If you install the official RuneScape client it will overwrite the symbolic link needed to run the Flatpak RuneScape client<br>
+> You can create the symbolic link with the following command:<br>
+```cd $HOME/Games/jagex-launcher/drive_c/Program\ Files\ \(x86\)/Jagex\ Launcher/Games/RuneScape/ && ln -s RuneScape.sh RuneScape.exe```<br>--->
 
-Save the file in: `/home/USERNAME/.local/share/appliations`<br>
-Download the Jagex Launcher icon and save it in `/home/USERNAME/.local/share/icons`<br>
-Make sure that the exec path is the same as the path to the Jagex Launcher<br>
+# Old School RuneScape
 
-### RuneLite
+The official Old School RuneScape client can be installed in the Jagex Launcher<br>
+The RuneLite client is automaticly installed and can be played by selecting it from the dropdown menu
 
-Navigate to this directory: `/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local`<br>
-Create a new folder called `RuneLite`and move `RuneLite.AppImage` to this directory.<br>
-Make the file executable with the following command: `sudo chmod +x RuneLite.AppImage`<br>
+# Steam Deck
 
-Create a new file called `RuneLite.sh` with the following text:
-```
-#!/bin/sh
-cd /home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local/RuneLite
-./RuneLite.AppImage
-```
-Save the file in the `RuneLite` folder you just created<br>
-Make `RuneLite.sh` executable with the following command: `sudo chmod +x RuneLite.sh`<br>
-Create a symbolic link to `RuneLite.sh` with the following command: `ln -s RuneLite.sh RuneLite.exe`
+Switch to desktop mode by pressing Steam -> Power -> Switch to Desktop<br>
+Follow the instructions for installing the Jagex Launhcer as normal<br>
 
-#### Windows Registry
+> **Note**<br>
+> It is recommended to install AnyDesk on the Steam Deck as well as on your PC to do the installation remotely as it makes installation steps that involve the terminal much more manageable<br>
 
-Create a new file called `InstallLocation.reg` with the following text:
-```
-Windows Registry Editor Version 5.00
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1]
-"InstallLocation"="/home/USERNAME/.wine/drive_c/users/USERNAME/AppData/Local/RuneLite"
-```
-Save the file in your home directory<br>
-Open Windows Registry Editor with the following command: `winetricks regedit`<br>
-Select registry, Import Registry File.. and import the file you just created<br>
-Now launch the Jagex Launcher and select RuneLite. `Install` should be replaced with `Play` and launch RuneLite
+Once the installation is complete do the below steps:<br>
 
-</details>
+Install BoilR from the discover store<br>
+Choose Import Games on the left, then make sure "Jagex Launcher" is checked in the list underneath Lutris<br>
+Click the button on the bottom left that is a picture of a controller pointing at steam<br>
+It should say "Done Importing Games"<br>
+Restart steam<br>
+Find the new entry for "Jagex Launcher"<br>
+Rename to RuneScape if playing RS3<br>
+Rename to OSRS or RuneLite if playing OSRS<br>
+This is because steam deck searches for control layouts based on game name<br>
+Reboot to game mode and launch the new entry<br>
+Press the steam button -> Controller Settings -> Browse community layouts<br>
+Choose a layout that looks good for you and then you should be good to start playing<br>
 
-### References
+If you are using RuneLite, there are many resolution and wonky ui issues with Steam Deck out of the box. The installer creates a properties file you can import to solve most of these issues. [^2] You can import this by clicking the wrench in the top right of RuneLite, clicking the "profiles" tab, then clicking "import profile" and select the file called steamdeck-config.properties in the installation directory (usually /home/<user>/Games/jagex-launcher). The file selector can be very wonky in game mode, so recommend doing this in Desktop mode right after installation
 
-<sub>[How to use Jagex's New Launcher on Linux by c00k](https://www.youtube.com/watch?v=izLxF_Wwinw)</sub><br>
-<sub>[Native Linux RuneLite running with Jagex Launcher Launcher by jolty__](https://www.reddit.com/r/2007scape/comments/uo1ey1/native_linux_runelite_running_with_jagex_launcher)</sub><br>
-<sub>[How to Run Jagex Launcher on Steam Deck/Linux Utilizing Bottles by jeremiah1119](https://www.reddit.com/r/2007scape/comments/11q8mly/how_to_run_jagex_launcher_on_steam_decklinux/)</sub>
+# Troubleshooting
+  
+Timeout waiting for window to load<br>
+Try to run the installer again as it might have timed out downloding the necessary dependencies<br>
+
+Exit with return code 256 during installation<br>
+Delete the folder inside /data/lutris/runners/wine and restart the installation<br>
+
+The Jagex Launcher opens, but the screen is black<br>
+Simply resize the window<br>
+
+Lutris can't open the file selector<br>
+Run the following command: `systemctl restart --user xdg-desktop-portal`<br>
+
+The audio is crackling<br>
+This is a known problem. See [issue 12](https://github.com/TormStorm/jagex-launcher-linux/issues/12) for possible solutions<br>
+
+# References
+[^1]: If using the Flatpak version of Lutris or the Flatpak RuneScape client
+[^2]: [PSA: Perfect RuneLite settings for Steam Deck](https://www.reddit.com/r/2007scape/comments/yzbuwc/psa_perfect_runelite_settings_for_steam_deck)
+
