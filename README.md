@@ -1,10 +1,7 @@
 # Jagex Launcher Linux
 
-> **Warning**<br>
-> This branch may not contain working or complete instructions, please use the main branch
-
 This repo contains instruction on how to install the Jagex Launcher in Linux<br>
-This also installs RuneLite and sets up the Flatpak RuneScape client<br>
+This also sets up the Flatpak RuneScape client and installs RuneLite<br>
 
 ## Disclaimer
 
@@ -29,7 +26,7 @@ I am not responsible for the maintenance and safety of content produced and host
 
 ## Installation
 
-Download the latest version of the `JagexLauncher.yml` script under resources<br>
+Download the latest version of the `jagexlauncher.yml` script under resources<br>
 Open Lutris and click the + in the top left corner<br>
 Select `Install from a local install script` and choose the script you downloaded<br>
 Make sure to leave the default installation path
@@ -49,7 +46,7 @@ The Flatpak RuneScape client can be launched from the Jagex Launcher after insta
 > **Note**<br>
 > If you install the official RuneScape client it will overwrite the symbolic link needed to run the Flatpak RuneScape client<br>
 > You can create the symbolic link with the following command:<br>
-```cd $HOME/Games/jagex-launcher/drive_c/Program\ Files\ \(x86\)/Jagex\ Launcher/Games/RuneScape/ && ln -s RuneScape.sh RuneScape.exe```<br>--->
+```cd $HOME/Games/jagex-launcher/drive_c/Program\ Files\ \(x86\)/Jagex\ Launcher/Games/RuneScape/ && ln -s runescape.sh RuneScape.exe```<br>--->
 
 # Old School RuneScape
 
