@@ -39,14 +39,14 @@ script:
         dst: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite"
     - chmodx: runelite
     - write_file:
-        file: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/RuneLite.sh
+        file: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh
         content: |
           #!/bin/sh
           cd "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite"
           ./RuneLite.AppImage --appimage-extract-and-run
-    - chmodx: "$GAMEDIR/drive_c/Program\ Files (x86)/Jagex Launcher/Games/RuneLite/RuneLite.sh"
+    - chmodx: "$GAMEDIR/drive_c/Program\ Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh"
     - execute:
-        command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/RuneLite.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/RuneLite.exe"
+        command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/RuneLite.exe"
     - write_file:
         file: "$GAMEDIR/steamdeck-config.properties"
         content: |
@@ -103,7 +103,7 @@ script:
           runelite.wintertodtnotificationsplugin=false
           runelite.xpglobesplugin=true
     - write_file:
-        file: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/RuneScape.sh"
+        file: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh"
         content: |
           #!/bin/sh
           set -e
@@ -121,9 +121,9 @@ script:
               --env=JX_REFRESH_TOKEN="$JX_REFRESH_TOKEN" \
               --env=JX_SESSION_ID="$JX_SESSION_ID" \
               com.jagex.RuneScape
-    - chmodx: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/RuneScape.sh"
+    - chmodx: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh"
     - execute:
-        command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/RuneScape.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/RuneScape.exe"
+        command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/RuneScape.exe"
     - task:
         name: set_regedit
         path: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1
