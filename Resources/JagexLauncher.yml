@@ -120,7 +120,6 @@ script:
               --env=JX_DISPLAY_NAME="$JX_DISPLAY_NAME" \
               --env=JX_REFRESH_TOKEN="$JX_REFRESH_TOKEN" \
               --env=JX_SESSION_ID="$JX_SESSION_ID" \
-              --env=MANGOHUD=1 \
               com.jagex.RuneScape
     - chmodx: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/RuneScape.sh"
     - execute:
