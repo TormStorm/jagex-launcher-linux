@@ -8,6 +8,9 @@ script:
   files:
     - jagexlauncher: https://cdn.jagex.com/Jagex%20Launcher%20Installer.exe
     - runelite: https://github.com/runelite/launcher/releases/download/2.6.4/RuneLite.AppImage
+    - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runelite.sh
+    - runescape-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runescape.sh
+    - steamdeck-config: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/steamdeck-config.properties
 
   game:
     exe: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/JagexLauncher.exe
@@ -38,90 +41,19 @@ script:
         src: runelite
         dst: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite"
     - chmodx: runelite
-    - write_file:
-        file: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh
-        content: |
-          #!/bin/sh
-          cd "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite"
-          ./RuneLite.AppImage --appimage-extract-and-run
-    - chmodx: "$GAMEDIR/drive_c/Program\ Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh"
+    - merge:
+        src: runelite-launcher
+        dst: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite
+    - chmodx: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh
     - execute:
         command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/RuneLite.exe"
-    - write_file:
-        file: "$GAMEDIR/steamdeck-config.properties"
-        content: |
-          runelite.automaticResizeType=KEEP_WINDOW_SIZE
-          runelite.blockExtraMouseButtons=true
-          runelite.clientBounds=0\:0\:1288\:807
-          runelite.clientMaximized=true
-          runelite.containInScreen2=NEVER
-          runelite.dragHotkey=0\:512
-          runelite.entityhiderplugin=false
-          runelite.flashNotification=DISABLED
-          runelite.fontType=SMALL
-          runelite.gameAlwaysOnTop=false
-          runelite.gameSize=1002x776
-          runelite.groundmarkerplugin=true
-          runelite.hdplugin=true
-          runelite.idlenotifierplugin=false
-          runelite.infoBoxSize=35
-          runelite.infoBoxTextOutline=false
-          runelite.infoBoxVertical=false
-          runelite.infoboxFontType=REGULAR
-          runelite.interfaceFontType=REGULAR
-          runelite.itemidentificationplugin=false
-          runelite.lockWindowSize=true
-          runelite.menuentryswapperplugin=true
-          runelite.metronomeplugin=false
-          runelite.miningplugin=true
-          runelite.motherlodeplugin=true
-          runelite.notificationFlashColor=1191116800
-          runelite.notificationFocused=true
-          runelite.notificationGameMessage=false
-          runelite.notificationRequestFocus=OFF
-          runelite.notificationSound=CUSTOM
-          runelite.notificationTimeout=2000
-          runelite.notificationTray=true
-          runelite.overlayBackgroundColor=-1673118414
-          runelite.panelToggleKey=123\:128
-          runelite.partyplugin2=true
-          runelite.pcrewardsplugin=false
-          runelite.pickpockethelperplugin=false
-          runelite.rememberScreenBounds=true
-          runelite.sidebarToggleKey=122\:128
-          runelite.slayerplugin=true
-          runelite.statusbarsplugin=true
-          runelite.tileindicatorsplugin=true
-          runelite.tooltipFontType=SMALL
-          runelite.tooltipPosition=UNDER_CURSOR
-          runelite.trayIcon=true
-          runelite.uiEnableCustomChrome=true
-          runelite.uiWindowOpacity=100
-          runelite.useWikiItemPrices=true
-          runelite.usernameInTitle=true
-          runelite.warningOnExit=LOGGED_IN
-          runelite.wintertodtnotificationsplugin=false
-          runelite.xpglobesplugin=true
-    - write_file:
-        file: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh"
-        content: |
-          #!/bin/sh
-          set -e
-          flatpak run --env=PULSE_LATENCY_MSEC=200 \
-              --env='vblank_mode=0' \
-              --env='MESA_GL_VERSION_OVERRIDE=4.5FC' \
-              com.jagex.RuneScape || \
-          flatpak-spawn --host flatpak run \
-              --env=PULSE_LATENCY_MSEC=200 \
-              --env='vblank_mode=0' \
-              --env='MESA_GL_VERSION_OVERRIDE=4.5FC' \
-              --env=JX_ACCESS_TOKEN="$JX_ACCESS_TOKEN" \
-              --env=JX_CHARACTER_ID="$JX_CHARACTER_ID" \
-              --env=JX_DISPLAY_NAME="$JX_DISPLAY_NAME" \
-              --env=JX_REFRESH_TOKEN="$JX_REFRESH_TOKEN" \
-              --env=JX_SESSION_ID="$JX_SESSION_ID" \
-              com.jagex.RuneScape
-    - chmodx: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh"
+    - merge:
+        src: steamdeck-config
+        dst: $GAMEDIR
+    - merge:
+        src: runescape-launcher
+        dst: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape
+    - chmodx: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh
     - execute:
         command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/RuneScape.exe"
     - task:
