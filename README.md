@@ -34,8 +34,9 @@ I am not responsible for the maintenance and safety of content produced and host
 
 ## Installation
 
+Download the latest version of the `JagexLauncher.yml` script under resources<br>
 Open Lutris and click the + in the top left corner<br>
-Select `Search the Lutris website for installers` and search `Jagex Launcher`<br>
+Select `Install from a local install script` and choose the script you downloaded<br>
 Make sure to leave the default installation path
 
 After clicking install the installer will appear to freeze. This is expected, and the installer still works in the background<br>
