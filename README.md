@@ -24,11 +24,6 @@ I am not responsible for the maintenance and safety of content produced and host
 - [Flatpak](https://www.flatpak.org/setup) <sup title="If using the Flatpak version of Lutris or the Flatpak RuneScape client">[^1]</sup>
 - [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal) <sup title="If using the Flatpak version of Lutris or the Flatpak RuneScape client">[^1]</sup>
 
-> **Note**<br>
-> It is recommended to install Lutris from your disto's package manager<br>
-> If you use the Flatpak version of Lutris you will not be able to use the Flatpak RuneScape client
-
-
 ## Installation
 
 Download the latest version of the `JagexLauncher.yml` script under resources<br>
