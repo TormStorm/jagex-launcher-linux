@@ -51,7 +51,7 @@ The Flatpak RuneScape client can be launched from the Jagex Launcher after insta
 # Old School RuneScape
 
 The official Old School RuneScape client can be installed in the Jagex Launcher<br>
-The RuneLite client is automaticly installed and can be played by selecting it from the dropdown menu
+The RuneLite client is automatically installed and can be played by selecting it from the dropdown menu
 
 # Steam Deck
 
