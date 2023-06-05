@@ -20,13 +20,25 @@ I am not responsible for the maintenance and safety of content produced and host
 
 ## Requirements
 
-- [Lutris](https://lutris.net/downloads)
-- [Flatpak](https://www.flatpak.org/setup) <sup title="If using the Flatpak version of Lutris or the Flatpak RuneScape client">[^1]</sup>
-- [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal) <sup title="If using the Flatpak version of Lutris or the Flatpak RuneScape client">[^1]</sup>
+### Lutris
+To install and run the jagex launcher you need Lutris:<br>
+https://lutris.net/downloads
+> **Note**<br>
+> To avoid dependency issues we recommend using the Flatpak version
+
+If you are not using the Flatpak version we recommend installing the latest version of wine staging as well as wine dependencies:
+https://wiki.winehq.org/Download<br>
+https://github.com/lutris/docs/blob/master/WineDependencies.md<br>
+
+### Flatpak and Flatseal
+If you are using the flatpak version of Lutris or the Flatpak RuneScape client you need Flatpak and Flatseal:<br>
+https://www.flatpak.org/setup<br>
+https://flathub.org/apps/com.github.tchx84.Flatseal<br>
 
 ## Installation
 
-Download the latest version of the `jagexlauncher.yml` script under resources<br>
+Download the latest version of the Jagex Launcher install script:<br>
+https://github.com/TormStorm/jagex-launcher-linux/blob/main/resources/jagexlauncher.yml<br>
 Open Lutris and click the + in the top left corner<br>
 Select `Install from a local install script` and choose the script you downloaded<br>
 Make sure to leave the default installation path
@@ -39,14 +51,8 @@ If you are using the flatpak version of Lutris launch Flatseal. Select Lutris an
 
 # RuneScape
 
-<!---The official RuneScape client can be downloaded from the Jagex Launcher<br>--->
 The Flatpak RuneScape client can be launched from the Jagex Launcher after installing it from Flathub:<br>
 ```flatpak install flathub com.jagex.RuneScape```<br>
-<!---
-> **Note**<br>
-> If you install the official RuneScape client it will overwrite the symbolic link needed to run the Flatpak RuneScape client<br>
-> You can create the symbolic link with the following command:<br>
-```cd $HOME/Games/jagex-launcher/drive_c/Program\ Files\ \(x86\)/Jagex\ Launcher/Games/RuneScape/ && ln -s runescape.sh RuneScape.exe```<br>--->
 
 # Old School RuneScape
 
@@ -76,10 +82,10 @@ Reboot to game mode and launch the new entry<br>
 Press the steam button -> Controller Settings -> Browse community layouts<br>
 Choose a layout that looks good for you and then you should be good to start playing<br>
 
-If you are using RuneLite, there are many resolution and wonky ui issues with Steam Deck out of the box. The installer creates a properties file you can import to solve most of these issues. [^2] You can import this by clicking the wrench in the top right of RuneLite, clicking the "profiles" tab, then clicking "import profile" and select the file called steamdeck-config.properties in the installation directory (usually /home/<user>/Games/jagex-launcher). The file selector can be very wonky in game mode, so recommend doing this in Desktop mode right after installation
+If you are using RuneLite, there are many resolution and wonky ui issues with Steam Deck out of the box. The installer creates a properties file you can import to solve most of these issues. [^1] You can import this by clicking the wrench in the top right of RuneLite, clicking the "profiles" tab, then clicking "import profile" and select the file called steamdeck-config.properties in the installation directory (usually /home/<user>/Games/jagex-launcher). The file selector can be very wonky in game mode, so recommend doing this in Desktop mode right after installation
 
 # Troubleshooting
-  
+
 Timeout waiting for window to load<br>
 Try to run the installer again as it might have timed out downloding the necessary dependencies<br>
 
@@ -94,8 +100,7 @@ Run the following command: `systemctl restart --user xdg-desktop-portal`<br>
 
 The audio is crackling<br>
 This is a known problem. See [issue 12](https://github.com/TormStorm/jagex-launcher-linux/issues/12) for possible solutions<br>
-
+  
 # References
-[^1]: If using the Flatpak version of Lutris or the Flatpak RuneScape client
-[^2]: [PSA: Perfect RuneLite settings for Steam Deck](https://www.reddit.com/r/2007scape/comments/yzbuwc/psa_perfect_runelite_settings_for_steam_deck)
+[^1]: [PSA: Perfect RuneLite settings for Steam Deck](https://www.reddit.com/r/2007scape/comments/yzbuwc/psa_perfect_runelite_settings_for_steam_deck)
 
