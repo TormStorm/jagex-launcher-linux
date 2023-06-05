@@ -21,17 +21,17 @@ I am not responsible for the maintenance and safety of content produced and host
 ## Requirements
 
 ### Lutris
-To install and run the jagex launcher you need Lutris:<br>
+To install and run the Jagex Launcher you need Lutris:<br>
 https://lutris.net/downloads
 > **Note**<br>
-> To avoid dependency issues we recommend using the Flatpak version
+> To avoid dependency issues we recommend using Flatpak
 
-If you are not using the Flatpak version we recommend installing the latest version of wine staging as well as wine dependencies:
+If you are not using Flatpak we recommend installing ``wine-staging`` and all of the wine dependencies:<br>
 https://wiki.winehq.org/Download<br>
 https://github.com/lutris/docs/blob/master/WineDependencies.md<br>
 
 ### Flatpak and Flatseal
-If you are using the flatpak version of Lutris or the Flatpak RuneScape client you need Flatpak and Flatseal:<br>
+If you are using Flatpak Lutris or the Flatpak RuneScape client you need Flatpak and Flatseal:<br>
 https://www.flatpak.org/setup<br>
 https://flathub.org/apps/com.github.tchx84.Flatseal<br>
 
