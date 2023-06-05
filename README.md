@@ -47,6 +47,9 @@ The Flatpak RuneScape client can be launched from the Jagex Launcher after insta
 > If you install the official RuneScape client it will overwrite the symbolic link needed to run the Flatpak RuneScape client<br>
 > You can create the symbolic link with the following command:<br>
 ```cd $HOME/Games/jagex-launcher/drive_c/Program\ Files\ \(x86\)/Jagex\ Launcher/Games/RuneScape/ && ln -s runescape.sh RuneScape.exe```<br>--->
+> If not installing and linking to a native installation instead, you will have to import a registry key via the wine utility `regedit`.
+> The registry key to import is under `resources/runelite.reg`. 
+> Depending on your setup, you may still have to update the shell script accordingly as well.
 
 # Old School RuneScape
 
