@@ -95,6 +95,10 @@ Simply resize the window<br>
 Lutris can't open the file selector<br>
 Run the following command: `systemctl restart --user xdg-desktop-portal`<br>
 
+Problem: Jagex Launcher is white / cannot enter email/password into Jagex Launcher
+Potential Solution: Configure the launcher in Lutris `Runner Options`>`Wine Version` to use `lutris-GE-Proton` instead of Wine.
+
+
 The audio is crackling<br>
 This is a known problem. See [issue 12](https://github.com/TormStorm/jagex-launcher-linux/issues/12) for possible solutions<br>
 
