@@ -41,11 +41,10 @@ Download the latest version of the Jagex Launcher install script:<br>
 https://github.com/TormStorm/jagex-launcher-linux/blob/main/resources/jagexlauncher.yml<br>
 Open Lutris and click the + in the top left corner<br>
 Select `Install from a local install script` and choose the script you downloaded<br>
-Make sure to leave the default installation path
 
-After clicking install the installer will appear to freeze. This is expected, and the installer still works in the background<br>
-After waiting about one minute you can close the Jagex Launcher with the following command:<br>
-```ps aux | grep 'cache/lutris/installer/jagex-launcher/jagexlauncher/' | grep -v grep | awk '{print $2}' | xargs kill```
+> **Note**<br>
+> Leave the installation path default<br>
+> After you click install, the client will appear to freeze. This is normal. It should quit within 2 minutes and continue
 
 If you are using the flatpak version of Lutris launch Flatseal. Select Lutris and under Filesystem enable all user files<br>
 
