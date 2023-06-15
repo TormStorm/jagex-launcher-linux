@@ -66,12 +66,10 @@ Reboot to game mode and launch the new entry<br>
 Press the steam button -> Controller Settings -> Browse community layouts<br>
 Choose a layout that looks good for you and then you should be good to start playing<br>
 
-## RuneLite
 If you are using RuneLite on the Steam Deck there are some issues out of the box. The installer creates a properties file you can import to solve most of these issues[^1]<br>
-
-You can import this file by opening the RuneLite configuration and clicking the profiles tab<br>
+Launch RuneLite, open the configuration menu and select the profiles tab<br>
 Click `import profile` and navigate to `$HOME/Games/jagex-launcher`<br>
-Select the steamdeck-config.properties file and click open<br>
+Select the `steamdeck-config.properties` file and click open<br>
 
 # Troubleshooting
 
