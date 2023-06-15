@@ -20,38 +20,23 @@ I am not responsible for the maintenance and safety of content produced and host
 
 ## Requirements
 
-### Lutris
-To install and run the Jagex Launcher you need Lutris:<br>
-https://lutris.net/downloads
-> **Note**<br>
-> To avoid dependency issues we recommend using Flatpak
+* [Flatpak](https://www.flatpak.org/setup)<br>
+* [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal)<br>
+* [Lutris](https://flathub.org/apps/net.lutris.Lutris)<br>
 
-If you are not using Flatpak we recommend installing ``wine-staging`` and all of the wine dependencies:<br>
-https://wiki.winehq.org/Download<br>
-https://github.com/lutris/docs/blob/master/WineDependencies.md<br>
-
-### Flatpak and Flatseal
-If you are using Flatpak Lutris or the Flatpak RuneScape client you need Flatpak and Flatseal:<br>
-https://www.flatpak.org/setup<br>
-https://flathub.org/apps/com.github.tchx84.Flatseal<br>
 
 ## Installation
 
-Download the latest version of the Jagex Launcher install script:<br>
-https://github.com/TormStorm/jagex-launcher-linux/blob/main/resources/jagexlauncher.yml<br>
-Open Lutris and click the + in the top left corner<br>
-Select `Install from a local install script` and choose the script you downloaded<br>
-
-> **Note**<br>
-> Leave the installation path default<br>
-> After you click install, the client will appear to freeze. This is normal. It should quit within 2 minutes and continue
-
-If you are using the flatpak version of Lutris launch Flatseal. Select Lutris and under Filesystem enable all user files<br>
+Download the latest version of the [install script](https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/jagexlauncher.yml)<br>
+Open Lutris and click the `+` in the top left corner<br>
+Select `Install from a local install script` and navigate to the install script<br>
+After clicking install the client will appear to freeze. This is expected and the installer should finnish within a couple of minutes<br>
+After the installation has completed launch Flatseal<br>
+Select Lutris and under Filesystem enable all user files<br>
 
 # RuneScape
 
-The Flatpak RuneScape client can be launched from the Jagex Launcher after installing it from Flathub:<br>
-```flatpak install flathub com.jagex.RuneScape```<br>
+The Flatpak RuneScape client can be launched after installing it from [Flathub](https://flathub.org/apps/com.jagex.RuneScape)<br>
 
 # Old School RuneScape
 
@@ -64,7 +49,7 @@ Switch to desktop mode by pressing Steam -> Power -> Switch to Desktop<br>
 Follow the instructions for installing the Jagex Launhcer as normal<br>
 
 > **Note**<br>
-> It is recommended to install AnyDesk on the Steam Deck as well as on your PC to do the installation remotely as it makes installation steps that involve the terminal much more manageable<br>
+> It is recommended to install a remote desktop application to make the installation easier<br>
 
 Once the installation is complete do the below steps:<br>
 
@@ -81,24 +66,34 @@ Reboot to game mode and launch the new entry<br>
 Press the steam button -> Controller Settings -> Browse community layouts<br>
 Choose a layout that looks good for you and then you should be good to start playing<br>
 
-If you are using RuneLite, there are many resolution and wonky ui issues with Steam Deck out of the box. The installer creates a properties file you can import to solve most of these issues. [^1] You can import this by clicking the wrench in the top right of RuneLite, clicking the "profiles" tab, then clicking "import profile" and select the file called steamdeck-config.properties in the installation directory (usually /home/<user>/Games/jagex-launcher). The file selector can be very wonky in game mode, so recommend doing this in Desktop mode right after installation
+## RuneLite
+If you are using RuneLite on the Steam Deck there are some issues out of the box. The installer creates a properties file you can import to solve most of these issues[^1]<br>
+
+You can import this file by opening the RuneLite configuration and clicking the profiles tab<br>
+Click `import profile` and navigate to `$HOME/Games/jagex-launcher`<br>
+Select the steamdeck-config.properties file and click open<br>
 
 # Troubleshooting
 
-Timeout waiting for window to load<br>
+**Timeout waiting for window to load**<br>
 Try to run the installer again as it might have timed out downloding the necessary dependencies<br>
 
-Exit with return code 256 during installation<br>
-Delete the folder inside /data/lutris/runners/wine and restart the installation<br>
+**Exit with return code 256 during installation**<br>
+Delete the folder inside `$HOME.var/app/net.lutris.Lutris/data/lutris/runners/wine` and restart the installation<br>
 
-The Jagex Launcher opens, but the screen is black<br>
+**The Jagex Launcher opens, but the screen is black**<br>
 Simply resize the window<br>
 
-Lutris can't open the file selector<br>
+**Lutris can't open the file selector**<br>
 Run the following command: `systemctl restart --user xdg-desktop-portal`<br>
 
-The audio is crackling<br>
-This is a known problem. See [issue 12](https://github.com/TormStorm/jagex-launcher-linux/issues/12) for possible solutions<br>
+**The audio is crackling**<br>
+Navigate to the following directory: `$HOME/Games/jagex-launcher/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape`
+Open `runescape.sh` and change the `PULSE_LATENCY_MSEC`
+  
+**Not using Flatpak**<br>
+It is recommended to use flatpak to avoid dependency issues<br>
+You can try to get it working by installing [wine-staging](https://wiki.winehq.org/Download) and [wine dependencies](https://github.com/lutris/docs/blob/master/WineDependencies.md) but your your success will vary
   
 # References
 [^1]: [PSA: Perfect RuneLite settings for Steam Deck](https://www.reddit.com/r/2007scape/comments/yzbuwc/psa_perfect_runelite_settings_for_steam_deck)
