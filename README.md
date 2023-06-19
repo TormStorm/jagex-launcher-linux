@@ -30,7 +30,7 @@ I am not responsible for the maintenance and safety of content produced and host
 Download the latest version of the [install script](https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/jagexlauncher.yml)<br>
 Open Lutris and click the `+` in the top left corner<br>
 Select `Install from a local install script` and navigate to the install script<br>
-After clicking install the client will appear to freeze. This is expected and the installer should finnish within a couple of minutes<br>
+After clicking install the client will appear to freeze. This is expected and the installer should finish within a couple of minutes<br>
 After the installation has completed launch Flatseal<br>
 Select Lutris and under Filesystem enable all user files<br>
 
@@ -46,7 +46,7 @@ The RuneLite client is automatically installed and can be played by selecting it
 # Steam Deck
 
 Switch to desktop mode by pressing Steam -> Power -> Switch to Desktop<br>
-Follow the instructions for installing the Jagex Launhcer as normal<br>
+Follow the instructions for installing the Jagex Launcher as normal<br>
 
 > **Note**<br>
 > It is recommended to install a remote desktop application to make the installation easier<br>
@@ -66,7 +66,7 @@ Reboot to game mode and launch the new entry<br>
 Press the steam button -> Controller Settings -> Browse community layouts<br>
 Choose a layout that looks good for you and then you should be good to start playing<br>
 
-If you are using RuneLite on the Steam Deck there are some issues out of the box. The installer creates a properties file you can import to solve most of these issues[^1]<br>
+If you are using RuneLite on the Steam Deck, there are some issues out of the box. The installer creates a properties file you can import to solve most of these issues[^1]<br>
 Launch RuneLite, open the configuration menu and select the profiles tab<br>
 Click `import profile` and navigate to `$HOME/Games/jagex-launcher`<br>
 Select the `steamdeck-config.properties` file and click open<br>
@@ -74,7 +74,7 @@ Select the `steamdeck-config.properties` file and click open<br>
 # Troubleshooting
 
 **Timeout waiting for window to load**<br>
-Try to run the installer again as it might have timed out downloding the necessary dependencies<br>
+Try to run the installer again as it might have timed out downloading the necessary dependencies<br>
 
 **Exit with return code 256 during installation**<br>
 Delete the folder inside `$HOME.var/app/net.lutris.Lutris/data/lutris/runners/wine` and restart the installation<br>
