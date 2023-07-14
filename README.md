@@ -28,7 +28,9 @@ I am not responsible for the maintenance and safety of content produced and host
 
 Install the requirements from the links above<br>
 Download the latest version of the [installation script](https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/jagexlauncher.yml)<br>
-Open Lutris, click the `+` in the top left corner and select `Install from a local install script`<br>
+In the bottom left, click on `Wine` under `Runners` and then choose `Manage Versions`<br>
+Install the latest `lutris-GE-Proton` version. E.g. `lutris-GE-Proton8-10`<br>
+Click `OK`. Back in Lutris, click the `+` in the top left corner and select `Install from a local install script`<br>
 After clicking install the window will appear to freeze, this is expected and should finish within a couple of minutes<br>
 Once the installation has completed launch Flatseal, select Lutris and under filesystem enable all user files<br>
 
