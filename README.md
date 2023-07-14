@@ -1,17 +1,13 @@
 # Jagex Launcher Linux
 
-This repo contains instruction on how to install the Jagex Launcher in Linux, it also sets up the Flatpak RuneScape client and RuneLite<br>
+This repository contains instruction on how to install the Jagex Launcher in Linux using Lutris. It also automatically sets up the Flatpak RuneScape client and RuneLite<br>
 
-## Disclaimer
-
-I am not responsible for the maintenance and safety of content produced and hosted by third parties and any use of third-party sites is at your own risk
-
-## Contents
-
-- [Jagex Launcher](#jagex-launcher)
-- [Game clients](#game-clients)
-- [Troubleshooting](#troubleshooting)
-- [References](#references)
+|                 Content             |
+| ---------------------------------   |
+| [Jagex Launcher](#jagex-launcher)   |
+| [Game clients](#game-clients)       |
+| [Troubleshooting](#troubleshooting) |
+| [References](#references)           |
 
 # Jagex Launcher
 
@@ -40,13 +36,13 @@ I am not responsible for the maintenance and safety of content produced and host
 Switch to desktop mode by pressing steam, power, switch to desktop and then follow the instructions above<br>
 Once the installation has completed do the following steps:<br>
 
-1 .Install BoilR from the discover store<br>
+1. Install BoilR from the discover store<br>
 2. Select `Import Games` and make sure the Jagex Launcher is checked under Lutris<br>
 3. Click the import games button on the bottom left and restart steam<br>
 4. Rename the Steam entry to `RuneScape` if playing RuneScape or `OSRS` if playing Old School RuneScape<br>
 5. Press the steam button, controller settings, browse community layouts and select a controller layout<br>
 
-If you are using RuneLite on the Steam Deck you can import a properties file to set it up automatically[^1]<br>
+If you are using RuneLite on the Steam Deck you can import a properties file to set it up automatically<sup title="PSA: Perfect RuneLite settings for Steam Deck">[^1]</sup><br>
 
 1. Launch RuneLite, open the configuration menu and select the profiles tab<br>
 2. Click `import profile` navigate to `$HOME/Games/jagex-launcher` and open `steamdeck-config.properties`
@@ -54,13 +50,13 @@ If you are using RuneLite on the Steam Deck you can import a properties file to 
 
 # Game Clients
 
-The supported game clients are the Flatpak RuneScape client, the Java Old School RuneScape client and RuneLite<br>
+The currently supported game clients are the Flatpak RuneScape client, the Java Old School RuneScape client and RuneLite
 
-## RuneScape
+### RuneScape
 
-The Flatpak RuneScape client can be launched after installing it from FlatHub[^2]<br>
+The Flatpak RuneScape client can be launched after installing it from FlatHub<sup title="Flatpak RuneScape client">[^2]</sup><br>
 
-## Old School RuneScape
+### Old School RuneScape
 
 The Java Old School RuneScape client can be installed in the Jagex Launcher<br>
 The RuneLite client is automatically installed and can be played by selecting it from the dropdown menu
@@ -86,11 +82,10 @@ Open `runescape.sh` and change the `PULSE_LATENCY_MSEC`
   
 **Not using Flatpak**<br>
 It is recommended to use flatpak to avoid dependency issues<br>
-You can try to get it working by installing wine-staging[^3] and wine dependencies[^4] but your your success may vary
+You can try to get it working by installing Wine Staging<sup title="Wine Staging">[^3]</sup> and Wine Dependencies<sup title="Wine Dependencies">[^4]</sup> but your your success may vary
   
 # References
 [^1]: [PSA: Perfect RuneLite settings for Steam Deck](https://www.reddit.com/r/2007scape/comments/yzbuwc/psa_perfect_runelite_settings_for_steam_deck)
 [^2]: [Flatpak RuneScape client](https://flathub.org/apps/com.jagex.RuneScape)
-[^3]: [wine-staging](https://wiki.winehq.org/Download)
-[^4]: [wine dependencies](https://github.com/lutris/docs/blob/master/WineDependencies.md)
-
+[^3]: [Wine Staging](https://wiki.winehq.org/Download)
+[^4]: [Wine Dependencies](https://github.com/lutris/docs/blob/master/WineDependencies.md)<br>
