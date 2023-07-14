@@ -6,12 +6,10 @@ This repo contains instruction on how to install the Jagex Launcher in Linux, it
 
 I am not responsible for the maintenance and safety of content produced and hosted by third parties and any use of third-party sites is at your own risk
 
-# Table of contents
+## Contents
 
 - [Jagex Launcher](#jagex-launcher)
-- [Steam Deck](#steam-deck)
-- [RuneScape](#runescape)
-- [Old School RuneScape](#old-school-runescape)
+- [Game clients](#game-clients)
 - [Troubleshooting](#troubleshooting)
 - [References](#references)
 
@@ -20,19 +18,19 @@ I am not responsible for the maintenance and safety of content produced and host
 ## Requirements
 
 * [Flatpak](https://www.flatpak.org/setup)<br>
-* [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal)<br>
 * [Lutris](https://flathub.org/apps/net.lutris.Lutris)<br>
-
+* [Installation script](https://github.com/TormStorm/jagex-launcher-linux/blob/main/resources/jagexlauncher.yml)<br>
 
 ## Installation
 
-Install the requirements from the links above<br>
-Download the latest version of the [installation script](https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/jagexlauncher.yml)<br>
-In the bottom left, click on `Wine` under `Runners` and then choose `Manage Versions`<br>
-Install the latest `lutris-GE-Proton` version. E.g. `lutris-GE-Proton8-10`<br>
-Click `OK`. Back in Lutris, click the `+` in the top left corner and select `Install from a local install script`<br>
-After clicking install the window will appear to freeze, this is expected and should finish within a couple of minutes<br>
-Once the installation has completed launch Flatseal, select Lutris and under filesystem enable all user files<br>
+> **Note**<br>
+> After clicking install the window will appear to freeze, this is expected and it should finish within a couple of minutes<br>
+
+1. Get the requirements from the links above and open Lutris<br>
+2. In the bottom left under `Runners` click on `Wine` and choose `Manage Versions`<br>
+3. Install the latest `lutris-GE-Proton` version. E.g. `lutris-GE-Proton8-10`<br>
+4. Click the `+` in the top left corner of Lutris and select `Install from a local install script`<br>
+5. Follow the on screen instructions leaving the installation directory as default 
 
 ## Steam Deck
 
@@ -42,24 +40,31 @@ Once the installation has completed launch Flatseal, select Lutris and under fil
 Switch to desktop mode by pressing steam, power, switch to desktop and then follow the instructions above<br>
 Once the installation has completed do the following steps:<br>
 
-Install BoilR from the discover store<br>
-Select `Import Games` and make sure the Jagex Launcher is checked under Lutris<br>
-Click the import games button on the bottom left and restart steam<br>
-Rename the Steam entry to `RuneScape` if playing RuneScape or `OSRS` if playing Old School RuneScape<br>
-Press the steam button, controller settings, browse community layouts and select a controller layout<br>
+1 .Install BoilR from the discover store<br>
+2. Select `Import Games` and make sure the Jagex Launcher is checked under Lutris<br>
+3. Click the import games button on the bottom left and restart steam<br>
+4. Rename the Steam entry to `RuneScape` if playing RuneScape or `OSRS` if playing Old School RuneScape<br>
+5. Press the steam button, controller settings, browse community layouts and select a controller layout<br>
 
 If you are using RuneLite on the Steam Deck you can import a properties file to set it up automatically[^1]<br>
-Launch RuneLite, open the configuration menu and select the profiles tab<br>
-Click `import profile` navigate to `$HOME/Games/jagex-launcher` and select `steamdeck-config.properties`
 
-# RuneScape
+1. Launch RuneLite, open the configuration menu and select the profiles tab<br>
+2. Click `import profile` navigate to `$HOME/Games/jagex-launcher` and open `steamdeck-config.properties`
+3. Double-click the imported profile to select it
 
-The Flatpak RuneScape client can be launched after installing it from [Flathub](https://flathub.org/apps/com.jagex.RuneScape)<br>
+# Game Clients
 
-# Old School RuneScape
+The supported game clients are the Flatpak RuneScape client, the Java Old School RuneScape client and RuneLite<br>
 
-The official Old School RuneScape client can be installed in the Jagex Launcher<br>
+## RuneScape
+
+The Flatpak RuneScape client can be launched after installing it from FlatHub[^2]<br>
+
+## Old School RuneScape
+
+The Java Old School RuneScape client can be installed in the Jagex Launcher<br>
 The RuneLite client is automatically installed and can be played by selecting it from the dropdown menu
+
 
 # Troubleshooting
 
@@ -81,8 +86,11 @@ Open `runescape.sh` and change the `PULSE_LATENCY_MSEC`
   
 **Not using Flatpak**<br>
 It is recommended to use flatpak to avoid dependency issues<br>
-You can try to get it working by installing [wine-staging](https://wiki.winehq.org/Download) and [wine dependencies](https://github.com/lutris/docs/blob/master/WineDependencies.md) but your your success may vary
+You can try to get it working by installing wine-staging[^3] and wine dependencies[^4] but your your success may vary
   
 # References
 [^1]: [PSA: Perfect RuneLite settings for Steam Deck](https://www.reddit.com/r/2007scape/comments/yzbuwc/psa_perfect_runelite_settings_for_steam_deck)
+[^2]: [Flatpak RuneScape client](https://flathub.org/apps/com.jagex.RuneScape)
+[^3]: [wine-staging](https://wiki.winehq.org/Download)
+[^4]: [wine dependencies](https://github.com/lutris/docs/blob/master/WineDependencies.md)
 
