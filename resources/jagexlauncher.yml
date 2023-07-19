@@ -14,6 +14,7 @@ script:
 
   game:
     exe: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/JagexLauncher.exe
+    prefix: $GAMEDIR
   wine:
     overrides:
       jscript.dll: native
