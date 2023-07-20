@@ -24,7 +24,7 @@ script:
         description: Creating Wine prefix
         name: create_prefix
         prefix: $GAMEDIR
-     - task:
+    - task:
         name: set_regedit
         path: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1
         key: InstallLocation
