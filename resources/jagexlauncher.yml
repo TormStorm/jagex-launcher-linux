@@ -24,6 +24,18 @@ script:
         description: Creating Wine prefix
         name: create_prefix
         prefix: $GAMEDIR
+     - task:
+        name: set_regedit
+        path: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1
+        key: InstallLocation
+        prefix: $GAMEDIR
+        value: C:\\Program Files (x86)\\Jagex Launcher\\Games\\RuneLite
+    - task:
+        name: set_regedit
+        path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneScape Launcher_is1
+        key: InstallLocation
+        prefix: $GAMEDIR
+        value: C:\\Program Files (x86)\\Jagex Launcher\\Games\\RuneScape
     - execute:
         command: |
           set -x
@@ -83,15 +95,3 @@ script:
     - chmodx: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh
     - execute:
         command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/RuneScape.exe"
-    - task:
-        name: set_regedit
-        path: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1
-        key: InstallLocation
-        prefix: $GAMEDIR
-        value: C:\\Program Files (x86)\\Jagex Launcher\\Games\\RuneLite
-    - task:
-        name: set_regedit
-        path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneScape Launcher_is1
-        key: InstallLocation
-        prefix: $GAMEDIR
-        value: C:\\Program Files (x86)\\Jagex Launcher\\Games\\RuneScape
