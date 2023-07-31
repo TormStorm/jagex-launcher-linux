@@ -24,7 +24,12 @@ This repository contains instruction on how to install the Jagex Launcher in Lin
 
 1. Get the requirements from the links above and open Lutris<br>
 2. In the bottom left under `Runners` click on `Wine` and choose `Manage Versions`<br>
-3. Install the latest `lutris-GE-Proton` version. E.g. `lutris-GE-Proton8-10`<br>
+3. Install the latest `lutris-GE-Proton` version. E.g. `lutris-GE-Proton8-12`<br>
+4. You might need to edit the script on line 21 to include whatever version you installed for example:<br>
+   &nbsp;Line 21 might look like <br>
+   &nbsp;`version: lutris-GE-Proton8-12-x86_64`<br>
+   &nbsp;but if you installed lutris-GE-Proton8-15, change it to look like <br>
+   &nbsp;`version: lutris-GE-Proton8-15-x86_64`
 4. Click the `+` in the top left corner of Lutris and select `Install from a local install script`<br>
 5. Follow the on screen instructions leaving the installation directory as default 
 
