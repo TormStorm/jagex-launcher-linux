@@ -18,7 +18,6 @@ script:
   wine:
     overrides:
       jscript.dll: native
-    version: lutris-GE-Proton8-10-x86_64
   installer:
     - task:
         description: Creating Wine prefix
@@ -41,7 +40,7 @@ script:
     - execute:
         command: |
           set -x
-          # Run the installer using the wine version set in the installer script and override jscript .dll in the native version. Start the jagex installer in the background so we can monitor the install directory size.
+          # Run the installer overriding jscript.dll and starting the jagex launcher installer in the background to monitor the install directory size.
           # We need to do this because the gui window freezes normally and does not allow users to close it.
           WINEPREFIX="$GAMEDIR" WINEDLLOVERRIDES="jscript.dll=n" "$WINEBIN" "$jagexlauncher" &
           # Grab the pid of the installer process
@@ -54,7 +53,7 @@ script:
           while true 
           do
               echo "Checking directory size..."
-              # Grab directory size for jagex launcher install directory. This is how we know when to kill the installer window.
+              # Grab directory size for jagex launcher install directory.
               dir_size=$(((du -sh "${GAMEDIR}/drive_c/Program Files (x86)/Jagex Launcher" 2> /dev/null) || echo '0G') | awk '{ print $1 }')
               # Remove the last character from the dir_size so the units don't show
               dir_size=$(echo "$dir_size" | sed 's/.$//')
@@ -64,14 +63,14 @@ script:
                   above_200=$((above_200+1))
               fi
 
-              # If the directory has been above 200M for 20 seconds, then the installer is likely done and we can kill the window.
+              # If the directory has been above 200M for 20 seconds the installer is likely done and we can kill the process.
               if (( $above_200 > 1 )); then
                   kill "$installer_process"
                   break # Exit the while loop
               fi
               sleep 10
           done;
-        description: Leave the installation path default. After you click install, the client will appear to freeze. This is normal. It should quit within 2 minutes and continue. 
+        description: After clicking install the window will appear to freeze, this is expected and it should finish within a couple of minutes
     - task:
         name: winekill
         prefix: $GAMEDIR
