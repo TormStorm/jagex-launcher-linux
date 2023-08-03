@@ -7,7 +7,7 @@ runner: wine
 script:
   files:
     - jagexlauncher: https://cdn.jagex.com/Jagex%20Launcher%20Installer.exe
-    - runelite: https://github.com/runelite/launcher/releases/download/2.6.4/RuneLite.AppImage
+    - runelite: https://github.com/runelite/launcher/releases/download/2.6.7/RuneLite.AppImage
     - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runelite.sh
     - runescape-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runescape.sh
     - steamdeck-config: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/steamdeck-config.properties
