@@ -19,7 +19,6 @@ script:
   wine:
     overrides:
       jscript.dll: native
-    version: lutris-GE-Proton8-12-x86_64
   installer:
     - extract:
         file: prefix
