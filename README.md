@@ -76,16 +76,16 @@ Run the following command: `systemctl restart --user xdg-desktop-portal`<br>
 Navigate to the following directory: `$HOME/Games/jagex-launcher/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape`<br>
 Open `runescape.sh` and change the `PULSE_LATENCY_MSEC`
 
+**The Jagex Launcher UI is too small**<br>
+Open Lutris, right click the Jagex Launcher and select Configure. Open the runner options tab and select `Enable DPI Scaling`
+
+**The RuneLite UI is too small**<br>
+Navigate to the following directory: `$HOME/Games/jagex-launcher/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite`<br>
+Open `runelite.sh` and add `env GDK_SCALE=2` to the start of the command
+
 **Not using Flatpak**<br>
 It is recommended to use flatpak to avoid dependency issues<br>
 You can try to get it working by installing wine staging<sup title="Wine Staging">[^3]</sup> and wine dependencies<sup title="Wine Dependencies">[^4]</sup> but your your success will vary
-
-**(4K/HiDPI) The launcher's UI is too small**<br>
-In Lutris, right click the launcher and select 'Configure', open the 'Runner options' tab, then select 'Enable DPI Scaling'
-
-**(4K/HiDPI) The RuneLite client UI is too small**<br>
-Navigate to the following directory: `$HOME/Games/jagex-launcher/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite`<br>
-Open `runelite.sh`, then add `env GDK_SCALE=2` to the start of the command
 
 ## References
 [^1]: [PSA: Perfect RuneLite settings for Steam Deck](https://www.reddit.com/r/2007scape/comments/yzbuwc/psa_perfect_runelite_settings_for_steam_deck)
