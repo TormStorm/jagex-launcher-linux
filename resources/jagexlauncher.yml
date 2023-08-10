@@ -11,7 +11,8 @@ script:
     - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runelite.sh
     - runescape-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runescape.sh
     - steamdeck-config: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/steamdeck-config.properties
-    - prefix: https://public-bucket-caution1.s3.amazonaws.com/prefix.tar.gz
+    - gecko: https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86_64.msi
+    - gecko_32: https://dl.winehq.org/wine/wine-gecko/2.47.3/wine-gecko-2.47.3-x86.msi        
 
   game:
     exe: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/JagexLauncher.exe
@@ -19,10 +20,11 @@ script:
   wine:
     overrides:
       jscript.dll: native
+    version: lutris-GE-Proton8-13-x86_64
   installer:
-    - extract:
-        file: prefix
-        dst: $GAMEDIR
+    - task:
+        name: create_prefix
+        prefix: "$GAMEDIR"
     - task:
         name: set_regedit
         type: REG_SZ
@@ -40,6 +42,12 @@ script:
     - execute:
         command: |
           set -e
+
+          # Install gecko
+          mkdir -p "$XDG_CACHE_HOME/wine"
+          mv "$gecko" "$XDG_CACHE_HOME/wine/"
+          mv "$gecko_32" "$XDG_CACHE_HOME/wine/"
+
           # Run the installer overriding jscript.dll and starting the jagex launcher installer in the background to monitor the install directory size.
           # We need to do this because the gui window freezes normally and does not allow users to close it.
           WINEPREFIX="$GAMEDIR" WINEDLLOVERRIDES="jscript.dll=n" "$WINEBIN" "$jagexlauncher" &
@@ -85,7 +93,7 @@ script:
         name: winekill
         prefix: $GAMEDIR
     - execute:
-        command: mkdir "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/"
+        command: mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/"
         description: Creating game directory
     - merge:
         src: runelite
