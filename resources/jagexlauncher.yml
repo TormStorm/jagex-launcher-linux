@@ -50,7 +50,7 @@ script:
 
           # Run the installer overriding jscript.dll and starting the jagex launcher installer in the background to monitor the install directory size.
           # We need to do this because the gui window freezes normally and does not allow users to close it.
-          WINEPREFIX="$GAMEDIR" WINEDLLOVERRIDES="jscript.dll=n" "$WINEBIN" "$jagexlauncher" &
+          WINEPREFIX="$GAMEDIR" WINEARCH=win64 WINEDLLOVERRIDES="jscript.dll=n" "$WINEBIN" "$jagexlauncher" &
           # Grab the pid of the installer process
           installer_process="$!"
 
