@@ -1,7 +1,7 @@
-![](https://runescape.wiki/images/thumb/Jagex_Launcher_icon.png/150px-Jagex_Launcher_icon.png)
+![](https://runescape.wiki/images/thumb/Jagex_Launcher_icon.png/128px-Jagex_Launcher_icon.png)
 # Jagex Launcher Linux
 
-This repository contains instruction on how to install the Jagex Launcher in Linux to play RuneScape and Old School RuneScape. It also automatically sets up the Flatpak RuneScape client and RuneLite. For more information visit the [jagex-launcher-linux Wiki](https://github.com/TormStorm/jagex-launcher-linux/wiki)<br>
+This repository contains instruction on how to install the Jagex Launcher in Linux to play RuneScape and Old School RuneScape. It also sets up the Flatpak RuneScape client and RuneLite
 
 ## Jagex Launcher
 
@@ -20,7 +20,7 @@ This repository contains instruction on how to install the Jagex Launcher in Lin
 2. Click the `+` in the top left corner of Lutris and select `Install from a local install script`<br>
 3. Follow the on screen instructions leaving the installation directory as default<br>
 
-To play RuneScape simply install it from FlatHub<br>
+- To play RuneScape simply install it from FlatHub<br>
 
 ### Steam Deck
 
@@ -42,3 +42,6 @@ If you are using RuneLite on the Steam Deck you can import a properties file to 
 2. Click `import profile` navigate to `$HOME/Games/jagex-launcher` and open `steamdeck-config.properties`
 3. Double-click the imported profile to select it
 
+### Additional information
+
+For more information visit the [jagex-launcher-linux Wiki](https://github.com/TormStorm/jagex-launcher-linux/wiki)<br>
