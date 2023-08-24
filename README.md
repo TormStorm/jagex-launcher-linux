@@ -10,6 +10,7 @@ This repository contains instruction on how to install the Jagex Launcher in Lin
 * [Flatpak](https://www.flatpak.org/setup)<br>
 * [Lutris](https://flathub.org/apps/net.lutris.Lutris)<br>
 * [Installation script](https://github.com/TormStorm/jagex-launcher-linux/blob/main/resources/jagexlauncher.yml)<br>
+* [Nvidia Offloader]
 
 ### Installation
 
@@ -21,7 +22,13 @@ This repository contains instruction on how to install the Jagex Launcher in Lin
 3. Follow the on screen instructions leaving the installation directory as default<br>
 
 - To play RuneScape simply install it from FlatHub<br>
+- Runescape will run on the intel graphics card
 
+### To use the nvidia GPU 
+ - Enable Nvidia offloader
+       -- create a new 10-nvidia.conf in /etc/X11/xorg.conf.d/
+       -- Reboot
+       -- Verify that the configration worked using __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia glxinfo | grep "OpenGL vendor" : you should the output "NVIDIA Corporation" 
 ### Steam Deck
 
 > **Note**<br>
