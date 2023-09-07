@@ -1,2 +1,2 @@
 #!/bin/sh
-flatpak run dev.hdos.HDOS
+java -jar "$(pwd)"/Games/HDOS/hdos-launcher.jar
