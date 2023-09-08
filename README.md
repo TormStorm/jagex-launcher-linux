@@ -1,7 +1,7 @@
 ![](https://runescape.wiki/images/thumb/Jagex_Launcher_icon.png/128px-Jagex_Launcher_icon.png)
 # Jagex Launcher Linux
 
-This repository contains instruction on how to install the Jagex Launcher in Linux to play RuneScape and Old School RuneScape. It also sets up the Flatpak RuneScape client and RuneLite
+This repository contains instruction on how to install the Jagex Launcher in Linux to play RuneScape and Old School RuneScape
 
 ## Jagex Launcher
 
@@ -13,19 +13,18 @@ This repository contains instruction on how to install the Jagex Launcher in Lin
 
 ### Installation
 
-> **Note**<br>
-> After clicking install the window will appear to freeze, this is expected and it should finish within a couple of minutes<br>
-
 1. Get the requirements from the links above and open Lutris<br>
 2. Click the `+` in the top left corner of Lutris and select `Install from a local install script`<br>
 3. Follow the on screen instructions leaving the installation directory as default<br>
 
-- To play RuneScape simply install it from FlatHub<br>
+### Game Clients
+
+After installing the Jagex Launcher you can install the following clients:
+
+RuneScape: `flatpak install flathub com.jagex.RuneScape`<br>
+HDOS: `flatpak install flathub dev.hdos.HDOS`<br>
 
 ### Steam Deck
-
-> **Note**<br>
-> It is recommended to install a remote desktop application to make the installation easier<br>
 
 Switch to desktop mode by pressing steam, power, switch to desktop and then follow the instructions above<br>
 Once the installation has completed do the following steps:<br>
