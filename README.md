@@ -21,8 +21,8 @@ This repository contains instruction on how to install the Jagex Launcher in Lin
 
 After installing the Jagex Launcher you can install the following clients:
 
-RuneLite: RuneLite is installed with the Jagex Launcher<br>
 RuneScape: `flatpak install flathub com.jagex.RuneScape`<br>
+RuneLite: `flatpak install flathub net.runelite.RuneLite`<br>
 HDOS: `flatpak install flathub dev.hdos.HDOS`<br>
 
 ### Steam Deck
