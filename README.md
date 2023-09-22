@@ -44,4 +44,4 @@ If you are using RuneLite on the Steam Deck you can import a properties file to 
 
 ### Additional information
 
-For more information visit the [jagex-launcher-linux Wiki](https://github.com/TormStorm/jagex-launcher-linux/wiki)<br>
+For additional information and troubleshooting visit the [jagex-launcher-linux wiki](https://github.com/TormStorm/jagex-launcher-linux/wiki)<br>
