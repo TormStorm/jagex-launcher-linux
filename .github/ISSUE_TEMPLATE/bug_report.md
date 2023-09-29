@@ -23,10 +23,8 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, add screenshots to help explain your problem.
 
-**Please complete the following information:**
- - Distro
- - Desktop environment or Window Manager
- - Version
+**Hardware information**
+In Lutris click the hamburger menu and select preferences, hardware information and copy this.
 
 **Additional context**
 Add any other context about the problem here.
