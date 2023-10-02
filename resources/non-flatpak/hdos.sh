@@ -1,2 +1,2 @@
 #!/bin/sh
-"$(pwd)"/Games/HDOS/hdos-launcher.jar java -jar
+java -jar "$(pwd)"/Games/HDOS/hdos-launcher.jar
