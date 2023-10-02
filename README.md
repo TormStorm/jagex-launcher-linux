@@ -32,8 +32,8 @@ HDOS: `flatpak install flathub dev.hdos.HDOS`<br>
 
 #### Non-Flatpak
 
-If you are using the non-flatpak installation script all of the clients except for RuneScape are pre-installed<br>
-To play RuneScape simply download it from the Jagex Launcher<br>
+If you are using the non-flatpak installation script all of the third-party clients are pre-installed<br>
+To play the official clients simply download them from the Jagex Launcher<br>
 
 ### Steam Deck
 
