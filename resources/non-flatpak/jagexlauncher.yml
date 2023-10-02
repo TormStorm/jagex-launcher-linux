@@ -7,12 +7,12 @@ runner: wine
 script:
   files:
     - jagexlauncher: https://cdn.jagex.com/Jagex%20Launcher%20Installer.exe
-    - runescape-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runescape.sh
+    - runelite: https://github.com/runelite/launcher/releases/download/2.6.8/RuneLite.AppImage
     - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runelite.sh
+    - hdos: https://cdn.hdos.dev/launcher/latest/hdos-launcher.jar
     - hdos-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/hdos.sh
-    - steamdeck-config: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/steamdeck-config.properties
     - gecko: https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86_64.msi
-    - gecko_32: https://dl.winehq.org/wine/wine-gecko/2.47.3/wine-gecko-2.47.3-x86.msi        
+    - gecko_32: https://dl.winehq.org/wine/wine-gecko/2.47.3/wine-gecko-2.47.3-x86.msi
 
   game:
     exe: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/JagexLauncher.exe
@@ -106,11 +106,9 @@ script:
         command: mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/"
         description: Creating game directory
     - merge:
-        src: runescape-launcher
-        dst: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape
-    - chmodx: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh
-    - execute:
-        command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/RuneScape.exe"
+        src: runelite
+        dst: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite"
+    - chmodx: runelite
     - merge:
         src: runelite-launcher
         dst: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite
@@ -118,8 +116,9 @@ script:
     - execute:
         command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/RuneLite.exe"
     - merge:
-        src: steamdeck-config
-        dst: $GAMEDIR
+        src: hdos
+        dst: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/HDOS"
+    - chmodx: hdos
     - merge:
         src: hdos-launcher
         dst: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/HDOS
