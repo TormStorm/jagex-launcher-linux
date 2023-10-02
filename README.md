@@ -9,23 +9,36 @@ This repository contains instruction on how to install the Jagex Launcher in Lin
 
 * [Flatpak](https://www.flatpak.org/setup)<br>
 * [Lutris](https://flathub.org/apps/net.lutris.Lutris)<br>
-* [Installation script](https://github.com/TormStorm/jagex-launcher-linux/blob/main/resources/jagexlauncher.yml)<br>
+* [Installation script](https://github.com/TormStorm/jagex-launcher-linux/tree/testing/resources)<br>
 
 ### Installation
 
+There are two versions of the installation script, flatpak and non-flatpak<br>
+We recommend using the flatpak unless you are on a Steam Deck or are having issues with flatpak<br>
+
 1. Get the requirements from the links above and open Lutris<br>
-2. Click the `+` in the top left corner of Lutris and select `Install from a local install script`<br>
+2. Click the `+` in the top left corner of Lutris, select `Install from a local install script` and navigate to `jagexlauncher.yml`<br>
 3. Follow the on screen instructions leaving the installation directory as default<br>
 
 ### Game Clients
 
-After installing the Jagex Launcher you can install the following clients:
+#### Flatpak
+
+If you are using the flatpak installation script you can install the following clients:
 
 RuneScape: `flatpak install flathub com.jagex.RuneScape`<br>
 RuneLite: `flatpak install flathub net.runelite.RuneLite`<br>
 HDOS: `flatpak install flathub dev.hdos.HDOS`<br>
 
+#### Non-Flatpak
+
+If you are using the non-flatpak installation script all of the clients except for RuneScape are pre-installed<br>
+To play RuneScape simply download it from the Jagex Launcher<br>
+
 ### Steam Deck
+
+> [!IMPORTANT]<br>
+> You need to use the non-flatpak installation script on the Steam Deck<br>
 
 Switch to desktop mode by pressing steam, power, switch to desktop and then follow the instructions above<br>
 Once the installation has completed do the following steps:<br>
@@ -38,9 +51,10 @@ Once the installation has completed do the following steps:<br>
 
 If you are using RuneLite on the Steam Deck you can import a properties file to set it up automatically<br>
 
-1. Launch RuneLite, open the configuration menu and select the profiles tab<br>
-2. Click `import profile` navigate to `$HOME/Games/jagex-launcher` and open `steamdeck-config.properties`
-3. Double-click the imported profile to select it
+1. Download the [steamdeck-config file](https://github.com/TormStorm/jagex-launcher-linux/blob/testing/resources/steamdeck-config.properties)
+2. Launch RuneLite, open the configuration menu and select the profiles tab<br>
+3. Click `import profile` navigate to `$HOME/Games/jagex-launcher` and open `steamdeck-config.properties`
+4. Double-click the imported profile to select it
 
 ### Additional information
 
