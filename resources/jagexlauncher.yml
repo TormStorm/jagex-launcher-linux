@@ -7,130 +7,122 @@ runner: wine
 script:
   files:
     - jagexlauncher: https://cdn.jagex.com/Jagex%20Launcher%20Installer.exe
-    - runelite: https://github.com/runelite/launcher/releases/download/2.6.4/RuneLite.AppImage
+    - runescape-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runescape.sh
+    - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runelite.sh
+    - hdos-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/hdos.sh
+    - steamdeck-config: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/steamdeck-config.properties
+    - gecko: https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86_64.msi
+    - gecko_32: https://dl.winehq.org/wine/wine-gecko/2.47.3/wine-gecko-2.47.3-x86.msi        
 
   game:
     exe: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/JagexLauncher.exe
+    prefix: $GAMEDIR
   wine:
     overrides:
       jscript.dll: native
+    version: lutris-GE-Proton8-15-x86_64
   installer:
     - task:
-        description: Creating Wine prefix
         name: create_prefix
-        prefix: $GAMEDIR
+        prefix: "$GAMEDIR"
     - task:
-        description: Leave the installation path as default and advance through the dialogue. After clicking install the installer will appear to freeze. This is expected, and the installer still works in the background. After waiting about one minute you can close the Jagex Launcher with the following command "ps aux | grep 'cache/lutris/installer/jagex-launcher/jagexlauncher/' | grep -v grep | awk '{print $2}' | xargs kill"
-        executable: $GAMEDIR/drive_c/windows/explorer.exe
-        args: jagexlauncher
-        include_processes: explorer.exe
-        name: wineexec
+        name: set_regedit
         prefix: $GAMEDIR
-        overrides:
-          jscript.dll: native
+        path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneScape Launcher_is1
+        key: InstallLocation
+        type: REG_SZ
+        value: C:\\Program Files (x86)\\Jagex Launcher\\Games\\RuneScape
+    - task:
+        name: set_regedit
+        type: REG_SZ
+        path: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1
+        key: InstallLocation
+        prefix: $GAMEDIR
+        value: C:\\Program Files (x86)\\Jagex Launcher\\Games\\RuneLite
+    - task:
+        name: set_regedit
+        type: REG_SZ
+        path: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\HDOS Launcher_is1
+        key: InstallLocation
+        prefix: $GAMEDIR
+        value: C:\\Program Files (x86)\\Jagex Launcher\\Games\\HDOS
+    - execute:
+        command: |
+          set -e
+
+          if [ -n "$XDG_CACHE_HOME" ]; then
+              mkdir -p "$XDG_CACHE_HOME/wine"
+              mv "$gecko" "$XDG_CACHE_HOME/wine/"
+              mv "$gecko_32" "$XDG_CACHE_HOME/wine/"
+          else
+              echo "XDG_CACHE_HOME is not set. Letting wine handle gecko installation."
+          fi
+
+          # Run the installer overriding jscript.dll and starting the jagex launcher installer in the background to monitor the install directory size.
+          # We need to do this because the gui window freezes normally and does not allow users to close it.
+          WINEPREFIX="$GAMEDIR" WINEARCH=win64 WINEDLLOVERRIDES="jscript.dll=n" "$WINEBIN" "$jagexlauncher" &
+          # Grab the pid of the installer process
+          installer_process="$!"
+
+          above_200=0
+
+           echo "PID of install process is $installer_process. Beginning installation..."
+
+            while true 
+            do
+                # Checking if installer is still running
+                if ps -p $installer_process > /dev/null
+                then
+                    echo "$installer_process is still running. Continuing to check directory..."
+                else
+                    echo "$installer_process appears to have quit. Ending loop."
+                    break
+                fi
+                echo "Checking directory size..."
+                # Grab directory size for jagex launcher install directory.
+                dir_size=$(((du -sh "${GAMEDIR}/drive_c/Program Files (x86)/Jagex Launcher" 2> /dev/null) || echo '0G') | awk '{ print $1 }')
+                # Remove the last character from the dir_size so the units don't show
+                dir_size=$(echo "$dir_size" | sed 's/.$//')
+
+                # If the directory size is above 200M, then add one to the above_200 variable
+                if (( $dir_size > 200 )); then
+                    above_200=$((above_200+1))
+                fi
+
+                # If the directory is over 200M the installer is likely done and we can kill the process.
+                if (( $above_200 > 1 )); then
+                    echo "Installation complete. Killing $installer_process"
+                    kill "$installer_process"
+                    break # Exit the while loop
+                fi
+
+                sleep 10
+            done;
+        description: After clicking install the window will appear to freeze, this is expected and it should finish within a couple of minutes
     - task:
         name: winekill
         prefix: $GAMEDIR
     - execute:
-        command: mkdir "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/"
+        command: mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/"
         description: Creating game directory
     - merge:
-        src: runelite
-        dst: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite"
-    - chmodx: runelite
-    - write_file:
-        file: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh
-        content: |
-          #!/bin/sh
-          cd "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite"
-          ./RuneLite.AppImage --appimage-extract-and-run
-    - chmodx: "$GAMEDIR/drive_c/Program\ Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh"
-    - execute:
-        command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/RuneLite.exe"
-    - write_file:
-        file: "$GAMEDIR/steamdeck-config.properties"
-        content: |
-          runelite.automaticResizeType=KEEP_WINDOW_SIZE
-          runelite.blockExtraMouseButtons=true
-          runelite.clientBounds=0\:0\:1288\:807
-          runelite.clientMaximized=true
-          runelite.containInScreen2=NEVER
-          runelite.dragHotkey=0\:512
-          runelite.entityhiderplugin=false
-          runelite.flashNotification=DISABLED
-          runelite.fontType=SMALL
-          runelite.gameAlwaysOnTop=false
-          runelite.gameSize=1002x776
-          runelite.groundmarkerplugin=true
-          runelite.hdplugin=true
-          runelite.idlenotifierplugin=false
-          runelite.infoBoxSize=35
-          runelite.infoBoxTextOutline=false
-          runelite.infoBoxVertical=false
-          runelite.infoboxFontType=REGULAR
-          runelite.interfaceFontType=REGULAR
-          runelite.itemidentificationplugin=false
-          runelite.lockWindowSize=true
-          runelite.menuentryswapperplugin=true
-          runelite.metronomeplugin=false
-          runelite.miningplugin=true
-          runelite.motherlodeplugin=true
-          runelite.notificationFlashColor=1191116800
-          runelite.notificationFocused=true
-          runelite.notificationGameMessage=false
-          runelite.notificationRequestFocus=OFF
-          runelite.notificationSound=CUSTOM
-          runelite.notificationTimeout=2000
-          runelite.notificationTray=true
-          runelite.overlayBackgroundColor=-1673118414
-          runelite.panelToggleKey=123\:128
-          runelite.partyplugin2=true
-          runelite.pcrewardsplugin=false
-          runelite.pickpockethelperplugin=false
-          runelite.rememberScreenBounds=true
-          runelite.sidebarToggleKey=122\:128
-          runelite.slayerplugin=true
-          runelite.statusbarsplugin=true
-          runelite.tileindicatorsplugin=true
-          runelite.tooltipFontType=SMALL
-          runelite.tooltipPosition=UNDER_CURSOR
-          runelite.trayIcon=true
-          runelite.uiEnableCustomChrome=true
-          runelite.uiWindowOpacity=100
-          runelite.useWikiItemPrices=true
-          runelite.usernameInTitle=true
-          runelite.warningOnExit=LOGGED_IN
-          runelite.wintertodtnotificationsplugin=false
-          runelite.xpglobesplugin=true
-    - write_file:
-        file: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh"
-        content: |
-          #!/bin/sh
-          set -e
-          flatpak run --env=PULSE_LATENCY_MSEC=200 \
-              --env='vblank_mode=0' \
-              --env='MESA_GL_VERSION_OVERRIDE=4.5FC' \
-              com.jagex.RuneScape || \
-          flatpak-spawn --host flatpak run \
-              --env=PULSE_LATENCY_MSEC=200 \
-              --env='vblank_mode=0' \
-              --env='MESA_GL_VERSION_OVERRIDE=4.5FC' \
-              --env=JX_ACCESS_TOKEN="$JX_ACCESS_TOKEN" \
-              --env=JX_CHARACTER_ID="$JX_CHARACTER_ID" \
-              --env=JX_DISPLAY_NAME="$JX_DISPLAY_NAME" \
-              --env=JX_REFRESH_TOKEN="$JX_REFRESH_TOKEN" \
-              --env=JX_SESSION_ID="$JX_SESSION_ID" \
-              com.jagex.RuneScape
-    - chmodx: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh"
+        src: runescape-launcher
+        dst: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape
+    - chmodx: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh
     - execute:
         command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/runescape.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneScape/RuneScape.exe"
-    - task:
-        name: set_regedit
-        path: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1
-        key: InstallLocation
-        value: C:\\Program Files (x86)\\Jagex Launcher\\Games\\RuneLite
-    - task:
-        name: set_regedit
-        path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneScape Launcher_is1
-        key: InstallLocation
-        value: C:\\Program Files (x86)\\Jagex Launcher\\Games\\RuneScape
+    - merge:
+        src: runelite-launcher
+        dst: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite
+    - chmodx: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh
+    - execute:
+        command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/RuneLite.exe"
+    - merge:
+        src: steamdeck-config
+        dst: $GAMEDIR
+    - merge:
+        src: hdos-launcher
+        dst: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/HDOS
+    - chmodx: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/HDOS/hdos.sh
+    - execute:
+        command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/HDOS/hdos.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/HDOS/HDOS.exe"
