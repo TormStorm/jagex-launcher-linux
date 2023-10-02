@@ -8,9 +8,9 @@ script:
   files:
     - jagexlauncher: https://cdn.jagex.com/Jagex%20Launcher%20Installer.exe
     - runelite: https://github.com/runelite/launcher/releases/download/2.6.8/RuneLite.AppImage
-    - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runelite.sh
+    - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/non-flatpak/runelite.sh
     - hdos: https://cdn.hdos.dev/launcher/latest/hdos-launcher.jar
-    - hdos-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/hdos.sh
+    - hdos-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/non-flatpak/hdos.sh
     - gecko: https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86_64.msi
     - gecko_32: https://dl.winehq.org/wine/wine-gecko/2.47.3/wine-gecko-2.47.3-x86.msi
 
@@ -25,13 +25,6 @@ script:
     - task:
         name: create_prefix
         prefix: "$GAMEDIR"
-    - task:
-        name: set_regedit
-        prefix: $GAMEDIR
-        path: HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneScape Launcher_is1
-        key: InstallLocation
-        type: REG_SZ
-        value: C:\\Program Files (x86)\\Jagex Launcher\\Games\\RuneScape
     - task:
         name: set_regedit
         type: REG_SZ
