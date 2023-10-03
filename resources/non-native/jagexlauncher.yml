@@ -8,9 +8,9 @@ script:
   files:
     - jagexlauncher: https://cdn.jagex.com/Jagex%20Launcher%20Installer.exe
     - runelite: https://github.com/runelite/launcher/releases/download/2.6.8/RuneLite.AppImage
-    - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/testing/resources/non-flatpak/runelite.sh
+    - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/testing/resources/non-native/runelite.sh
     - hdos: https://cdn.hdos.dev/launcher/latest/hdos-launcher.jar
-    - hdos-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/testing/resources/non-flatpak/hdos.sh
+    - hdos-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/testing/resources/non-native/hdos.sh
     - gecko: https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86_64.msi
     - gecko_32: https://dl.winehq.org/wine/wine-gecko/2.47.3/wine-gecko-2.47.3-x86.msi
 

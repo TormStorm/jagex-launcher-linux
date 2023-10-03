@@ -7,9 +7,9 @@ runner: wine
 script:
   files:
     - jagexlauncher: https://cdn.jagex.com/Jagex%20Launcher%20Installer.exe
-    - runescape-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/testing/resources/flatpak/runescape.sh
-    - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/testing/resources/flatpak/runelite.sh
-    - hdos-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/testing/resources/flatpak/hdos.sh
+    - runescape-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/testing/resources/native/runescape.sh
+    - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/testing/resources/native/runelite.sh
+    - hdos-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/testing/resources/native/hdos.sh
     - gecko: https://dl.winehq.org/wine/wine-gecko/2.47.4/wine-gecko-2.47.4-x86_64.msi
     - gecko_32: https://dl.winehq.org/wine/wine-gecko/2.47.3/wine-gecko-2.47.3-x86.msi
 
