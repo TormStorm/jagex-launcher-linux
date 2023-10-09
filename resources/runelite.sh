@@ -1,2 +1,2 @@
 #!/bin/sh
-java -jar "$(pwd)"/Games/HDOS/RuneLite.jar
+java -jar "$(pwd)"/Games/RuneLite/RuneLite.jar
