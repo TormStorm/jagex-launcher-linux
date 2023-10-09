@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Jagex Launcher
-Icon=
-Exec=env LUTRIS_SKIP_INIT=1 flatpak run net.lutris.Lutris lutris:rungameid/1
-Categories=Game
