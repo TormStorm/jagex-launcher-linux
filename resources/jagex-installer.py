@@ -42,7 +42,7 @@ def download_and_gzip_deflate(url, filename):
         with open(filename, 'wb') as output_file:
             output_file.write(decompressed_data)
 
-        print("Decompressed data saved to:", filename)
+        print("Decompressed data saved to: {}".format(filename))
     else:
         print(f"Failed to download file: {response.status_code}")
 
