@@ -22,7 +22,7 @@ script:
       jscript.dll: native
   installer:
     - input_menu:
-        description: 'This setup script is NOT associated with Jagex. Use at your own risk. Also, ensure you have read, understand, and accept the EULA here: https://www.jagex.com/en-GB/terms/eula'
+        description: 'This setup script is NOT associated with Jagex. Use at your own risk. You also must read, understand, and accept the EULA here: https://www.jagex.com/en-GB/terms/eula'
         id: EULA
         options:
         - accept: "I accept"
