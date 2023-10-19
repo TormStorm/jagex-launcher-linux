@@ -84,6 +84,11 @@ def decode_base64(encoded_str):
     except binascii.Error:
         print("An error occurred: Incorrect padding or corrupted data.")
         return None
+def cleanup():
+    for p in Path(".").glob("*.solidpiece"):
+        p.unlink()
+    for p in Path(".").glob("combined_file"):
+        p.unlink()
 
 def main():
     # TODO make this grab the latest release instead of hard-coding, although this should work for awhile since the launcher auto-updates itself on launch.
@@ -183,3 +188,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    cleanup()
