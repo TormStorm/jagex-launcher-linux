@@ -20,7 +20,6 @@ script:
   wine:
     overrides:
       jscript.dll: native
-    version: wine-ge-8-20-x86_64
   installer:
     - input_menu:
         description: 'Confirm you have read, understand, and accept the EULA here: https://www.jagex.com/en-GB/terms/eula'
