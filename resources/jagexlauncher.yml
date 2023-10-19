@@ -31,9 +31,9 @@ script:
     - execute:
         command: |
             if [ "$INPUT_EULA" = "accept" ]; then
-                echo "EULA accepted. Continuing with installation..."
+                echo "Terms acknowledged. Continuing with installation..."
             else
-                echo "EULA must be accepted before continuing. Quitting installation..."
+                echo "Terms must be acknowledged before continuing. Quitting installation..."
                 exit 1
             fi
     - task:
