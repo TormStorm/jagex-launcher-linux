@@ -17,7 +17,7 @@ from hashlib import sha256
 import datetime
 
 url_template = "http://jagex-akamai.aws.snxd.com/direct6/launcher-win/pieces/{}/{}.solidpiece"
-dirname = os.path.dirname(__file__)
+dirname = os.getcwd()
 
 def mkdir_p(path):
     try:
