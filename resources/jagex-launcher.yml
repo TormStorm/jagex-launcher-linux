@@ -8,7 +8,7 @@ script:
   files:
     - installer: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/installer.py
     - requirements: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/requirements.txt
-    - runelite: https://github.com/runelite/launcher/releases/download/2.6.8/RuneLite.jar
+    - runelite: https://github.com/runelite/launcher/releases/download/2.6.9/RuneLite.jar
     - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runelite.sh
     - hdos: https://cdn.hdos.dev/launcher/latest/hdos-launcher.jar
     - hdos-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/hdos.sh
