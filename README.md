@@ -13,10 +13,10 @@ I am not responsible for the maintenance and safety of content produced and host
 
 * [Flatpak](https://www.flatpak.org/setup)<br>
 * [Lutris v0.5.14](https://flathub.org/apps/net.lutris.Lutris)<br>
-* [Installation script](https://github.com/TormStorm/jagex-launcher-linux/blob/main/resources/jagex-launcher.yml)<br>
+* [Latest release source code](https://github.com/TormStorm/jagex-launcher-linux/releases/)<br>
 
-1. Get the requirements from the links above and open Lutris<br>
-2. Click the `+` in the top left corner of Lutris, select `Install from a local install script`<br>
+1. Get the requirements from the links above and extract the source code<br>
+2. Open Lutris, click the `+` in the top left corner and select `Install from a local install script`<br>
 3. Follow the on screen instructions leaving the installation directory as default<br>
 
 ### Game Clients
