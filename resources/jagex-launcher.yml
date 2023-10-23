@@ -6,13 +6,13 @@ runner: wine
 
 script:
   files:
-    - installscript: https://raw.githubusercontent.com/nmlynch94/jagex-launcher-linux/main/resources/jagex-installer.py
-    - pythonrequirements: https://raw.githubusercontent.com/nmlynch94/jagex-launcher-linux/main/resources/requirements.txt
+    - installer: https://raw.githubusercontent.com/nmlynch94/jagex-launcher-linux/main/resources/installer.py
+    - requirements: https://raw.githubusercontent.com/nmlynch94/jagex-launcher-linux/main/resources/requirements.txt
     - runelite: https://github.com/runelite/launcher/releases/download/2.6.8/RuneLite.jar
     - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runelite.sh
     - hdos: https://cdn.hdos.dev/launcher/latest/hdos-launcher.jar
     - hdos-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/hdos.sh
-    - steamdeck-config: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/steamdeck-config.properties
+    - steamdeck-settings: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/steamdeck-settings.properties
 
   game:
     exe: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/JagexLauncher.exe
@@ -24,18 +24,18 @@ script:
     - execute:
         command: xdg-open "https://www.jagex.com/en-GB/terms/eula"
     - input_menu:
-        description: 'This setup script is NOT associated with Jagex. Use at your own risk. You also must read, understand, and accept the EULA here: https://www.jagex.com/en-GB/terms/eula'
+        description: 'This is an unofficial installer, use is at your own risk. Please read the following licence agreement carefully: https://www.jagex.com/en-GB/terms/eula'
         id: EULA
         options:
-        - accept: "I accept"
-        - deny: "I do not accept"
-        preselect: deny
+        - accept: "Accept"
+        - decline: "Decline"
+        preselect: decline
     - execute:
         command: |
             if [ "$INPUT_EULA" = "accept" ]; then
-                echo "Terms acknowledged. Continuing with installation..."
+                echo "End user licence agreement accepted, continuing installation..."
             else
-                echo "Terms must be acknowledged before continuing. Quitting installation..."
+                echo "End user licence agreement must be accepted before continuing, quitting installation..."
                 exit 1
             fi
     - task:
@@ -62,8 +62,8 @@ script:
             cd "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher"
             python -m venv env
             source env/bin/activate
-            python -m pip install -r "$pythonrequirements"
-            python "$installscript"
+            python -m pip install -r "$requirements"
+            python "$installer"
         description: Installing the jagex-launcher files
     - task:
         name: winekill
@@ -92,5 +92,5 @@ script:
     - execute:
         command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/HDOS/hdos.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/HDOS/HDOS.exe"
     - merge:
-        src: steamdeck-config
+        src: steamdeck-settings
         dst: $GAMEDIR
