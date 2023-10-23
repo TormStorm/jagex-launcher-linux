@@ -12,7 +12,7 @@ I am not responsible for the maintenance and safety of content produced and host
 ### Requirements
 
 * [Flatpak](https://www.flatpak.org/setup)<br>
-* [Lutris](https://flathub.org/apps/net.lutris.Lutris)<br>
+* [Lutris v0.5.14](https://flathub.org/apps/net.lutris.Lutris)<br>
 * [Installation script](https://github.com/TormStorm/jagex-launcher-linux/blob/testing/resources/jagexlauncher.yml)<br>
 
 1. Get the requirements from the links above and open Lutris<br>
