@@ -21,8 +21,8 @@ I am not responsible for the maintenance and safety of content produced and host
 
 ### Game Clients
 
-All of the third-party clients are pre-installed<br>
-You can play the official clients by download them from the Jagex Launcher<br>
+The official clients can be played by download them from the Jagex Launcher<br>
+All of the officially approved third party clients are automatically installed<br>
 
 ### Steam Deck
 
