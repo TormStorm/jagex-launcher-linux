@@ -1,0 +1,11 @@
+certifi==2023.7.22
+cffi==1.16.0
+charset-normalizer==3.3.0
+cryptography==41.0.4
+Deprecated==1.2.14
+idna==3.4
+jwcrypto==1.5.0
+pycparser==2.21
+requests==2.31.0
+urllib3==2.0.7
+wrapt==1.15.0

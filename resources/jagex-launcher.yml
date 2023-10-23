@@ -1,0 +1,102 @@
+name: Jagex Launcher
+game_slug: jagex-launcher
+version: Installer
+slug: jagex-launcher-installer
+runner: wine
+
+script:
+  files:
+    - installer: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/installer.py
+    - requirements: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/requirements.txt
+    - runelite: https://github.com/runelite/launcher/releases/download/2.6.8/RuneLite.jar
+    - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runelite.sh
+    - hdos: https://cdn.hdos.dev/launcher/latest/hdos-launcher.jar
+    - hdos-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/hdos.sh
+    - steamdeck-settings: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/steamdeck-settings.properties
+
+  game:
+    exe: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/JagexLauncher.exe
+    prefix: $GAMEDIR
+  wine:
+    overrides:
+      jscript.dll: native
+  installer:
+    - execute:
+        command: xdg-open "https://www.jagex.com/en-GB/terms/eula"
+    - input_menu:
+        description: 'This is an unofficial installer, use is at your own risk. Please read the following licence agreement carefully: https://www.jagex.com/en-GB/terms/eula'
+        id: EULA
+        options:
+        - accept: "Accept"
+        - decline: "Decline"
+        preselect: decline
+    - execute:
+        command: |
+            if [ "$INPUT_EULA" = "accept" ]; then
+                echo "End user licence agreement accepted, continuing installation..."
+            else
+                echo "End user licence agreement must be accepted before continuing, quitting installation..."
+                exit 1
+            fi
+    - task:
+        name: create_prefix
+        prefix: "$GAMEDIR"
+    - task:
+        name: set_regedit
+        type: REG_SZ
+        path: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1
+        key: InstallLocation
+        prefix: $GAMEDIR
+        value: C:\\Program Files (x86)\\Jagex Launcher\\Games\\RuneLite
+    - task:
+        name: set_regedit
+        type: REG_SZ
+        path: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\HDOS Launcher_is1
+        key: InstallLocation
+        prefix: $GAMEDIR
+        value: C:\\Program Files (x86)\\Jagex Launcher\\Games\\HDOS
+    - execute:
+        command: |
+            # Adding this duplicate check for the EULA, because otherwise the user could go back, and then forward in the installer and lutris skips that check for some reason.
+            if [ "$INPUT_EULA" = "accept" ]; then
+                echo "End user licence agreement accepted, continuing installation..."
+            else
+                echo "End user licence agreement must be accepted before continuing, quitting installation..."
+                exit 1
+            fi
+            mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher"
+            cd "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher"
+            python -m venv env
+            source env/bin/activate
+            python -m pip install -r "$requirements"
+            python "$installer"
+        description: Installing the jagex-launcher files
+    - task:
+        name: winekill
+        prefix: $GAMEDIR
+    - execute:
+        command: mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/"
+        description: Creating game directory
+    - merge:
+        src: runelite
+        dst: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite"
+    - chmodx: runelite
+    - merge:
+        src: runelite-launcher
+        dst: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite
+    - chmodx: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh
+    - execute:
+        command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/runelite.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/RuneLite/RuneLite.exe"
+    - merge:
+        src: hdos
+        dst: "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/HDOS"
+    - chmodx: hdos
+    - merge:
+        src: hdos-launcher
+        dst: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/HDOS
+    - chmodx: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/HDOS/hdos.sh
+    - execute:
+        command: ln -s "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/HDOS/hdos.sh" "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/Games/HDOS/HDOS.exe"
+    - merge:
+        src: steamdeck-settings
+        dst: $GAMEDIR
