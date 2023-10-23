@@ -57,7 +57,13 @@ script:
         value: C:\\Program Files (x86)\\Jagex Launcher\\Games\\HDOS
     - execute:
         command: |
-            set -x
+            # Adding this duplicate check for the EULA, because otherwise the user could go back, and then forward in the installer and lutris skips that check for some reason.
+            if [ "$INPUT_EULA" = "accept" ]; then
+                echo "End user licence agreement accepted, continuing installation..."
+            else
+                echo "End user licence agreement must be accepted before continuing, quitting installation..."
+                exit 1
+            fi
             mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher"
             cd "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher"
             python -m venv env
