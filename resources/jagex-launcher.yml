@@ -6,13 +6,13 @@ runner: wine
 
 script:
   files:
-    - installer: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/installer.py
-    - requirements: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/requirements.txt
+    - installer: https://github.com/TormStorm/jagex-launcher-linux/releases/download/v1.0.0/installer.py
+    - requirements: https://github.com/TormStorm/jagex-launcher-linux/releases/download/v1.0.0/requirements.txt
     - runelite: https://github.com/runelite/launcher/releases/download/2.6.9/RuneLite.jar
-    - runelite-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/runelite.sh
+    - runelite-launcher: https://github.com/TormStorm/jagex-launcher-linux/releases/download/v1.0.0/runelite.sh
     - hdos: https://cdn.hdos.dev/launcher/latest/hdos-launcher.jar
-    - hdos-launcher: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/hdos.sh
-    - steamdeck-settings: https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/steamdeck-settings.properties
+    - hdos-launcher: https://github.com/TormStorm/jagex-launcher-linux/releases/download/v1.0.0/hdos.sh
+    - steamdeck-settings: https://github.com/TormStorm/jagex-launcher-linux/releases/download/v1.0.0/steamdeck-settings.properties
 
   game:
     exe: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/JagexLauncher.exe
