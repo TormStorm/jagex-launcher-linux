@@ -15,6 +15,14 @@ I am not responsible for the maintenance and safety of content produced and host
 * [Lutris v0.5.14](https://flathub.org/apps/net.lutris.Lutris)<br>
 * [Latest project release](https://github.com/TormStorm/jagex-launcher-linux/releases/)<br>
 
+* Python 3 and Python 3 venv
+
+For Ubuntu users:
+```
+$ sudo apt install -y python3 python3-venv
+```
+---
+
 1. Get the requirements from the links above and extract the source code<br>
 2. Open Lutris, click the `+` in the top left corner and select `Install from a local install script`<br>
 3. Select `jagex-launcher.yml`  and follow the on screen instructions leaving the installation directory as default<br>

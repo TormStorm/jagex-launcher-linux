@@ -66,10 +66,10 @@ script:
             fi
             mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher"
             cd "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher"
-            python -m venv env
+            python3 -m venv env
             source env/bin/activate
-            python -m pip install -r "$requirements"
-            python "$installer"
+            python3 -m pip install -r "$requirements"
+            python3 "$installer"
         description: Installing the jagex-launcher files
     - task:
         name: winekill
