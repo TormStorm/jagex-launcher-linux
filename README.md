@@ -1,5 +1,5 @@
 ![](https://runescape.wiki/images/thumb/Jagex_Launcher_icon.png/128px-Jagex_Launcher_icon.png)
-# Jagex Launcher Linux ![GitHub all releases](https://img.shields.io/github/downloads/TormStorm/jagex-launcher-linux/total) ![Discord](https://img.shields.io/discord/828918474784768010)
+# Jagex Launcher Linux [![GitHub all releases](https://img.shields.io/github/downloads/TormStorm/jagex-launcher-linux/total)](https://github.com/TormStorm/jagex-launcher-linux/releases) [![Discord](https://img.shields.io/discord/828918474784768010)](https://discord.gg/aX7GT2Mkdu)
 
 This repository contains instruction on how to install the Jagex Launcher in Linux to play RuneScape and Old School RuneScape<br>
 
