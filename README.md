@@ -1,23 +1,22 @@
 ![](https://runescape.wiki/images/thumb/Jagex_Launcher_icon.png/128px-Jagex_Launcher_icon.png)
-# Jagex Launcher Linux
+# Jagex Launcher Linux ![GitHub all releases](https://img.shields.io/github/downloads/TormStorm/jagex-launcher-linux/total) ![Discord](https://img.shields.io/discord/828918474784768010)
 
-This repository contains instruction on how to install the Jagex Launcher in Linux to play RuneScape and Old School RuneScape
-
-## Disclaimer
-
-I am not responsible for the maintenance and safety of content produced and hosted by third parties and any use of third-party sites is at your own risk
+This repository contains instruction on how to install the Jagex Launcher in Linux to play RuneScape and Old School RuneScape<br>
 
 ## Jagex Launcher
+
+> [!WARNING]  
+> I am not affiliated with Jagex and is not responsible for the maintenance and safety of content produced and hosted by third parties. Any use of third-party sites is at your own risk
 
 ### Requirements
 
 * [Flatpak](https://www.flatpak.org/setup)<br>
-* [Lutris v0.5.14](https://flathub.org/apps/net.lutris.Lutris)<br>
-* [Latest project release](https://github.com/TormStorm/jagex-launcher-linux/releases/)<br>
+* [Lutris Flatpak](https://flathub.org/apps/net.lutris.Lutris)<br>
+* [Latest Repo Release](https://github.com/TormStorm/jagex-launcher-linux/releases/)<br>
 
-1. Get the requirements from the links above and extract the source code<br>
+1. Get the requirements from the links above and extract the compressed file<br>
 2. Open Lutris, click the `+` in the top left corner and select `Install from a local install script`<br>
-3. Select `jagex-launcher.yml`  and follow the on screen instructions leaving the installation directory as default<br>
+3. Navigate to the extracted folder, select `jagex-launcher.yml`  and follow the on screen instructions<br>
 
 ### Game Clients
 
