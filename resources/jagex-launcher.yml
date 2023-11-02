@@ -13,7 +13,7 @@ script:
     - hdos: https://cdn.hdos.dev/launcher/latest/hdos-launcher.jar
     - hdos-launcher: https://github.com/TormStorm/jagex-launcher-linux/releases/download/v1.0.0/hdos.sh
     - steamdeck-settings: https://github.com/TormStorm/jagex-launcher-linux/releases/download/v1.0.0/steamdeck-settings.properties
-  require-binaries: python3, pip3
+  require-binaries: python3
   game:
     exe: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/JagexLauncher.exe
     prefix: $GAMEDIR
