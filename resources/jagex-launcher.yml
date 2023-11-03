@@ -13,7 +13,7 @@ script:
     - hdos: https://cdn.hdos.dev/launcher/latest/hdos-launcher.jar
     - hdos-launcher: https://github.com/TormStorm/jagex-launcher-linux/releases/download/v1.0.0/hdos.sh
     - steamdeck-settings: https://github.com/TormStorm/jagex-launcher-linux/releases/download/v1.0.0/steamdeck-settings.properties
-
+  require-binaries: python3
   game:
     exe: $GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher/JagexLauncher.exe
     prefix: $GAMEDIR
@@ -30,14 +30,6 @@ script:
         - accept: "Accept"
         - decline: "Decline"
         preselect: decline
-    - execute:
-        command: |
-            if [ "$INPUT_EULA" = "accept" ]; then
-                echo "End user licence agreement accepted, continuing installation..."
-            else
-                echo "End user licence agreement must be accepted before continuing, quitting installation..."
-                exit 1
-            fi
     - task:
         name: create_prefix
         prefix: "$GAMEDIR"
@@ -66,10 +58,10 @@ script:
             fi
             mkdir -p "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher"
             cd "$GAMEDIR/drive_c/Program Files (x86)/Jagex Launcher"
-            python -m venv env
+            python3 -m venv env
             source env/bin/activate
-            python -m pip install -r "$requirements"
-            python "$installer"
+            python3 -m pip install -r "$requirements"
+            python3 "$installer"
         description: Installing the jagex-launcher files
     - task:
         name: winekill
