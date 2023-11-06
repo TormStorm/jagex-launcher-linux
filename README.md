@@ -12,9 +12,9 @@ This repository contains instruction on how to install the Jagex Launcher in Lin
 
 * [Flatpak](https://www.flatpak.org/setup)<br>
 * [Lutris Flatpak](https://flathub.org/apps/net.lutris.Lutris)<br>
-* [Latest Repo Release](https://github.com/TormStorm/jagex-launcher-linux/releases/)<br>
+* [Latest Release](https://github.com/TormStorm/jagex-launcher-linux/releases/)<br>
 
-1. Get the requirements from the links above and extract the compressed file<br>
+1. Get the requirements from the links above and extract the compressed source code file<br>
 2. Open Lutris, click the `+` in the top left corner and select `Install from a local install script`<br>
 3. Navigate to the extracted folder, select `jagex-launcher.yml`  and follow the on screen instructions<br>
 
@@ -42,4 +42,4 @@ If you are using RuneLite on the Steam Deck you can import a properties file to 
 
 ### Additional information
 
-For additional information and troubleshooting visit the [Jagex Launcher Linux Wiki](https://github.com/TormStorm/jagex-launcher-linux/wiki)<br>
+For more information and troubleshooting visit the [Jagex Launcher Linux Wiki](https://github.com/TormStorm/jagex-launcher-linux/wiki)<br>
