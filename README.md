@@ -5,8 +5,8 @@ This repository contains instruction on how to install the Jagex Launcher in Lin
 
 ## Jagex Launcher
 
-> [!WARNING]  
-> I am not affiliated with Jagex and is not responsible for the maintenance and safety of content produced and hosted by third parties. Any use of third-party sites is at your own risk
+> [!IMPORTANT]  
+> You will need to have a Jagex Account in order to access the Jagex Launcher
 
 ### Requirements
 
@@ -43,3 +43,6 @@ If you are using RuneLite on the Steam Deck you can import a properties file to 
 ### Additional information
 
 For more information and troubleshooting visit the [Jagex Launcher Linux Wiki](https://github.com/TormStorm/jagex-launcher-linux/wiki)<br>
+
+> [!WARNING]  
+> I am not affiliated with Jagex and is not responsible for the maintenance and safety of content produced and hosted by third parties. Any use of third-party sites is at your own risk
