@@ -21,8 +21,6 @@ script:
     overrides:
       jscript.dll: native
   installer:
-    - execute:
-        command: xdg-open "https://www.jagex.com/en-GB/terms/eula"
     - input_menu:
         description: 'This is an unofficial installer, use is at your own risk. Please read the following licence agreement carefully: https://www.jagex.com/en-GB/terms/eula'
         id: EULA
