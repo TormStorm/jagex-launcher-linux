@@ -10,7 +10,7 @@ This repository contains instruction on how to install the Jagex Launcher in Lin
 
 ### Official Jagex Launcher
 
-Download the [official Jagex Launcher](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher/releases) as a Flatpak by nmlynch94 and install it with the following command:<br>
+Download the [Jagex Launcher](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher/releases) as a Flatpak by nmlynch94 and install it with the following command:<br>
 ```
 flatpak install --user flathub org.gnome.Platform.Compat.i386//45 && flatpak install --user jagexlauncher.flatpak
 ```
