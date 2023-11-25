@@ -1,3 +1,11 @@
+---
+name: Feature request
+about: Suggest an idea for this project
+title: ''
+labels: ''
+assignees: ''
+
+---
 
 This is for feature requests on the Lutris script<br>
 For requests on other project linked on this repository please report it to their respective GitHub pages
