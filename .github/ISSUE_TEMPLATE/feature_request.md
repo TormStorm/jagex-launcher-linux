@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-This is for feature requests on the Lutris script<br>
+This is for feature requests on the Lutris script
 For requests on other project linked on this repository please report it to their respective GitHub pages
 
 ---
