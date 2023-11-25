@@ -1,3 +1,7 @@
+
+This is for bug reports on the Lutris script<br>
+For issues on other project linked on this repository please report it to their respective GitHub pages
+
 ---
 name: Bug report
 about: Create a report to help us improve
