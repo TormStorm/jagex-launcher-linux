@@ -3,25 +3,27 @@
 
 This repository contains instruction on how to install the Jagex Launcher in Linux to play RuneScape and Old School RuneScape<br>
 
-## Jagex Launcher
-
 > [!IMPORTANT]  
-> You will need to have a Jagex Account in order to access the Jagex Launcher
+> You need a Jagex Account in order to access the Jagex Launcher
 
-### Official Jagex Launcher
+## Official Jagex Launcher
 
-Download the [Jagex Launcher](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher/releases) as a Flatpak by nmlynch94 and install it with the following command:<br>
+Download the latest [Jagex Launcher Flatpak](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher/releases) and install it with the following command:<br>
 ```
-flatpak install --user flathub org.gnome.Platform.Compat.i386//45 && flatpak install --user jagexlauncher.flatpak
+curl -s https://raw.githubusercontent.com/nmlynch94/com.jagexlauncher.JagexLauncher/main/install-jagex-launcher.sh | bash
 ```
-### Third-party Jagex Launcher
+For more information visit nmlynch94's [GitHub page](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher)
 
-Alternatively you can install a native [third-party Jagex Launcher](https://github.com/flathub/com.adamcake.Bolt) by Adamcake with the following command:<br>
+## Third-party launcher
+
+Alternatively you can install a native third-party launcher from [Flathub](https://flathub.org/setup) with the following command:<br>
 ```
 flatpak install flathub com.adamcake.Bolt
 ```
 
-### Steam Deck
+For more information visit adamcake's [Flathub page](https://github.com/flathub/com.adamcake.Bolt)
+
+## Steam Deck
 
 Install BoilR from the discover store<br>
 Select Import Games and make sure the Jagex Launcher is checked<br>
