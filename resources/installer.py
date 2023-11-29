@@ -93,10 +93,23 @@ def cleanup():
 def main():
     # TODO make this grab the latest release instead of hard-coding, although this should work for awhile since the launcher auto-updates itself on launch.
     # That piece reliably on linux.
-    metafile_url = "http://jagex-akamai.aws.snxd.com/direct6/launcher-win/metafile/d589817a9dbde1cb1c6f1cde1e81b5284db1c5d0617577e3c3b987406ca2b50b/metafile.json"
+    metafile_url_template = "http://jagex-akamai.aws.snxd.com/direct6/launcher-win/metafile/{}/metafile.json"
     # This is the fingerprint of the certificate that signed the JWT we are using from the jagex CDN so we can validate we are trusting the right certificate chain.
     JAGEX_PACKAGE_CERTIFICATE_SHA256_HASH = "848bae7e92dc58570db50cdfc933a78204c1b00f05d64f753a307ebbaed2404f"
 
+    catalog_url = "https://jagex.akamaized.net/direct6/launcher-win/alias.json"
+
+    catalog_json = requests.get(catalog_url)
+
+    metafile_url = metafile_url_template.format(json.loads(catalog_json.content)['launcher-win.production'])
+
+    print('Latest metafile_url: {}'.format(metafile_url))
+
+    metafile_json = requests.get(metafile_url)
+
+    jwt = metafile_json.content.strip()
+    jwt = jwcrypto.jwt.JWT(jwt=jwt.decode("ascii"))
+    
     # Load and deserialize JWT
     jwt = requests.get(metafile_url).content.strip()
     jwt = jwcrypto.jwt.JWT(jwt=jwt.decode("ascii"))
