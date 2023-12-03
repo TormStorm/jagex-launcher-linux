@@ -33,11 +33,12 @@ For more information visit adamcake's [Flathub page](https://github.com/flathub/
 
 ## Steam Deck
 
-Install BoilR from the discover store<br>
-Select Import Games and make sure the Jagex Launcher is checked<br>
-Click the import games button on the bottom left and restart steam<br>
-Rename the Steam entry to RuneScape if playing RuneScape or OSRS if playing Old School RuneScape<br>
-Press the steam button, controller settings, browse community layouts and select a controller layout<br>
+Open the application menu and right click on "Jagex Launcher" in the "Games" category  
+Select "Add to Steam"  
+Rename the Steam entry to RuneScape if playing RuneScape or OSRS if playing Old School RuneScape  
+Switch to Gaming Mode by logging out  
+Your new shortcut should now be in your library under "Non-Steam"  
+After launching, press the steam button and you can browse community layouts under "Controller Settings" to configure your controls  
 
 ### Additional information
 
