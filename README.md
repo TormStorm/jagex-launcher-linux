@@ -32,10 +32,10 @@ flatpak install flathub com.adamcake.Bolt
 For more information visit adamcake's [Flathub page](https://github.com/flathub/com.adamcake.Bolt)
 
 ## Steam Deck
-Switch to the desktop and open the application menu. Right click the Jagex Launcher under games and select add to Steam<br>
+Switch to the desktop and open the application menu. Right click the Jagex Launcher and select add to Steam<br>
 Switch back to Gaming Mode, your new shortcut should now be in your library under `Non-Steam`<br>
-Rename the Steam entry to RuneScape if playing RuneScape or OSRS if playing Old School RuneScape<br>
-You can configure your controls by going to the game's controller settings and browse community layouts
+Rename the Steam entry to `RuneScape` if playing RuneScape or `OSRS` if playing Old School RuneScape<br>
+You can configure your controls by going into the game's controller settings and browse community layouts
 
 ### Additional information
 
