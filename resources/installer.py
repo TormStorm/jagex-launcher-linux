@@ -107,11 +107,8 @@ def main():
 
     metafile_json = requests.get(metafile_url)
 
-    jwt = metafile_json.content.strip()
-    jwt = jwcrypto.jwt.JWT(jwt=jwt.decode("ascii"))
-    
     # Load and deserialize JWT
-    jwt = requests.get(metafile_url).content.strip()
+    jwt = metafile_json.content.strip()
     jwt = jwcrypto.jwt.JWT(jwt=jwt.decode("ascii"))
 
     # Deserialize the leaf certificate and validate the fingerprint of the certificate
