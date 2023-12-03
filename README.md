@@ -8,16 +8,23 @@ This repository contains instruction on how to install the Jagex Launcher in Lin
 
 ## Official Jagex Launcher
 
-There are multiple Flatpak packages available for the Jagex Launcher.
+There are multiple Flatpaks available, we recommend using this one from USA-RedDragon:
+```
+curl -fSsL https://raw.githubusercontent.com/USA-RedDragon/jagex-launcher-flatpak/main/install.sh | bash
+```
+For more information visit USA-RedDragon's [GitHub page](https://github.com/USA-RedDragon/jagex-launcher-flatpak)<br>
+<br>
 
-- <https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher>
-- <https://github.com/USA-RedDragon/jagex-launcher-flatpak>
 
-See the relevant repositories for installation instructions.
+Alternatively you can use nmlynch94's Flatpak:
+```
+wget https://raw.githubusercontent.com/nmlynch94/com.jagexlauncher.JagexLauncher/main/install-jagex-launcher.sh && bash install-jagex-launcher.sh && rm install-jagex-launcher.sh
+```
+For more information visit nmlynch94's [GitHub page](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher)
 
 ## Third-party launcher
 
-Alternatively you can install a native third-party launcher from [Flathub](https://flathub.org/setup) with the following command:<br>
+If you want to use a native third-party launcher you can install Bolt:<br>
 ```
 flatpak install flathub com.adamcake.Bolt
 ```
