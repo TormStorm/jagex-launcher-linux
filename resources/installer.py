@@ -7,6 +7,7 @@ from pathlib import Path
 import errno
 import base64
 from hashlib import sha256
+import binascii
 
 url_template = "https://jagex.akamaized.net/direct6/launcher-win/pieces/{}/{}.solidpiece"
 dirname = os.getcwd()
