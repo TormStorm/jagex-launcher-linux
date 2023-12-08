@@ -1,13 +1,12 @@
-import requests
-import json
 import base64
+import binascii
+import errno
 import gzip
+from hashlib import sha256
+import json
 import os
 from pathlib import Path
-import errno
-import base64
-from hashlib import sha256
-import binascii
+from urllib.request import urlopen, Request
 
 url_template = "https://jagex.akamaized.net/direct6/launcher-win/pieces/{}/{}.solidpiece"
 dirname = os.getcwd()
@@ -24,12 +23,21 @@ def mkdir_p(path):
 def get_abs_path(relative_path):
     return os.path.join(dirname, relative_path)
 
+def http_get(url):
+    if not url.startswith("https"):
+        raise Exception("Only HTTPS is supported.")
+    with urlopen(Request(url)) as response:
+        return {
+            "status_code": response.status,
+            "content": response.read()
+        }
+
 def download_gzip_deflate_and_validate(url, filename, digest):
     print ("Downloading file from: {}".format(url))
-    response = requests.get(url)
-    if response.status_code == 200:
+    response = http_get(url)
+    if response["status_code"] == 200:
         # Remove the first 6 bytes from the file. There is a set of what appear to be proprietary magic bytes placed here in the header, I assume something Solid State Network's DIRECT protocol uses.
-        content = response.content[6:]
+        content = response["content"][6:]
 
         with open(filename, 'wb') as f:
             f.write(content)
@@ -55,14 +63,14 @@ def download_gzip_deflate_and_validate(url, filename, digest):
 
         print("Decompressed data saved to:", filename)
     else:
-        print(f"Failed to download file: {response.status_code}")
+        print(f"Failed to download file: {response['status_code']}")
 
 def fetch_metafile(url):
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.content.decode()
+    response = http_get(url)
+    if response["status_code"] == 200:
+        return response["content"].decode()
     else:
-        raise Exception(f"Failed to fetch metafile, status code: {response.status_code}")
+        raise Exception(f"Failed to fetch metafile, status code: {response['status_code']}")
 
 def decode_base64(encoded_str):
     try:
@@ -88,13 +96,13 @@ def main():
 
     catalog_url = "https://jagex.akamaized.net/direct6/launcher-win/alias.json"
 
-    catalog_json = requests.get(catalog_url)
+    catalog_json = http_get(catalog_url)
 
-    metafile_url = metafile_url_template.format(json.loads(catalog_json.content)['launcher-win.production'])
+    metafile_url = metafile_url_template.format(json.loads(catalog_json["content"])['launcher-win.production'])
 
     print('Latest metafile_url: {}'.format(metafile_url))
 
-    metafile_json = json.loads(requests.get(metafile_url).content)
+    metafile_json = json.loads(http_get(metafile_url)["content"])
 
     try:
         global digest_list
