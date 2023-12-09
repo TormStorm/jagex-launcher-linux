@@ -37,6 +37,14 @@ Switch back to Gaming Mode, your new shortcut should now be in your library unde
 Rename the Steam entry to `RuneScape` if playing RuneScape or `OSRS` if playing Old School RuneScape<br>
 You can configure your controls by going into the game's controller settings and browse community layouts
 
+If you are using RuneLite on the Steam Deck you can import a [properties file](https://github.com/TormStorm/jagex-launcher-linux/blob/main/resources/steamdeck-settings.properties) to set it up automatically<br>
+
+Install [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal) and open it. Select the Jagex Launcher and enable `All user files` under Filesystem<br>
+Launch RuneLite, open the configuration menu and select the profiles tab<br>
+Click `import profile` navigate to your download folder and open `steamdeck-config.properties`<br>
+Double-click the imported profile to select it<br>
+Open Flatseal again, select the Jagex Launcher and disable `All user files`<br>
+
 ### Additional information
 
 For more information and troubleshooting visit the [Jagex Launcher Linux Wiki](https://github.com/TormStorm/jagex-launcher-linux/wiki)
