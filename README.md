@@ -7,29 +7,26 @@ This repository contains instruction on how to install the Jagex Launcher in Lin
 > You need a Jagex Account in order to access the Jagex Launcher
 
 ## Official Jagex Launcher
+There are multiple community projects available that you can try<br>
+<br>
 
-There are multiple Flatpaks available, we recommend using this one from USA-RedDragon:
+We recommend using this Flatpak by [USA-RedDragon](https://github.com/USA-RedDragon/jagex-launcher-flatpak)
 ```
 curl -fSsL https://raw.githubusercontent.com/USA-RedDragon/jagex-launcher-flatpak/main/install.sh | bash
 ```
-For more information visit USA-RedDragon's [GitHub page](https://github.com/USA-RedDragon/jagex-launcher-flatpak)<br>
 <br>
 
-
-Alternatively you can use nmlynch94's Flatpak:
+You can also use this Flatpak by [nmlynch94](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher)
 ```
 wget https://raw.githubusercontent.com/nmlynch94/com.jagexlauncher.JagexLauncher/main/install-jagex-launcher.sh && bash install-jagex-launcher.sh && rm install-jagex-launcher.sh
 ```
-For more information visit nmlynch94's [GitHub page](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher)
 
 ## Third-party launcher
 
-If you want to use a native third-party launcher you can install Bolt:<br>
+If you want a native launcher you can install Bolt by [Adamcake](https://github.com/flathub/com.adamcake.Bolt)<br>
 ```
 flatpak install flathub com.adamcake.Bolt
 ```
-
-For more information visit adamcake's [Flathub page](https://github.com/flathub/com.adamcake.Bolt)
 
 ## Steam Deck
 Switch to the desktop and open the application menu. Right click the Jagex Launcher and select add to Steam<br>
