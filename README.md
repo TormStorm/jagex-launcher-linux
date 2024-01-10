@@ -15,18 +15,22 @@ There are multiple community projects available that you can use such as:
 * [Native third-party launcher](https://github.com/flathub/com.adamcake.Bolt) by Adamcake
 
 ## Steam Deck
-Switch to the desktop and open the application menu. Right click the Jagex Launcher and select add to Steam  
-Switch back to Gaming Mode, your new shortcut should now be in your library under `Non-Steam`  
-Rename the Steam entry to `RuneScape` if playing RuneScape or `OSRS` if playing Old School RuneScape  
-You can configure your controls by going into the game's controller settings and browse community layouts  
+Switch to the desktop and open the application menu  
+Right click the Jagex Launcher and select add to Steam, a new shortcut will be added to your library under `NON-STEAM`  
 
-If you are using RuneLite on the Steam Deck you can import a [properties file](https://github.com/TormStorm/jagex-launcher-linux/blob/main/resources/steamdeck-settings.properties) to set it up automatically
+If you are using RuneLite you can import a [properties file](https://github.com/TormStorm/jagex-launcher-linux/blob/main/resources/steamdeck-settings.properties) or log in to set it up automatically  
+While in desktop mode open the Jagex Launcher and start RuneLite  
 
-Install [Flatseal](https://flathub.org/apps/com.github.tchx84.Flatseal) and open it. Select the Jagex Launcher and enable `All user files` under Filesystem  
-Launch RuneLite, open the configuration menu and select the profiles tab  
-Click `import profile` navigate to your download folder and open `steamdeck-config.properties`  
-Double-click the imported profile to select it  
-Open Flatseal again, select the Jagex Launcher and disable `All user files`  
+If you want to import a properties file open the configuration menu and select the profiles tab  
+Click `import profile` navigate to your properties file and open it   
+
+If you have a RuneLite account click the login button at the bottom right of your client  
+A browser will open where you will be able to sign in and automatically import your profiles   
+
+To set up your controls rename the Steam entry to `RuneScape` if playing RuneScape or `OSRS` if playing Old School RuneScape  
+Now you can go into the game's controller settings and browse community layouts or make your own   
+
+If you are using [Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader) you can download a plugin called `SteamGridDB` to add custom artwork to your steam entry  
 
 > [!WARNING]  
 > I am not affiliated with Jagex and is not responsible for the maintenance and safety of content produced and hosted by third parties. Any use of third-party sites is at your own risk
