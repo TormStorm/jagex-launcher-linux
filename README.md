@@ -4,25 +4,24 @@
 This repository contains community projects to install the Jagex Launcher and use Jagex Accounts in Linux     
 If you have any questions feel free to join my [Discord server](https://discord.gg/aX7GT2Mkdu)  
 
-### Official Jagex Launcher
+### Jagex Launcher
 
 Community projects that package the official Jagex Launcher   
 
 * [USA-RedDragon/jagex-launcher-flatpak](https://github.com/USA-RedDragon/jagex-launcher-flatpak)
 * [nmlynch94/com.jagexlauncher.JagexLauncher](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher)
 
-### Third-party launcher
+### Bolt Launcher
 
-Native third-party alternative to the Jagex Launcher (recommended)
+Native third-party alternative to the Jagex Launcher
 
-* [Bolt Launcher - flathub/com.adamcake.Bolt](https://github.com/flathub/com.adamcake.Bolt)
+* [Adamcake/Bolt](https://bolt.adamcake.com)
 
 
 ## Steam Deck
-Install one of the community projects above
-
-For the Official Jagex Launcher projects via Wine, install by following the instructions in the README for those repos  
-For the Bolt Launcher, install through the Discover Store (easiest method)  
+Install one of the community projects above  
+For the Official Jagex Launcher install it by following the instructions in the README of the respective repo  
+For the Bolt Launcher install it through the Discover app (recommended)  
 
 Switch to desktop mode and open the application menu. Right click the Jagex Launcher or Bolt and select add to Steam  
 A new Steam entry will be added to your library under `NON-STEAM`  
