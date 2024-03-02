@@ -15,10 +15,15 @@ Community projects that package the official Jagex Launcher
 
 Native third-party alternative to the Jagex Launcher (recommended)
 
-* [flathub/com.adamcake.Bolt](https://github.com/flathub/com.adamcake.Bolt)
+* [Bolt Launcher - flathub/com.adamcake.Bolt](https://github.com/flathub/com.adamcake.Bolt)
 
 
 ## Steam Deck
+Install one of the community projects above
+
+For the Official Jagex Launcher projects via Wine, install by following the instructions in the README for those repos  
+For the Bolt Launcher, install through the Discover Store (easiest method)  
+
 Switch to desktop mode and open the application menu. Right click the Jagex Launcher and select add to Steam  
 A new Steam entry will be added to your library under `NON-STEAM`  
 
