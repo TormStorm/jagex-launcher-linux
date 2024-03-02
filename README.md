@@ -24,7 +24,7 @@ Install one of the community projects above
 For the Official Jagex Launcher projects via Wine, install by following the instructions in the README for those repos  
 For the Bolt Launcher, install through the Discover Store (easiest method)  
 
-Switch to desktop mode and open the application menu. Right click the Jagex Launcher and select add to Steam  
+Switch to desktop mode and open the application menu. Right click the Jagex Launcher or Bolt and select add to Steam  
 A new Steam entry will be added to your library under `NON-STEAM`  
 
 Rename the Steam entry to `RuneScape` if playing RuneScape or `OSRS` if playing Old School RuneScape  
