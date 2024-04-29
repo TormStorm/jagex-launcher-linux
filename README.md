@@ -11,11 +11,21 @@ Community projects that package the official Jagex Launcher
 * [USA-RedDragon/jagex-launcher-flatpak](https://github.com/USA-RedDragon/jagex-launcher-flatpak)
 * [nmlynch94/com.jagexlauncher.JagexLauncher](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher)
 
+<img src="https://www.jagex.com/images/launcher-preview-large-os-202309.jpg" width=750px>
+
 ### Bolt Launcher
 
 Native third-party alternative to the Jagex Launcher
 
 * [Adamcake/Bolt](https://bolt.adamcake.com)
+
+<img src="https://github.com/TormStorm/jagex-launcher-linux/assets/35997481/fd372776-7869-4a8a-bab3-9a531b8a8648" width=750px>
+
+### Old installation methods
+
+Install the official Jagex Launcher manually or via Lutris
+
+* [TormStorm/jagex-launcher-linux/wiki/old-installation-methods](https://github.com/TormStorm/jagex-launcher-linux/wiki/old-installation-methods)
 
 
 ## Steam Deck
@@ -41,11 +51,6 @@ Click `import profile` navigate to your properties file and open it
 
 To log in to your RuneLite account click the login button at the bottom right of your client  
 A browser will open where you will be able to sign in and import your profiles  
-
-#### Additional information
-
-You can find additional information like the old installation methods on the [wiki](https://github.com/TormStorm/jagex-launcher-linux/wiki)
-
 
 > [!WARNING]  
 > I am not affiliated with Jagex and is not responsible for the maintenance and safety of content produced and hosted by third parties. Any use of third-party sites is at your own risk
