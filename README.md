@@ -11,7 +11,7 @@ Community projects that package the official Jagex Launcher
 * [USA-RedDragon/jagex-launcher-flatpak](https://github.com/USA-RedDragon/jagex-launcher-flatpak)
 * [nmlynch94/com.jagexlauncher.JagexLauncher](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher)
 
-<img src="https://www.jagex.com/images/launcher-preview-large-os-202309.jpg" width=750px>
+<img src="https://github.com/TormStorm/jagex-launcher-linux/assets/35997481/8cf8913f-b0c9-4d16-9eb5-2e7e6847f433" width=750px>
 
 ### Bolt Launcher
 
@@ -19,14 +19,13 @@ Native third-party alternative to the Jagex Launcher
 
 * [Adamcake/Bolt](https://bolt.adamcake.com)
 
-<img src="https://github.com/TormStorm/jagex-launcher-linux/assets/35997481/fd372776-7869-4a8a-bab3-9a531b8a8648" width=750px>
+<img src="https://github.com/TormStorm/jagex-launcher-linux/assets/35997481/970f4ee0-8e6b-44de-8757-0b995d73f921" width=750px>
 
 ### Old installation methods
 
 Install the official Jagex Launcher manually or via Lutris
 
 * [TormStorm/jagex-launcher-linux/wiki/old-installation-methods](https://github.com/TormStorm/jagex-launcher-linux/wiki/old-installation-methods)
-
 
 ## Steam Deck
 Install one of the community projects above  
