@@ -51,5 +51,17 @@ Click `import profile` navigate to your properties file and open it
 To log in to your RuneLite account click the login button at the bottom right of your client  
 A browser will open where you will be able to sign in and import your profiles  
 
+## Chromebook
+
+Set up [Linux on your Chromebook](https://support.google.com/chromebook/answer/9145439)   
+Open the Linux terminal and run the following command to install Java and Bolt:  
+```
+sudo apt install default-jdk && sudo apt install flatpak && flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo && flatpak install flathub com.adamcake.Bolt
+```
+Run Bolt from the terminal:   
+```
+flatpak run com.adamcake.Bolt --no-sandbox
+```
+
 > [!WARNING]  
 > I am not affiliated with Jagex and is not responsible for the maintenance and safety of content produced and hosted by third parties. Any use of third-party sites is at your own risk
