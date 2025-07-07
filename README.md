@@ -4,52 +4,73 @@
 This repository contains community projects to install the Jagex Launcher and use Jagex Accounts in Linux     
 If you have any questions feel free to join my [Discord server](https://discord.gg/aX7GT2Mkdu)  
 
-### Jagex Launcher
+### [USA-RedDragon/jagex-launcher-flatpak](https://github.com/USA-RedDragon/jagex-launcher-flatpak)   
+<img src="https://github.com/user-attachments/assets/6d0024d8-fff0-432d-be5d-c0cb3cf3f8b6" width="20"> Installs the Official Jagex Launcher which runs through Wine  
+<img src="https://github.com/user-attachments/assets/989790d0-1a47-489d-a666-a46c31148295" width="20"> The New Official Client runs through Wine and is installable via the Jagex Launcher  
+<img src="https://github.com/user-attachments/assets/3021bbfd-2e59-41b1-9df7-d275f6e34c65" width="20"> RuneLite & HDOS run natively but need to be installed separately  
+<img src="https://github.com/user-attachments/assets/d461c72e-1fd4-40f1-8f97-6054d9073fd3" width="20"> The RS3 Client runs natively and is included  
 
-Community projects that package the official Jagex Launcher   
+Install the Flatpak:
+```
+curl -fSsL https://raw.githubusercontent.com/USA-RedDragon/jagex-launcher-linux-flatpak/main/install.sh | bash
+```
+Install RuneLite & HDOS:
+```
+flatpak install --user JagexLauncher com.jagex.Launcher.ThirdParty.RuneLite
+```
+```
+flatpak install --user JagexLauncher com.jagex.Launcher.ThirdParty.HDOS
+```
+Run the Flatpak from the terminal:
+```
+flatpak run com.jagex.Launcher
+```
 
-* [USA-RedDragon/jagex-launcher-flatpak](https://github.com/USA-RedDragon/jagex-launcher-flatpak)
-* [nmlynch94/com.jagexlauncher.JagexLauncher](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher)
+### [nmlynch94/com.jagexlauncher.JagexLauncher](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher)
+<img src="https://github.com/user-attachments/assets/6d0024d8-fff0-432d-be5d-c0cb3cf3f8b6" width="20"> Installs the Official Jagex Launcher which runs through Wine  
+<img src="https://github.com/user-attachments/assets/989790d0-1a47-489d-a666-a46c31148295" width="20"> The New Official Client runs through Wine and is installable via the Jagex Launcher  
+<img src="https://github.com/user-attachments/assets/3021bbfd-2e59-41b1-9df7-d275f6e34c65" width="20"> RuneLite & HDOS run natively and are included  
+<img src="https://github.com/user-attachments/assets/d461c72e-1fd4-40f1-8f97-6054d9073fd3" width="20"> The RS3 Client runs through Wine and is installable via the Jagex Launcher  
 
-<img src="https://github.com/TormStorm/jagex-launcher-linux/assets/35997481/8cf8913f-b0c9-4d16-9eb5-2e7e6847f433" width=750px>
+Install the Flatpak:
+```
+curl -fSsL https://raw.githubusercontent.com/nmlynch94/com.jagexlauncher.JagexLauncher/main/install-jagex-launcher-repo.sh | bash
+```
+Run the Flatpak from the terminal:
+```
+flatpak run com.jagexlauncher.JagexLauncher
+```
+### [Adamcake/Bolt](https://bolt.adamcake.com)
+<img src="https://github.com/user-attachments/assets/201b579c-cfa6-42f3-89a2-dea4b70022be" width="20"> Native third-party Jagex Launcher  
+<img src="https://github.com/user-attachments/assets/989790d0-1a47-489d-a666-a46c31148295" width="20"> The New Official Client runs through Wine and is installable via Bolt  
+<img src="https://github.com/user-attachments/assets/3021bbfd-2e59-41b1-9df7-d275f6e34c65" width="20"> RuneLite & HDOS run natively and are included  
+<img src="https://github.com/user-attachments/assets/d461c72e-1fd4-40f1-8f97-6054d9073fd3" width="20"> The RS3 Client runs natively and is included  
 
-### Bolt Launcher
-
-Native third-party alternative to the Jagex Launcher
-
-* [Adamcake/Bolt](https://bolt.adamcake.com)
-
-<img src="https://github.com/TormStorm/jagex-launcher-linux/assets/35997481/970f4ee0-8e6b-44de-8757-0b995d73f921" width=750px>
-
-### Old installation methods
-
-Install the official Jagex Launcher manually or via Lutris
-
-* [TormStorm/jagex-launcher-linux/wiki/old-installation-methods](https://github.com/TormStorm/jagex-launcher-linux/wiki/old-installation-methods)
+Install the Flatpak:
+```
+flatpak install com.adamcake.Bolt
+```
+Run the Flatpak from the terminal:
+```
+flatpak run com.adamcake.Bolt
+```
 
 ## Steam Deck
-Install one of the community projects above  
-For the Official Jagex Launcher install it by following the instructions in the README of the respective repo  
-For the Bolt Launcher install it through the Discover app (recommended)  
+Switch to desktop mode and install one of the community projects. For new users i would recommend installing Bolt through the Discover app  
+Open the application menu, right click the application you installed and select add to Steam. This will add it to your library under `NON-STEAM`  
 
-Switch to desktop mode and open the application menu. Right click the application and select add to Steam  
-A new Steam entry will be added to your library under `NON-STEAM`  
-
-Rename the Steam entry to `RuneScape` if playing RuneScape or `OSRS` if playing Old School RuneScape  
-Now you can go into the game's controller settings and browse community layouts or make your own   
-
+To search for community controller layouts rename the Steam entry to `RuneScape` if playing RS3 or `OSRS` if playing Old School RuneScape  
 If you use [Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader) you can download `SteamGridDB` to add custom artwork to your Steam entry  
 
 ### RuneLite
 
-You can import a [properties file](https://github.com/TormStorm/jagex-launcher-linux/blob/main/resources/steamdeck-settings.properties) or log in to import your profiles  
-While in desktop mode open the Jagex Launcher and start RuneLite  
+You can import this [properties file](https://github.com/TormStorm/jagex-launcher-linux/blob/main/resources/steamdeck-settings.properties) to get the correct settings for your Steam Deck 
 
-To import a properties file open the configuration menu and select the profiles tab  
-Click `import profile` navigate to your properties file and open it  
+To import a properties file switch to desktop mode, open the Jagex Launcher and start RuneLite  
+Open the configuration menu and select the profiles tab. Click `import profile` and navigate to your properties file  
 
-To log in to your RuneLite account click the login button at the bottom right of your client  
-A browser will open where you will be able to sign in and import your profiles  
+To log in to your RuneLite account switch to desktop mode, open the Jagex Launcher and start RuneLite  
+Click the login button at the bottom right of your client and sign in to your account  
 
 ## Chromebook
 
