@@ -84,5 +84,40 @@ Run Bolt from the terminal:
 flatpak run com.adamcake.Bolt --no-sandbox
 ```
 
+## Troubleshooting
+
+### Audio
+
+Audio may not work outright when utilizing linux distros like Linux Mint, and sometimes Arch. The solutions below will need to be modified for your exact distro but the idea is to find the `sound.properties` file and then append the lines below.
+
+#### RuneLite with JagexLauncher
+
+for `com.jagex.Launcher` with `com.jagex.Launcher.ThirdParty.Runelite`
+
+```sh
+sudo nano ~/.local/share/flatpak/runtime/com.jagex.Launcher.ThirdParty.RuneLite/x86_64/stable/active/files/jre/conf/sound.properties
+```
+```sh
+javax.sound.sampled.Clip=com.sun.media.sound.DirectAudioDeviceProvider
+javax.sound.sampled.Port=com.sun.media.sound.PortMixerProvider
+javax.sound.sampled.SourceDataLine=com.sun.media.sound.DirectAudioDeviceProvider
+javax.sound.sampled.TargetDataLine=com.sun.media.sound.DirectAudioDeviceProvider
+```
+
+#### RuneLite with Bolt
+
+for `net.runelite.RuneLite` from Software Manager / Flatpak
+
+```sh
+sudo nano /var/lib/flatpak/app/net.runelite.RuneLite/x86_64/stable/active/files/jre/conf/sound.properties
+```
+```sh
+javax.sound.sampled.Clip=com.sun.media.sound.DirectAudioDeviceProvider
+javax.sound.sampled.Port=com.sun.media.sound.PortMixerProvider
+javax.sound.sampled.SourceDataLine=com.sun.media.sound.DirectAudioDeviceProvider
+javax.sound.sampled.TargetDataLine=com.sun.media.sound.DirectAudioDeviceProvider
+```
+---
+
 > [!WARNING]  
 > I am not affiliated with Jagex and is not responsible for the maintenance and safety of content produced and hosted by third parties. Any use of third-party sites is at your own risk
