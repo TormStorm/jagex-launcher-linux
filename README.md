@@ -4,28 +4,6 @@
 This repository contains community projects to install the Jagex Launcher and use Jagex Accounts in Linux     
 If you have any questions feel free to join my [Discord server](https://discord.gg/aX7GT2Mkdu)  
 
-### [USA-RedDragon/jagex-launcher-flatpak](https://github.com/USA-RedDragon/jagex-launcher-flatpak)   
-<img src="https://github.com/user-attachments/assets/6d0024d8-fff0-432d-be5d-c0cb3cf3f8b6" width="20"> Installs the Official Jagex Launcher which runs through Wine  
-<img src="https://github.com/user-attachments/assets/989790d0-1a47-489d-a666-a46c31148295" width="20"> The New Official Client runs through Wine and is installable via the Jagex Launcher  
-<img src="https://github.com/user-attachments/assets/3021bbfd-2e59-41b1-9df7-d275f6e34c65" width="20"> RuneLite & HDOS run natively but need to be installed separately  
-<img src="https://github.com/user-attachments/assets/d461c72e-1fd4-40f1-8f97-6054d9073fd3" width="20"> The RS3 Client runs natively and is included  
-
-Install the Flatpak:
-```
-curl -fSsL https://raw.githubusercontent.com/USA-RedDragon/jagex-launcher-linux-flatpak/main/install.sh | bash
-```
-Install RuneLite & HDOS:
-```
-flatpak install --user JagexLauncher com.jagex.Launcher.ThirdParty.RuneLite
-```
-```
-flatpak install --user JagexLauncher com.jagex.Launcher.ThirdParty.HDOS
-```
-Run the Flatpak from the terminal:
-```
-flatpak run com.jagex.Launcher
-```
-
 ### [nmlynch94/com.jagexlauncher.JagexLauncher](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher)
 <img src="https://github.com/user-attachments/assets/6d0024d8-fff0-432d-be5d-c0cb3cf3f8b6" width="20"> Installs the Official Jagex Launcher which runs through Wine  
 <img src="https://github.com/user-attachments/assets/989790d0-1a47-489d-a666-a46c31148295" width="20"> The New Official Client runs through Wine and is installable via the Jagex Launcher  
