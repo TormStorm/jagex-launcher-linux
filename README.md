@@ -18,7 +18,7 @@ Run the Flatpak from the terminal:
 ```
 flatpak run com.jagexlauncher.JagexLauncher
 ```
-### [Adamcake/Bolt](https://bolt.adamcake.com)
+### [Adamcake/Bolt](https://codeberg.org/Adamcake/Bolt)
 <img src="https://github.com/user-attachments/assets/201b579c-cfa6-42f3-89a2-dea4b70022be" width="20"> Native third-party Jagex Launcher  
 <img src="https://github.com/user-attachments/assets/989790d0-1a47-489d-a666-a46c31148295" width="20"> The New Official Client runs through Wine and is installable via Bolt  
 <img src="https://github.com/user-attachments/assets/3021bbfd-2e59-41b1-9df7-d275f6e34c65" width="20"> RuneLite & HDOS run natively and are included  
