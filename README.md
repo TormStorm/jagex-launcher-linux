@@ -4,7 +4,7 @@
 This repository contains community projects to install the Jagex Launcher and use Jagex Accounts in Linux     
 If you have any questions feel free to join my [Discord server](https://discord.gg/aX7GT2Mkdu)  
 
-### [nmlynch94/com.jagexlauncher.JagexLauncher](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher)
+## [nmlynch94/com.jagexlauncher.JagexLauncher](https://github.com/nmlynch94/com.jagexlauncher.JagexLauncher)
 <img src="https://github.com/user-attachments/assets/6d0024d8-fff0-432d-be5d-c0cb3cf3f8b6" width="20"> Installs the Official Jagex Launcher which runs through Wine  
 <img src="https://github.com/user-attachments/assets/989790d0-1a47-489d-a666-a46c31148295" width="20"> The New Official Client runs through Wine and is installable via the Jagex Launcher  
 <img src="https://github.com/user-attachments/assets/3021bbfd-2e59-41b1-9df7-d275f6e34c65" width="20"> RuneLite & HDOS run natively and are included  
@@ -18,7 +18,7 @@ Run the Flatpak from the terminal:
 ```
 flatpak run com.jagexlauncher.JagexLauncher
 ```
-### [Adamcake/Bolt](https://codeberg.org/Adamcake/Bolt)
+## [Adamcake/Bolt](https://codeberg.org/Adamcake/Bolt)
 <img src="https://github.com/user-attachments/assets/201b579c-cfa6-42f3-89a2-dea4b70022be" width="20"> Native third-party Jagex Launcher  
 <img src="https://github.com/user-attachments/assets/989790d0-1a47-489d-a666-a46c31148295" width="20"> The New Official Client runs through Wine and is installable via Bolt  
 <img src="https://github.com/user-attachments/assets/3021bbfd-2e59-41b1-9df7-d275f6e34c65" width="20"> RuneLite & HDOS run natively and are included  
@@ -61,6 +61,16 @@ Run Bolt from the terminal:
 ```
 flatpak run com.adamcake.Bolt --no-sandbox
 ```
+
+## Star History
+
+<a href="https://www.star-history.com/#TormStorm/jagex-launcher-linux&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=TormStorm/jagex-launcher-linux&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=TormStorm/jagex-launcher-linux&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=TormStorm/jagex-launcher-linux&type=date&legend=top-left" />
+ </picture>
+</a>
 
 > [!WARNING]  
 > I am not affiliated with Jagex and is not responsible for the maintenance and safety of content produced and hosted by third parties. Any use of third-party sites is at your own risk
