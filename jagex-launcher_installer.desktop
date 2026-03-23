@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Install Jagex Launcher
+Exec=sh -c 'set -e; script=/tmp/install_script.sh; rm -f "$script"; if curl -fsSL --connect-timeout 60 -o "$script" "https://github.com/tormstorm/jagex-launcher-linux/releases/latest/download/install_script.sh"; then bash "$script"; else echo "Something went wrong, please report this if it is a bug"; read; fi'
+Icon=
+Terminal=true
+Type=Application
+StartupNotify=false
