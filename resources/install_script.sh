@@ -462,12 +462,11 @@ if is_installed; then
 fi
 
 if [[ -d "$BASE_DIR" ]]; then
-  echo "An incomplete Jagex Launcher installation was found."
-  if confirm "Remove it and start over?"; then
+  echo "The Jagex Launcher did not install correctly."
+  if confirm "Remove the installation?"; then
     uninstall
-  else
-    exit 0
   fi
+  exit 0
 fi
 
 do_install
