@@ -13,6 +13,7 @@ PREFIX_DIR="${BASE_DIR}/prefix"
 BIN_DIR="${BASE_DIR}/bin"
 WINE_USER="${USER:-$(id -un)}"
 LOCALAPPDATA_DIR="${PREFIX_DIR}/drive_c/users/${WINE_USER}/AppData/Local"
+RUNELITE_DIR="${LOCALAPPDATA_DIR}/RuneLite"
 HDOS_DIR="${LOCALAPPDATA_DIR}/HDOS"
 JAGEX_DIR="${PREFIX_DIR}/drive_c/Program Files (x86)/Jagex Launcher"
 
@@ -33,6 +34,7 @@ EULA_URL="https://www.jagex.com/en-GB/terms/eula"
 WINE_URL="https://github.com/GloriousEggroll/wine-ge-custom/releases/download/GE-Proton8-26/wine-lutris-GE-Proton8-26-x86_64.tar.xz"
 INSTALLER_URL="https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/main/resources/installer.py"
 JRE_URL="https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.19%2B10/OpenJDK17U-jre_x64_linux_hotspot_17.0.19_10.tar.gz"
+RUNELITE_URL="https://github.com/runelite/launcher/releases/download/2.7.7/RuneLite.jar"
 HDOS_URL="https://cdn.hdos.dev/launcher/latest/hdos-launcher.jar"
 ICON_URL="https://oldschool.runescape.wiki/w/Special:Redirect/file/Jagex_Launcher_icon.png"
 
@@ -128,6 +130,7 @@ create_dirs() {
     "$JRE_DIR" \
     "$PREFIX_DIR" \
     "$BIN_DIR" \
+    "$RUNELITE_DIR" \
     "$HDOS_DIR" \
     "$JAGEX_DIR" \
     "$(dirname "$DESKTOP_FILE")"
@@ -219,6 +222,7 @@ download_files() {
   download_file "Wine runtime" "$WINE_URL" "$WINE_DIR/$(basename "$WINE_URL")"
   download_file "Jagex installer" "$INSTALLER_URL" "$JAGEX_DIR/installer.py"
   download_file "Java runtime" "$JRE_URL" "$JRE_DIR/$(basename "$JRE_URL")"
+  download_file "RuneLite" "$RUNELITE_URL" "$RUNELITE_DIR/RuneLite.jar"
   download_file "HDOS" "$HDOS_URL" "$HDOS_DIR/HDOS.jar"
   download_file "Jagex Launcher icon" "$ICON_URL" "$ICON_FILE"
 }
@@ -274,6 +278,25 @@ install_launcher() {
   rm -f "$installer"
 }
 
+install_runelite() {
+  mkdir -p "$RUNELITE_DIR"
+
+  cat > "$RUNELITE_DIR/RuneLite.exe" <<EOF_RUNELITE
+#!/usr/bin/env bash
+set -euo pipefail
+ROOT="${BASE_DIR}"
+RUNELITE_HOME="${RUNELITE_DIR}"
+mkdir -p "\$RUNELITE_HOME"
+export HOME="\$RUNELITE_HOME"
+export XDG_DATA_HOME="\$RUNELITE_HOME/.local/share"
+export XDG_CONFIG_HOME="\$RUNELITE_HOME/.config"
+export XDG_CACHE_HOME="\$RUNELITE_HOME/.cache"
+exec "\$ROOT/jre/bin/java" -Duser.home="\$RUNELITE_HOME" -jar "\$RUNELITE_HOME/RuneLite.jar" "\$@" -J-Duser.home="\$RUNELITE_HOME"
+EOF_RUNELITE
+
+  chmod +x "$RUNELITE_DIR/RuneLite.exe"
+}
+
 install_hdos() {
   mkdir -p "$HDOS_DIR"
 
@@ -293,10 +316,14 @@ EOF_HDOS
   chmod +x "$HDOS_DIR/HDOS.exe"
 }
 
-register_hdos() {
+register_clients() {
   wine_env
-  local hdos_win
-  hdos_win="$($WINEPATH_BIN -w "$HDOS_DIR")"
+  local runelite_win hdos_win
+  runelite_win="$("$WINEPATH_BIN" -w "$RUNELITE_DIR")"
+  hdos_win="$("$WINEPATH_BIN" -w "$HDOS_DIR")"
+
+  "$WINE_BIN" reg add 'HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\RuneLite Launcher_is1' \
+    /v 'InstallLocation' /t REG_SZ /d "$runelite_win" /f
 
   "$WINE_BIN" reg add 'HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Uninstall\HDOS Launcher_is1' \
     /v 'InstallLocation' /t REG_SZ /d "$hdos_win" /f
@@ -405,7 +432,6 @@ handle_existing_install() {
   fi
 }
 run_launcher() {
-  echo "Starting the Jagex Launcher."
   ("$LAUNCHER_SCRIPT" >/dev/null 2>&1 &) || true
 }
 
@@ -438,12 +464,13 @@ do_install() {
   run_step "Java runtime" extract_java
   run_step "Wine prefix" create_prefix
   run_step "Jagex Launcher files" install_launcher
+  run_step "RuneLite client" install_runelite
   run_step "HDOS client" install_hdos
-  run_step "HDOS client integration" register_hdos
+  run_step "Client integration" register_clients
   run_step "Desktop entry" install_shortcuts
   INSTALLING=0
   printf '\nInstallation completed successfully.\n'
-  printf 'After updating the The Jagex Launcher it can be started from your application menu.\n\n'
+  printf 'Starting the Jagex Launcher. After updating it can be launched from your application menu.\n\n'
   run_launcher
 }
 
