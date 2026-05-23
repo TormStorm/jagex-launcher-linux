@@ -11,11 +11,10 @@ WINE_DIR="${BASE_DIR}/wine"
 JRE_DIR="${BASE_DIR}/jre"
 PREFIX_DIR="${BASE_DIR}/prefix"
 BIN_DIR="${BASE_DIR}/bin"
-WINE_USER="${USER:-$(id -un)}"
-LOCALAPPDATA_DIR="${PREFIX_DIR}/drive_c/users/${WINE_USER}/AppData/Local"
-RUNELITE_DIR="${LOCALAPPDATA_DIR}/RuneLite"
-HDOS_DIR="${LOCALAPPDATA_DIR}/HDOS"
 JAGEX_DIR="${PREFIX_DIR}/drive_c/Program Files (x86)/Jagex Launcher"
+GAMES_DIR="${JAGEX_DIR}/Games"
+RUNELITE_DIR="${GAMES_DIR}/RuneLite"
+HDOS_DIR="${GAMES_DIR}/HDOS"
 
 # Files
 JAGEX_EXE="${JAGEX_DIR}/JagexLauncher.exe"
@@ -130,9 +129,10 @@ create_dirs() {
     "$JRE_DIR" \
     "$PREFIX_DIR" \
     "$BIN_DIR" \
+    "$JAGEX_DIR" \
+    "$GAMES_DIR" \
     "$RUNELITE_DIR" \
     "$HDOS_DIR" \
-    "$JAGEX_DIR" \
     "$(dirname "$DESKTOP_FILE")"
 }
 
