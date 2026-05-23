@@ -93,13 +93,19 @@ source_changed() {
 
 confirm() {
   local prompt="$1" answer
+
+  if [[ ! -r /dev/tty ]]; then
+    echo "Error: this installer needs an interactive terminal." >&2
+    return 1
+  fi
+
   while true; do
-    printf '%s [y/N]: ' "$prompt"
-    IFS= read -r answer || return 1
+    printf '%s [y/N]: ' "$prompt" > /dev/tty
+    IFS= read -r answer < /dev/tty || return 1
     case "${answer:-n}" in
       y|Y|yes|YES|Yes) return 0 ;;
       n|N|no|NO|No) return 1 ;;
-      *) printf 'Please answer y or n.\n' ;;
+      *) printf 'Please answer y or n.\n' > /dev/tty ;;
     esac
   done
 }
