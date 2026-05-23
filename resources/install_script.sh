@@ -78,12 +78,13 @@ log_step() {
 }
 
 is_installed() {
-  [[ -e "${BASE_DIR}" ]]
+  [[ -f "$WINE_DIR/.source" && -f "$JRE_DIR/.source" && -f "$JAGEX_EXE" ]]
 }
 
 installed_source() {
   local file="$1"
   [[ -f "$file" ]] && head -n 1 "$file"
+  return 0
 }
 
 source_changed() {
@@ -458,6 +459,15 @@ esac
 if is_installed; then
   handle_existing_install
   exit 0
+fi
+
+if [[ -d "$BASE_DIR" ]]; then
+  echo "An incomplete Jagex Launcher installation was found."
+  if confirm "Remove it and start over?"; then
+    uninstall
+  else
+    exit 0
+  fi
 fi
 
 do_install
