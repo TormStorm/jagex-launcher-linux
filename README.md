@@ -18,6 +18,18 @@ Run the Flatpak from the terminal:
 ```
 flatpak run com.jagexlauncher.JagexLauncher
 ```
+## [TormStorm/jagex-launcher-linux](https://github.com/TormStorm/jagex-launcher-linux/tree/feature)
+<img src="https://github.com/user-attachments/assets/6d0024d8-fff0-432d-be5d-c0cb3cf3f8b6" width="20"> Installs the Official Jagex Launcher which runs through Wine  
+<img src="https://github.com/user-attachments/assets/989790d0-1a47-489d-a666-a46c31148295" width="20"> The New Official Client runs through Wine and is installable via the Jagex Launcher  
+<img src="https://github.com/user-attachments/assets/3021bbfd-2e59-41b1-9df7-d275f6e34c65" width="20"> RuneLite & HDOS run natively and are included  
+<img src="https://github.com/user-attachments/assets/d461c72e-1fd4-40f1-8f97-6054d9073fd3" width="20"> The RS3 Client runs through Wine and is installable via the Jagex Launcher  
+
+Install the Jagex Launcher
+```
+curl -fSsL https://raw.githubusercontent.com/tormstorm/jagex-launcher-linux/feature/resources/install_script.sh -o /tmp/jagex-launcher-installer.sh
+bash /tmp/jagex-launcher-installer.sh
+```
+
 ## [Adamcake/Bolt](https://codeberg.org/Adamcake/Bolt)
 <img src="https://github.com/user-attachments/assets/201b579c-cfa6-42f3-89a2-dea4b70022be" width="20"> Native third-party Jagex Launcher  
 <img src="https://github.com/user-attachments/assets/989790d0-1a47-489d-a666-a46c31148295" width="20"> The New Official Client runs through Wine and is installable via Bolt  
