@@ -26,8 +26,7 @@ flatpak run com.jagexlauncher.JagexLauncher
 
 Install the Jagex Launcher
 ```
-curl -fSsL https://raw.githubusercontent.com/tormstorm/jagex-launcher-linux/feature/resources/install_script.sh -o /tmp/jagex-launcher-installer.sh
-bash /tmp/jagex-launcher-installer.sh
+bash <(curl -fSsL https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/feature/resources/install_script.sh)
 ```
 
 ## [Adamcake/Bolt](https://codeberg.org/Adamcake/Bolt)
