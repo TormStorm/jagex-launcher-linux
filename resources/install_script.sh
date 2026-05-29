@@ -35,7 +35,7 @@ INSTALLER_URL="https://raw.githubusercontent.com/TormStorm/jagex-launcher-linux/
 JRE_URL="https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.19%2B10/OpenJDK17U-jre_x64_linux_hotspot_17.0.19_10.tar.gz"
 RUNELITE_URL="https://github.com/runelite/launcher/releases/download/2.7.7/RuneLite.jar"
 HDOS_URL="https://cdn.hdos.dev/launcher/latest/hdos-launcher.jar"
-ICON_URL="https://oldschool.runescape.wiki/w/Special:Redirect/file/Jagex_Launcher_icon.png"
+ICON_URL="https://github.com/TormStorm/jagex-launcher-linux/blob/feature/resources/Jagex_Launcher_icon.png"
 
 INSTALLING=0
 
