@@ -1,4 +1,5 @@
-![](https://runescape.wiki/images/thumb/Jagex_Launcher_icon.png/128px-Jagex_Launcher_icon.png)
+<img src="resources/Jagex_Launcher_icon.png" alt="Jagex Launcher icon" width="128">
+
 # Jagex Launcher Linux [![Discord](https://img.shields.io/discord/828918474784768010)](https://discord.gg/aX7GT2Mkdu)
 
 This repository contains community projects to install the Jagex Launcher and use Jagex Accounts in Linux     
